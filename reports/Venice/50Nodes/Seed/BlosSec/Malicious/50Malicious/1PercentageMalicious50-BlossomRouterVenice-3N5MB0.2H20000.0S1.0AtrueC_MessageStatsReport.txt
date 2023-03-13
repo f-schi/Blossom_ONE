@@ -1,0 +1,21 @@
+Message stats for scenario 1PercentageMalicious50-BlossomRouterVenice-3N5MB0.2H20000.0S1.0AtrueC
+sim_time: 172800.0000
+created: 5840
+started: 3389
+relayed: 3323
+aborted: 66
+dropped: 2436
+removed: 3311
+delivered: 3288
+delivery_prob: 0.5630
+dropped_prob: 0.7188
+response_prob: 0.0000
+overhead_ratio: 0.0106
+latency_avg: 3707.1979
+latency_med: 2493.6000
+hopcount_avg: 1.0055
+hopcount_med: 1
+buffertime_avg: 3722.6704
+buffertime_med: 1992.8000
+rtt_avg: NaN
+rtt_med: NaN

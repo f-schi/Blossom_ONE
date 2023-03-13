@@ -1,0 +1,21 @@
+Message stats for scenario 5FirstContactRouterSanFran-3N5MB0.1H20000.0S0.8AfalseC
+sim_time: 172800.0000
+created: 5837
+started: 85038
+relayed: 81998
+aborted: 3038
+dropped: 3904
+removed: 81998
+delivered: 1829
+delivery_prob: 0.3133
+dropped_prob: 0.0459
+response_prob: 0.0000
+overhead_ratio: 43.8321
+latency_avg: 2329.3450
+latency_med: 1521.5000
+hopcount_avg: 12.6774
+hopcount_med: 11
+buffertime_avg: 200.4172
+buffertime_med: 88.3000
+rtt_avg: NaN
+rtt_med: NaN

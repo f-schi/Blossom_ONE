@@ -1,0 +1,4328 @@
+#
+# Default settings for the simulation
+#
+
+## Scenario settings
+#Scenario.name = FirstContact
+Scenario.name = %%Group.router%%SanFran-%%Scenario.nrofHostGroups%%N%%Group.bufferSize%%B%%BlossomRouter.maxHeight%%H%%BlossomRouter.sleepTime%%S%%BlossomRouter.adjustmentParameter%%A%%BlossomRouter.cloakingEnabled%%C%%
+#Scenario.name = Samaneh_5Copy5PMN
+Scenario.simulateConnections = true
+#Scenario.updateInterval = 0.1
+Scenario.updateInterval = 60
+# 43200s == 12h
+Scenario.endTime = 172800
+#Scenario.endTime =  43200
+
+
+## Interface-specific settings:
+# type : which interface class the interface belongs to
+# For different types, the sub-parameters are interface-specific
+# For SimpleBroadcastInterface, the parameters are:
+# transmitSpeed : transmit speed of the interface (bytes per second)
+# transmitRange : range of the interface (meters)
+
+# "Bluetooth" interface for all nodes
+btInterface.type = SimpleBroadcastInterface
+# Transmit speed of 2 Mbps = 250kBps
+btInterface.transmitSpeed = 250k
+btInterface.transmitRange = 10
+9
+# High speed, long range, interface for group 4
+highspeedInterface.type = SimpleBroadcastInterface
+highspeedInterface.transmitSpeed = 10M
+highspeedInterface.transmitRange = 100
+
+# Define 1 node groups
+Scenario.nrofHostGroups = 99
+## Group-specific settings:
+# groupID : Group's identifier. Used as the prefix of host names
+# nrofHosts: number of hosts in the group
+# movementModel: movement model of the hosts (valid class name from movement package)
+# waitTime: minimum and maximum wait times (seconds) after reaching destination
+# speed: minimum and maximum speeds (m/s) when moving on a path
+# bufferSize: size of the message buffer (bytes)
+# router: router used to route messages (valid class name from routing package)
+# activeTimes: Time intervals when the nodes in the group are active (start1, end1, start2, end2, ...)
+# msgTtl : TTL (minutes) of the messages created by this host group, default=infinite
+
+## Group and movement model specific settings
+# pois: Points Of Interest indexes and probabilities (poiIndex1, poiProb1, poiIndex2, poiProb2, ... )
+#       for ShortestPathMapBasedMovement
+# okMaps : which map nodes are OK for the group (map file indexes), default=all
+#          for all MapBasedMovent models
+# routeFile: route's file path - for MapRouteMovement
+# routeType: route's type - for MapRouteMovement
+
+
+# Common settings for all groups
+Group.movementModel = ShortestPathMapBasedMovement
+#Group.movementModel = MapBasedMovement
+#Group.router =FirstContactRouter
+Group.router = BlossomRouter
+#Group.router = EpidemicRouter
+#Group.router = ProphetRouter
+Group.bufferSize = 5M
+#Group.waitTime = 0, 120
+# All nodes have the bluetooth interface
+Group.nrofInterfaces = 1
+Group.interface1 = btInterface
+# Walking speeds
+Group.speed = 0.5, 1.5
+# Message TTL of 300 minutes (5 hours)
+Group.msgTtl = 300
+
+#Group.nrofHosts = 11
+
+#number of nodes in the senario 1
+#Group1.nrofHosts = 1
+#Group1.groupID = s
+#Group1.routeType = 1
+#Group1.movementModel = ExternalPathMovement
+#Group1.traceFile = data/TaxiSanFran/file1.txt
+#Group1.activeFile = data/TaxiSanFran/active1.txt
+
+#Group1.routeFile = data/TaxiSanFran/taxi1.wkt
+
+# To solve prophet problem, (1=random, 2=FIFO)
+ Group.sendQueue=2
+
+
+
+#number of nodes in the senario 1
+Group1.nrofHosts = 1
+Group1.groupID = c
+Group1.speed = 2.7, 13.9
+#Group1.routeType = 1
+Group1.movementModel = ExternalPathMovement
+Group1.traceFile = data/TaxiSanFran/file0.txt
+Group1.activeFile = data/TaxiSanFran/active0.txt
+
+
+
+#number of nodes in the senario 1
+Group2.nrofHosts = 1
+Group2.groupID = s
+Group2.movementModel = ExternalPathMovement
+Group2.traceFile = data/TaxiSanFran/file1.txt
+Group2.activeFile = data/TaxiSanFran/active1.txt
+
+#number of nodes in the senario 1
+Group3.nrofHosts = 1
+Group3.groupID = s
+Group3.movementModel = ExternalPathMovement
+Group3.traceFile = data/TaxiSanFran/file2.txt
+Group3.activeFile = data/TaxiSanFran/active2.txt
+
+#number of nodes in the senario 1
+Group4.nrofHosts = 1
+Group4.groupID = s
+Group4.movementModel = ExternalPathMovement
+Group4.traceFile = data/TaxiSanFran/file3.txt
+Group4.activeFile = data/TaxiSanFran/active3.txt
+
+
+#number of nodes in the senario 1
+Group5.nrofHosts = 1
+Group5.groupID = s
+Group5.movementModel = ExternalPathMovement
+Group5.traceFile = data/TaxiSanFran/file4.txt
+Group5.activeFile = data/TaxiSanFran/active4.txt
+
+#number of nodes in the senario 1
+Group6.nrofHosts = 1
+Group6.groupID = s
+Group6.movementModel = ExternalPathMovement
+Group6.traceFile = data/TaxiSanFran/file5.txt
+Group6.activeFile = data/TaxiSanFran/active5.txt
+
+#number of nodes in the senario 1
+Group7.nrofHosts = 1
+Group7.groupID = s
+Group7.movementModel = ExternalPathMovement
+Group7.traceFile = data/TaxiSanFran/file6.txt
+Group7.activeFile = data/TaxiSanFran/active6.txt
+
+#number of nodes in the senario 1
+Group8.nrofHosts = 1
+Group8.groupID = s
+Group8.movementModel = ExternalPathMovement
+Group8.traceFile = data/TaxiSanFran/file7.txt
+Group8.activeFile = data/TaxiSanFran/active7.txt
+
+#number of nodes in the senario 1
+Group9.nrofHosts = 1
+Group9.groupID = s
+Group9.movementModel = ExternalPathMovement
+Group9.traceFile = data/TaxiSanFran/file8.txt
+Group9.activeFile = data/TaxiSanFran/active8.txt
+
+#number of nodes in the senario 1
+Group10.nrofHosts = 1
+Group10.groupID = s
+Group10.movementModel = ExternalPathMovement
+Group10.traceFile = data/TaxiSanFran/file9.txt
+Group10.activeFile = data/TaxiSanFran/active9.txt
+
+#number of nodes in the senario 1
+Group11.nrofHosts = 1
+Group11.groupID = c
+Group11.speed = 2.7, 13.9
+Group11.movementModel = ExternalPathMovement
+Group11.traceFile = data/TaxiSanFran/file10.txt
+Group11.activeFile = data/TaxiSanFran/active10.txt
+
+#numbe11 of nodes in the senario 1
+Group12.nrofHosts = 1
+Group12.groupID = s
+Group12.movementModel = ExternalPathMovement
+Group12.traceFile = data/TaxiSanFran/file11.txt
+Group12.activeFile = data/TaxiSanFran/active11.txt
+
+#number of nodes in the senario 1
+Group13.nrofHosts = 1
+Group13.groupID = s
+Group13.movementModel = ExternalPathMovement
+Group13.traceFile = data/TaxiSanFran/file12.txt
+Group13.activeFile = data/TaxiSanFran/active12.txt
+
+#number of nodes in the senario 1
+Group14.nrofHosts = 1
+Group14.groupID = s
+Group14.movementModel = ExternalPathMovement
+Group14.traceFile = data/TaxiSanFran/file13.txt
+Group14.activeFile = data/TaxiSanFran/active13.txt
+
+#number of nodes in the senario 1
+Group15.nrofHosts = 1
+Group15.groupID = s
+Group15.movementModel = ExternalPathMovement
+Group15.traceFile = data/TaxiSanFran/file14.txt
+Group15.activeFile = data/TaxiSanFran/active14.txt
+
+#number of nodes in the senario 1
+Group16.nrofHosts = 1
+Group16.groupID = s
+Group16.movementModel = ExternalPathMovement
+Group16.traceFile = data/TaxiSanFran/file15.txt
+Group16.activeFile = data/TaxiSanFran/active15.txt
+
+#number of nodes in the senario 1
+Group17.nrofHosts = 1
+Group17.groupID = s
+Group17.movementModel = ExternalPathMovement
+Group17.traceFile = data/TaxiSanFran/file16.txt
+Group17.activeFile = data/TaxiSanFran/active16.txt
+
+#number of nodes in the senario 1
+Group18.nrofHosts = 1
+Group18.groupID = s
+Group18.movementModel = ExternalPathMovement
+Group18.traceFile = data/TaxiSanFran/file17.txt
+Group18.activeFile = data/TaxiSanFran/active17.txt
+
+#number of nodes in the senario 1
+Group19.nrofHosts = 1
+Group19.groupID = s
+Group19.movementModel = ExternalPathMovement
+Group19.traceFile = data/TaxiSanFran/file18.txt
+Group19.activeFile = data/TaxiSanFran/active18.txt
+
+#number of nodes in the senario 1
+Group20.nrofHosts = 1
+Group20.groupID = s
+Group20.movementModel = ExternalPathMovement
+Group20.traceFile = data/TaxiSanFran/file19.txt
+Group20.activeFile = data/TaxiSanFran/active19.txt
+
+#number of nodes in the senario 1
+Group21.nrofHosts = 1
+Group21.groupID = c
+Group21.speed = 2.7, 13.9
+Group21.movementModel = ExternalPathMovement
+Group21.traceFile = data/TaxiSanFran/file20.txt
+Group21.activeFile = data/TaxiSanFran/active20.txt
+
+#number of nodes in the senario 1
+Group22.nrofHosts = 1
+Group22.groupID = s
+Group22.movementModel = ExternalPathMovement
+Group22.traceFile = data/TaxiSanFran/file21.txt
+Group22.activeFile = data/TaxiSanFran/active21.txt
+
+#number of nodes in the senario 1
+Group23.nrofHosts = 1
+Group23.groupID = s
+Group23.movementModel = ExternalPathMovement
+Group23.traceFile = data/TaxiSanFran/file22.txt
+Group23.activeFile = data/TaxiSanFran/active22.txt
+
+#number of nodes in the senario 1
+Group24.nrofHosts = 1
+Group24.groupID = s
+Group24.movementModel = ExternalPathMovement
+Group24.traceFile = data/TaxiSanFran/file23.txt
+Group24.activeFile = data/TaxiSanFran/active23.txt
+
+#number of nodes in the senario 1
+Group25.nrofHosts = 1
+Group25.groupID = s
+Group25.movementModel = ExternalPathMovement
+Group25.traceFile = data/TaxiSanFran/file24.txt
+Group25.activeFile = data/TaxiSanFran/active24.txt
+
+#number of nodes in the senario 1
+Group26.nrofHosts = 1
+Group26.groupID = s
+Group26.movementModel = ExternalPathMovement
+Group26.traceFile = data/TaxiSanFran/file25.txt
+Group26.activeFile = data/TaxiSanFran/active25.txt
+
+#number of nodes in the senario 1
+Group27.nrofHosts = 1
+Group27.groupID = s
+Group27.movementModel = ExternalPathMovement
+Group27.traceFile = data/TaxiSanFran/file26.txt
+Group27.activeFile = data/TaxiSanFran/active26.txt
+
+#number of nodes in the senario 1
+Group28.nrofHosts = 1
+Group28.groupID = s
+Group28.movementModel = ExternalPathMovement
+Group28.traceFile = data/TaxiSanFran/file27.txt
+Group28.activeFile = data/TaxiSanFran/active27.txt
+
+#number of nodes in the senario 1
+Group29.nrofHosts = 1
+Group29.groupID = s
+Group29.movementModel = ExternalPathMovement
+Group29.traceFile = data/TaxiSanFran/file28.txt
+Group29.activeFile = data/TaxiSanFran/active28.txt
+
+#number of nodes in the senario 1
+Group30.nrofHosts = 1
+Group30.groupID = s
+Group30.movementModel = ExternalPathMovement
+Group30.traceFile = data/TaxiSanFran/file29.txt
+Group30.activeFile = data/TaxiSanFran/active29.txt
+
+#number of nodes in the senario 1
+Group31.nrofHosts = 1
+Group31.groupID = c
+Group31.speed = 2.7, 13.9
+Group31.movementModel = ExternalPathMovement
+Group31.traceFile = data/TaxiSanFran/file30.txt
+Group31.activeFile = data/TaxiSanFran/active30.txt
+
+#number of nodes in the senario 1
+Group32.nrofHosts = 1
+Group32.groupID = s
+Group32.movementModel = ExternalPathMovement
+Group32.traceFile = data/TaxiSanFran/file31.txt
+Group32.activeFile = data/TaxiSanFran/active31.txt
+
+#number of nodes in the senario 1
+Group33.nrofHosts = 1
+Group33.groupID = s
+Group33.movementModel = ExternalPathMovement
+Group33.traceFile = data/TaxiSanFran/file32.txt
+Group33.activeFile = data/TaxiSanFran/active32.txt
+
+#number of nodes in the senario 1
+Group34.nrofHosts = 1
+Group34.groupID = s
+Group34.movementModel = ExternalPathMovement
+Group34.traceFile = data/TaxiSanFran/file33.txt
+Group34.activeFile = data/TaxiSanFran/active33.txt
+
+#number of nodes in the senario 1
+Group35.nrofHosts = 1
+Group35.groupID = s
+Group35.movementModel = ExternalPathMovement
+Group35.traceFile = data/TaxiSanFran/file34.txt
+Group35.activeFile = data/TaxiSanFran/active34.txt
+
+#number of nodes in the senario 1
+Group36.nrofHosts = 1
+Group36.groupID = s
+Group36.movementModel = ExternalPathMovement
+Group36.traceFile = data/TaxiSanFran/file35.txt
+Group36.activeFile = data/TaxiSanFran/active35.txt
+
+#number of nodes in the senario 1
+Group37.nrofHosts = 1
+Group37.groupID = s
+Group37.movementModel = ExternalPathMovement
+Group37.traceFile = data/TaxiSanFran/file36.txt
+Group37.activeFile = data/TaxiSanFran/active36.txt
+
+#number of nodes in the senario 1
+Group38.nrofHosts = 1
+Group38.groupID = s
+Group38.movementModel = ExternalPathMovement
+Group38.traceFile = data/TaxiSanFran/file37.txt
+Group38.activeFile = data/TaxiSanFran/active37.txt
+
+#number of nodes in the senario 1
+Group39.nrofHosts = 1
+Group39.groupID = s
+Group39.movementModel = ExternalPathMovement
+Group39.traceFile = data/TaxiSanFran/file38.txt
+Group39.activeFile = data/TaxiSanFran/active38.txt
+
+#number of nodes in the senario 1
+Group40.nrofHosts = 1
+Group40.groupID = s
+Group40.movementModel = ExternalPathMovement
+Group40.traceFile = data/TaxiSanFran/file39.txt
+Group40.activeFile = data/TaxiSanFran/active39.txt
+
+#number of nodes in the senario 1
+Group41.nrofHosts = 1
+Group41.groupID = c
+Group41.speed = 2.7, 13.9
+Group41.movementModel = ExternalPathMovement
+Group41.traceFile = data/TaxiSanFran/file40.txt
+Group41.activeFile = data/TaxiSanFran/active40.txt
+
+#number of nodes in the senario 1
+Group42.nrofHosts = 1
+Group42.groupID = s
+Group42.movementModel = ExternalPathMovement
+Group42.traceFile = data/TaxiSanFran/file41.txt
+Group42.activeFile = data/TaxiSanFran/active41.txt
+
+#number of nodes in the senario 1
+Group43.nrofHosts = 1
+Group43.groupID = s
+Group43.movementModel = ExternalPathMovement
+Group43.traceFile = data/TaxiSanFran/file42.txt
+Group43.activeFile = data/TaxiSanFran/active42.txt
+
+#number of nodes in the senario 1
+Group44.nrofHosts = 1
+Group44.groupID = s
+Group44.movementModel = ExternalPathMovement
+Group44.traceFile = data/TaxiSanFran/file43.txt
+Group44.activeFile = data/TaxiSanFran/active43.txt
+
+#number of nodes in the senario 1
+Group45.nrofHosts = 1
+Group45.groupID = s
+Group45.movementModel = ExternalPathMovement
+Group45.traceFile = data/TaxiSanFran/file44.txt
+Group45.activeFile = data/TaxiSanFran/active44.txt
+
+#number of nodes in the senario 1
+Group46.nrofHosts = 1
+Group46.groupID = s
+Group46.movementModel = ExternalPathMovement
+Group46.traceFile = data/TaxiSanFran/file45.txt
+Group46.activeFile = data/TaxiSanFran/active45.txt
+
+#number of nodes in the senario 1
+Group47.nrofHosts = 1
+Group47.groupID = s
+Group47.movementModel = ExternalPathMovement
+Group47.traceFile = data/TaxiSanFran/file46.txt
+Group47.activeFile = data/TaxiSanFran/active46.txt
+
+#number of nodes in the senario 1
+Group48.nrofHosts = 1
+Group48.groupID = s
+Group48.movementModel = ExternalPathMovement
+Group48.traceFile = data/TaxiSanFran/file47.txt
+Group48.activeFile = data/TaxiSanFran/active47.txt
+
+#number of nodes in the senario 1
+Group49.nrofHosts = 1
+Group49.groupID = s
+Group49.movementModel = ExternalPathMovement
+Group49.traceFile = data/TaxiSanFran/file48.txt
+Group49.activeFile = data/TaxiSanFran/active48.txt
+
+#Tram
+Group50.nrofHosts = 1
+Group50.bufferSize = 50M
+Group50.groupID = t
+Group50.waitTime = 10, 30
+Group50.speed = 7, 10
+Group50.interface1 = highspeedInterface
+Group50.movementModel = ExternalPathMovement
+Group50.traceFile = data/TaxiSanFran/file49.txt
+Group50.activeFile = data/TaxiSanFran/active49.txt
+
+#number of nodes in the senario 1
+Group51.nrofHosts = 1
+Group51.bufferSize = 50M
+Group51.groupID = t
+Group51.waitTime = 10, 30
+Group51.speed = 7, 10
+Group51.interface1 = highspeedInterface
+Group51.movementModel = ExternalPathMovement
+Group51.traceFile = data/TaxiSanFran/file50.txt
+Group51.activeFile = data/TaxiSanFran/active50.txt
+
+#number of nodes in the senario 1
+Group52.nrofHosts = 1
+Group52.bufferSize = 50M
+Group52.groupID = t
+Group52.waitTime = 10, 30
+Group52.speed = 7, 10
+Group52.interface1 = highspeedInterface
+Group52.movementModel = ExternalPathMovement
+Group52.traceFile = data/TaxiSanFran/file51.txt
+Group52.activeFile = data/TaxiSanFran/active51.txt
+
+#number of nodes in the senario 1
+Group53.nrofHosts = 1
+Group53.groupID = c
+Group53.speed = 2.7, 13.9
+Group53.movementModel = ExternalPathMovement
+Group53.traceFile = data/TaxiSanFran/file52.txt
+Group53.activeFile = data/TaxiSanFran/active52.txt
+
+#number of nodes in the senario 1
+Group54.nrofHosts = 1
+Group54.groupID = s
+Group54.movementModel = ExternalPathMovement
+Group54.traceFile = data/TaxiSanFran/file53.txt
+Group54.activeFile = data/TaxiSanFran/active53.txt
+
+#number of nodes in the senario 1
+Group55.nrofHosts = 1
+Group55.groupID = s
+Group55.movementModel = ExternalPathMovement
+Group55.traceFile = data/TaxiSanFran/file54.txt
+Group55.activeFile = data/TaxiSanFran/active54.txt
+
+#number of nodes in the senario 1
+Group56.nrofHosts = 1
+Group56.groupID = s
+Group56.movementModel = ExternalPathMovement
+Group56.traceFile = data/TaxiSanFran/file55.txt
+Group56.activeFile = data/TaxiSanFran/active55.txt
+
+#number of nodes in the senario 1
+Group57.nrofHosts = 1
+Group57.groupID = s
+Group57.movementModel = ExternalPathMovement
+Group57.traceFile = data/TaxiSanFran/file56.txt
+Group57.activeFile = data/TaxiSanFran/active56.txt
+
+#number of nodes in the senario 1
+Group58.nrofHosts = 1
+Group58.groupID = s
+Group58.movementModel = ExternalPathMovement
+Group58.traceFile = data/TaxiSanFran/file57.txt
+Group58.activeFile = data/TaxiSanFran/active57.txt
+
+#number of nodes in the senario 1
+Group59.nrofHosts = 1
+Group59.groupID = s
+Group59.movementModel = ExternalPathMovement
+Group59.traceFile = data/TaxiSanFran/file58.txt
+Group59.activeFile = data/TaxiSanFran/active58.txt
+
+#number of nodes in the senario 1
+Group60.nrofHosts = 1
+Group60.groupID = s
+Group60.movementModel = ExternalPathMovement
+Group60.traceFile = data/TaxiSanFran/file59.txt
+Group60.activeFile = data/TaxiSanFran/active59.txt
+
+#number of nodes in the senario 1
+Group61.nrofHosts = 1
+Group61.groupID = c
+Group61.speed = 2.7, 13.9
+Group61.movementModel = ExternalPathMovement
+Group61.traceFile = data/TaxiSanFran/file60.txt
+Group61.activeFile = data/TaxiSanFran/active60.txt
+
+#number of nodes in the senario 1
+Group62.nrofHosts = 1
+Group62.groupID = s
+Group62.movementModel = ExternalPathMovement
+Group62.traceFile = data/TaxiSanFran/file61.txt
+Group62.activeFile = data/TaxiSanFran/active61.txt
+
+#number of nodes in the senario 1
+Group63.nrofHosts = 1
+Group63.groupID = s
+Group63.movementModel = ExternalPathMovement
+Group63.traceFile = data/TaxiSanFran/file62.txt
+Group63.activeFile = data/TaxiSanFran/active62.txt
+
+#number of nodes in the senario 1
+Group64.nrofHosts = 1
+Group64.groupID = s
+Group64.movementModel = ExternalPathMovement
+Group64.traceFile = data/TaxiSanFran/file63.txt
+Group64.activeFile = data/TaxiSanFran/active63.txt
+
+#number of nodes in the senario 1
+Group65.nrofHosts = 1
+Group65.groupID = s
+Group65.movementModel = ExternalPathMovement
+Group65.traceFile = data/TaxiSanFran/file64.txt
+Group65.activeFile = data/TaxiSanFran/active64.txt
+
+#number of nodes in the senario 1
+Group66.nrofHosts = 1
+Group66.groupID = s
+Group66.movementModel = ExternalPathMovement
+Group66.traceFile = data/TaxiSanFran/file65.txt
+Group66.activeFile = data/TaxiSanFran/active65.txt
+
+#number of nodes in the senario 1
+Group67.nrofHosts = 1
+Group67.groupID = s
+Group67.movementModel = ExternalPathMovement
+Group67.traceFile = data/TaxiSanFran/file66.txt
+Group67.activeFile = data/TaxiSanFran/active66.txt
+
+#number of nodes in the senario 1
+Group68.nrofHosts = 1
+Group68.groupID = s
+Group68.movementModel = ExternalPathMovement
+Group68.traceFile = data/TaxiSanFran/file67.txt
+Group68.activeFile = data/TaxiSanFran/active67.txt
+
+#number of nodes in the senario 1
+Group69.nrofHosts = 1
+Group69.groupID = s
+Group69.movementModel = ExternalPathMovement
+Group69.traceFile = data/TaxiSanFran/file68.txt
+Group69.activeFile = data/TaxiSanFran/active68.txt
+
+#number of nodes in the senario 1
+Group70.nrofHosts = 1
+Group70.groupID = s
+Group70.movementModel = ExternalPathMovement
+Group70.traceFile = data/TaxiSanFran/file69.txt
+Group70.activeFile = data/TaxiSanFran/active69.txt
+
+#number of nodes in the senario 1
+Group71.nrofHosts = 1
+Group71.groupID = c
+Group71.speed = 2.7, 13.9
+Group71.movementModel = ExternalPathMovement
+Group71.traceFile = data/TaxiSanFran/file70.txt
+Group71.activeFile = data/TaxiSanFran/active70.txt
+
+#number of nodes in the senario 1
+Group72.nrofHosts = 1
+Group72.groupID = s
+Group72.movementModel = ExternalPathMovement
+Group72.traceFile = data/TaxiSanFran/file71.txt
+Group72.activeFile = data/TaxiSanFran/active71.txt
+
+#number of nodes in the senario 1
+Group73.nrofHosts = 1
+Group73.groupID = s
+Group73.movementModel = ExternalPathMovement
+Group73.traceFile = data/TaxiSanFran/file72.txt
+Group73.activeFile = data/TaxiSanFran/active72.txt
+
+#number of nodes in the senario 1
+Group74.nrofHosts = 1
+Group74.groupID = s
+Group74.movementModel = ExternalPathMovement
+Group74.traceFile = data/TaxiSanFran/file73.txt
+Group74.activeFile = data/TaxiSanFran/active73.txt
+
+#number of nodes in the senario 1
+Group75.nrofHosts = 1
+Group75.groupID = s
+Group75.movementModel = ExternalPathMovement
+Group75.traceFile = data/TaxiSanFran/file74.txt
+Group75.activeFile = data/TaxiSanFran/active74.txt
+
+#number of nodes in the senario 1
+Group76.nrofHosts = 1
+Group76.groupID = s
+Group76.movementModel = ExternalPathMovement
+Group76.traceFile = data/TaxiSanFran/file75.txt
+Group76.activeFile = data/TaxiSanFran/active75.txt
+
+#number of nodes in the senario 1
+Group77.nrofHosts = 1
+Group77.groupID = s
+Group77.movementModel = ExternalPathMovement
+Group77.traceFile = data/TaxiSanFran/file76.txt
+Group77.activeFile = data/TaxiSanFran/active76.txt
+
+#number of nodes in the senario 1
+Group78.nrofHosts = 1
+Group78.groupID = s
+Group78.movementModel = ExternalPathMovement
+Group78.traceFile = data/TaxiSanFran/file77.txt
+Group78.activeFile = data/TaxiSanFran/active77.txt
+
+#number of nodes in the senario 1
+Group79.nrofHosts = 1
+Group79.groupID = s
+Group79.movementModel = ExternalPathMovement
+Group79.traceFile = data/TaxiSanFran/file78.txt
+Group79.activeFile = data/TaxiSanFran/active78.txt
+
+#number of nodes in the senario 1
+Group80.nrofHosts = 1
+Group80.groupID = s
+Group80.movementModel = ExternalPathMovement
+Group80.traceFile = data/TaxiSanFran/file79.txt
+Group80.activeFile = data/TaxiSanFran/active79.txt
+
+#number of nodes in the senario 1
+Group81.nrofHosts = 1
+Group81.groupID = c
+Group81.speed = 2.7, 13.9
+Group81.movementModel = ExternalPathMovement
+Group81.traceFile = data/TaxiSanFran/file80.txt
+Group81.activeFile = data/TaxiSanFran/active80.txt
+
+#number of nodes in the senario 1
+Group82.nrofHosts = 1
+Group82.groupID = s
+Group82.movementModel = ExternalPathMovement
+Group82.traceFile = data/TaxiSanFran/file81.txt
+Group82.activeFile = data/TaxiSanFran/active81.txt
+
+#number of nodes in the senario 1
+Group83.nrofHosts = 1
+Group83.groupID = s
+Group83.movementModel = ExternalPathMovement
+Group83.traceFile = data/TaxiSanFran/file82.txt
+Group83.activeFile = data/TaxiSanFran/active82.txt
+
+#number of nodes in the senario 1
+Group84.nrofHosts = 1
+Group84.groupID = s
+Group84.movementModel = ExternalPathMovement
+Group84.traceFile = data/TaxiSanFran/file83.txt
+Group84.activeFile = data/TaxiSanFran/active83.txt
+
+#number of nodes in the senario 1
+Group85.nrofHosts = 1
+Group85.groupID = s
+Group85.movementModel = ExternalPathMovement
+Group85.traceFile = data/TaxiSanFran/file84.txt
+Group85.activeFile = data/TaxiSanFran/active84.txt
+
+#number of nodes in the senario 1
+Group86.nrofHosts = 1
+Group86.groupID = s
+Group86.movementModel = ExternalPathMovement
+Group86.traceFile = data/TaxiSanFran/file85.txt
+Group86.activeFile = data/TaxiSanFran/active85.txt
+
+#number of nodes in the senario 1
+Group87.nrofHosts = 1
+Group87.groupID = s
+Group87.movementModel = ExternalPathMovement
+Group87.traceFile = data/TaxiSanFran/file86.txt
+Group87.activeFile = data/TaxiSanFran/active86.txt
+
+#number of nodes in the senario 1
+Group88.nrofHosts = 1
+Group88.groupID = s
+Group88.movementModel = ExternalPathMovement
+Group88.traceFile = data/TaxiSanFran/file87.txt
+Group88.activeFile = data/TaxiSanFran/active87.txt
+
+#number of nodes in the senario 1
+Group89.nrofHosts = 1
+Group89.groupID = s
+Group89.movementModel = ExternalPathMovement
+Group89.traceFile = data/TaxiSanFran/file88.txt
+Group89.activeFile = data/TaxiSanFran/active88.txt
+
+#number of nodes in the senario 1
+Group90.nrofHosts = 1
+Group90.groupID = s
+Group90.movementModel = ExternalPathMovement
+Group90.traceFile = data/TaxiSanFran/file89.txt
+Group90.activeFile = data/TaxiSanFran/active89.txt
+
+#number of nodes in the senario 1
+Group91.nrofHosts = 1
+Group91.groupID = c
+Group91.speed = 2.7, 13.9
+Group91.movementModel = ExternalPathMovement
+Group91.traceFile = data/TaxiSanFran/file90.txt
+Group91.activeFile = data/TaxiSanFran/active90.txt
+
+#number of nodes in the senario 1
+Group92.nrofHosts = 1
+Group92.groupID = s
+Group92.movementModel = ExternalPathMovement
+Group92.traceFile = data/TaxiSanFran/file91.txt
+Group92.activeFile = data/TaxiSanFran/active91.txt
+
+#number of nodes in the senario 1
+Group93.nrofHosts = 1
+Group93.groupID = s
+Group93.movementModel = ExternalPathMovement
+Group93.traceFile = data/TaxiSanFran/file92.txt
+Group93.activeFile = data/TaxiSanFran/active92.txt
+
+#number of nodes in the senario 1
+Group94.nrofHosts = 1
+Group94.groupID = s
+Group94.movementModel = ExternalPathMovement
+Group94.traceFile = data/TaxiSanFran/file93.txt
+Group94.activeFile = data/TaxiSanFran/active93.txt
+
+#number of nodes in the senario 1
+Group95.nrofHosts = 1
+Group95.groupID = s
+Group95.movementModel = ExternalPathMovement
+Group95.traceFile = data/TaxiSanFran/file94.txt
+Group95.activeFile = data/TaxiSanFran/active94.txt
+
+#number of nodes in the senario 1
+Group96.nrofHosts = 1
+Group96.groupID = s
+Group96.movementModel = ExternalPathMovement
+Group96.traceFile = data/TaxiSanFran/file95.txt
+Group96.activeFile = data/TaxiSanFran/active95.txt
+
+#number of nodes in the senario 1
+Group97.nrofHosts = 1
+Group97.groupID = s
+Group97.movementModel = ExternalPathMovement
+Group97.traceFile = data/TaxiSanFran/file96.txt
+Group97.activeFile = data/TaxiSanFran/active96.txt
+
+#number of nodes in the senario 1
+Group98.nrofHosts = 1
+Group98.groupID = s
+Group98.movementModel = ExternalPathMovement
+Group98.traceFile = data/TaxiSanFran/file97.txt
+Group98.activeFile = data/TaxiSanFran/active97.txt
+
+#number of nodes in the senario 1
+Group99.nrofHosts = 1
+Group99.groupID = s
+Group99.movementModel = ExternalPathMovement
+Group99.traceFile = data/TaxiSanFran/file98.txt
+Group99.activeFile = data/TaxiSanFran/active98.txt
+
+#number of nodes in the senario 1
+Group100.nrofHosts = 1
+Group100.groupID = s
+Group100.movementModel = ExternalPathMovement
+Group100.traceFile = data/TaxiSanFran/file99.txt
+Group100.activeFile = data/TaxiSanFran/active99.txt
+
+#number of nodes in the senario 1
+Group101.nrofHosts = 1
+Group101.groupID = c
+Group101.speed = 2.7, 13.9
+Group101.movementModel = ExternalPathMovement
+Group101.traceFile = data/TaxiSanFran/file100.txt
+Group101.activeFile = data/TaxiSanFran/active100.txt
+
+
+
+#number of nodes in the senario 1
+Group102.nrofHosts = 1
+Group102.groupID = s
+Group102.movementModel = ExternalPathMovement
+Group102.traceFile = data/TaxiSanFran/file101.txt
+Group102.activeFile = data/TaxiSanFran/active101.txt
+
+
+
+#number of nodes in the senario 1
+Group103.nrofHosts = 1
+Group103.groupID = s
+Group103.movementModel = ExternalPathMovement
+Group103.traceFile = data/TaxiSanFran/file102.txt
+Group103.activeFile = data/TaxiSanFran/active102.txt
+
+#number of nodes in the senario 1
+Group104.nrofHosts = 1
+Group104.groupID = s
+Group104.movementModel = ExternalPathMovement
+Group104.traceFile = data/TaxiSanFran/file103.txt
+Group104.activeFile = data/TaxiSanFran/active103.txt
+
+
+#number of nodes in the senario 1
+Group105.nrofHosts = 1
+Group105.groupID = s
+Group105.movementModel = ExternalPathMovement
+Group105.traceFile = data/TaxiSanFran/file104.txt
+Group105.activeFile = data/TaxiSanFran/active104.txt
+
+#number of nodes in the senario 1
+Group106.nrofHosts = 1
+Group106.groupID = s
+Group106.movementModel = ExternalPathMovement
+Group106.traceFile = data/TaxiSanFran/file105.txt
+Group106.activeFile = data/TaxiSanFran/active105.txt
+
+#number of nodes in the senario 1
+Group107.nrofHosts = 1
+Group107.groupID = s
+Group107.movementModel = ExternalPathMovement
+Group107.traceFile = data/TaxiSanFran/file106.txt
+Group107.activeFile = data/TaxiSanFran/active106.txt
+
+#number of nodes in the senario 1
+Group108.nrofHosts = 1
+Group108.groupID = s
+Group108.movementModel = ExternalPathMovement
+Group108.traceFile = data/TaxiSanFran/file107.txt
+Group108.activeFile = data/TaxiSanFran/active107.txt
+
+#number of nodes in the senario 1
+Group109.nrofHosts = 1
+Group109.groupID = s
+Group109.movementModel = ExternalPathMovement
+Group109.traceFile = data/TaxiSanFran/file108.txt
+Group109.activeFile = data/TaxiSanFran/active108.txt
+
+#number of nodes in the senario 1
+Group110.nrofHosts = 1
+Group110.groupID = s
+Group110.movementModel = ExternalPathMovement
+Group110.traceFile = data/TaxiSanFran/file109.txt
+Group110.activeFile = data/TaxiSanFran/active109.txt
+
+#number of nodes in the senario 1
+Group111.nrofHosts = 1
+Group111.groupID = c
+Group111.speed = 2.7, 13.9
+Group111.movementModel = ExternalPathMovement
+Group111.traceFile = data/TaxiSanFran/file110.txt
+Group111.activeFile = data/TaxiSanFran/active110.txt
+
+#numbe11 of nodes in the senario 1
+Group112.nrofHosts = 1
+Group112.groupID = s
+Group112.movementModel = ExternalPathMovement
+Group112.traceFile = data/TaxiSanFran/file111.txt
+Group112.activeFile = data/TaxiSanFran/active111.txt
+
+#number of nodes in the senario 1
+Group113.nrofHosts = 1
+Group113.groupID = s
+Group113.movementModel = ExternalPathMovement
+Group113.traceFile = data/TaxiSanFran/file112.txt
+Group113.activeFile = data/TaxiSanFran/active112.txt
+
+#number of nodes in the senario 1
+Group114.nrofHosts = 1
+Group114.groupID = s
+Group114.movementModel = ExternalPathMovement
+Group114.traceFile = data/TaxiSanFran/file113.txt
+Group114.activeFile = data/TaxiSanFran/active113.txt
+
+#number of nodes in the senario 1
+Group115.nrofHosts = 1
+Group115.groupID = s
+Group115.movementModel = ExternalPathMovement
+Group115.traceFile = data/TaxiSanFran/file114.txt
+Group115.activeFile = data/TaxiSanFran/active114.txt
+
+#number of nodes in the senario 1
+Group116.nrofHosts = 1
+Group116.groupID = s
+Group116.movementModel = ExternalPathMovement
+Group116.traceFile = data/TaxiSanFran/file115.txt
+Group116.activeFile = data/TaxiSanFran/active115.txt
+
+#number of nodes in the senario 1
+Group117.nrofHosts = 1
+Group117.groupID = s
+Group117.movementModel = ExternalPathMovement
+Group117.traceFile = data/TaxiSanFran/file116.txt
+Group117.activeFile = data/TaxiSanFran/active116.txt
+
+#number of nodes in the senario 1
+Group118.nrofHosts = 1
+Group118.groupID = s
+Group118.movementModel = ExternalPathMovement
+Group118.traceFile = data/TaxiSanFran/file117.txt
+Group118.activeFile = data/TaxiSanFran/active117.txt
+
+#number of nodes in the senario 1
+Group119.nrofHosts = 1
+Group119.groupID = s
+Group119.movementModel = ExternalPathMovement
+Group119.traceFile = data/TaxiSanFran/file118.txt
+Group119.activeFile = data/TaxiSanFran/active118.txt
+
+#number of nodes in the senario 1
+Group120.nrofHosts = 1
+Group120.groupID = s
+Group120.movementModel = ExternalPathMovement
+Group120.traceFile = data/TaxiSanFran/file119.txt
+Group120.activeFile = data/TaxiSanFran/active119.txt
+
+#number of nodes in the senario 1
+Group121.nrofHosts = 1
+Group121.groupID = c
+Group121.speed = 2.7, 13.9
+Group121.movementModel = ExternalPathMovement
+Group121.traceFile = data/TaxiSanFran/file120.txt
+Group121.activeFile = data/TaxiSanFran/active120.txt
+
+#number of nodes in the senario 1
+Group122.nrofHosts = 1
+Group122.groupID = s
+Group122.movementModel = ExternalPathMovement
+Group122.traceFile = data/TaxiSanFran/file121.txt
+Group122.activeFile = data/TaxiSanFran/active121.txt
+
+#number of nodes in the senario 1
+Group123.nrofHosts = 1
+Group123.groupID = s
+Group123.movementModel = ExternalPathMovement
+Group123.traceFile = data/TaxiSanFran/file122.txt
+Group123.activeFile = data/TaxiSanFran/active122.txt
+
+#number of nodes in the senario 1
+Group124.nrofHosts = 1
+Group124.groupID = s
+Group124.movementModel = ExternalPathMovement
+Group124.traceFile = data/TaxiSanFran/file123.txt
+Group124.activeFile = data/TaxiSanFran/active123.txt
+
+#number of nodes in the senario 1
+Group125.nrofHosts = 1
+Group125.groupID = s
+Group125.movementModel = ExternalPathMovement
+Group125.traceFile = data/TaxiSanFran/file124.txt
+Group125.activeFile = data/TaxiSanFran/active124.txt
+
+#number of nodes in the senario 1
+Group126.nrofHosts = 1
+Group126.groupID = s
+Group126.movementModel = ExternalPathMovement
+Group126.traceFile = data/TaxiSanFran/file125.txt
+Group126.activeFile = data/TaxiSanFran/active125.txt
+
+#number of nodes in the senario 1
+Group127.nrofHosts = 1
+Group127.groupID = s
+Group127.movementModel = ExternalPathMovement
+Group127.traceFile = data/TaxiSanFran/file126.txt
+Group127.activeFile = data/TaxiSanFran/active126.txt
+
+#number of nodes in the senario 1
+Group128.nrofHosts = 1
+Group128.groupID = s
+Group128.movementModel = ExternalPathMovement
+Group128.traceFile = data/TaxiSanFran/file127.txt
+Group128.activeFile = data/TaxiSanFran/active127.txt
+
+#number of nodes in the senario 1
+Group129.nrofHosts = 1
+Group129.groupID = s
+Group129.movementModel = ExternalPathMovement
+Group129.traceFile = data/TaxiSanFran/file128.txt
+Group129.activeFile = data/TaxiSanFran/active128.txt
+
+#number of nodes in the senario 1
+Group130.nrofHosts = 1
+Group130.groupID = s
+Group130.movementModel = ExternalPathMovement
+Group130.traceFile = data/TaxiSanFran/file129.txt
+Group130.activeFile = data/TaxiSanFran/active129.txt
+
+#number of nodes in the senario 1
+Group131.nrofHosts = 1
+Group131.groupID = c
+Group131.speed = 2.7, 13.9
+Group131.movementModel = ExternalPathMovement
+Group131.traceFile = data/TaxiSanFran/file130.txt
+Group131.activeFile = data/TaxiSanFran/active130.txt
+
+#number of nodes in the senario 1
+Group132.nrofHosts = 1
+Group132.groupID = s
+Group132.movementModel = ExternalPathMovement
+Group132.traceFile = data/TaxiSanFran/file131.txt
+Group132.activeFile = data/TaxiSanFran/active131.txt
+
+#number of nodes in the senario 1
+Group133.nrofHosts = 1
+Group133.groupID = s
+Group133.movementModel = ExternalPathMovement
+Group133.traceFile = data/TaxiSanFran/file132.txt
+Group133.activeFile = data/TaxiSanFran/active132.txt
+
+#number of nodes in the senario 1
+Group134.nrofHosts = 1
+Group134.groupID = s
+Group134.movementModel = ExternalPathMovement
+Group134.traceFile = data/TaxiSanFran/file133.txt
+Group134.activeFile = data/TaxiSanFran/active133.txt
+
+#number of nodes in the senario 1
+Group135.nrofHosts = 1
+Group135.groupID = s
+Group135.movementModel = ExternalPathMovement
+Group135.traceFile = data/TaxiSanFran/file134.txt
+Group135.activeFile = data/TaxiSanFran/active134.txt
+
+#number of nodes in the senario 1
+Group136.nrofHosts = 1
+Group136.groupID = s
+Group136.movementModel = ExternalPathMovement
+Group136.traceFile = data/TaxiSanFran/file135.txt
+Group136.activeFile = data/TaxiSanFran/active135.txt
+
+#number of nodes in the senario 1
+Group137.nrofHosts = 1
+Group137.groupID = s
+Group137.movementModel = ExternalPathMovement
+Group137.traceFile = data/TaxiSanFran/file136.txt
+Group137.activeFile = data/TaxiSanFran/active136.txt
+
+#number of nodes in the senario 1
+Group138.nrofHosts = 1
+Group138.groupID = s
+Group138.movementModel = ExternalPathMovement
+Group138.traceFile = data/TaxiSanFran/file137.txt
+Group138.activeFile = data/TaxiSanFran/active137.txt
+
+#number of nodes in the senario 1
+Group139.nrofHosts = 1
+Group139.groupID = s
+Group139.movementModel = ExternalPathMovement
+Group139.traceFile = data/TaxiSanFran/file138.txt
+Group139.activeFile = data/TaxiSanFran/active138.txt
+
+#number of nodes in the senario 1
+Group140.nrofHosts = 1
+Group140.groupID = s
+Group140.movementModel = ExternalPathMovement
+Group140.traceFile = data/TaxiSanFran/file139.txt
+Group140.activeFile = data/TaxiSanFran/active139.txt
+
+#number of nodes in the senario 1
+Group141.nrofHosts = 1
+Group141.groupID = c
+Group141.speed = 2.7, 13.9
+Group141.movementModel = ExternalPathMovement
+Group141.traceFile = data/TaxiSanFran/file140.txt
+Group141.activeFile = data/TaxiSanFran/active140.txt
+
+#number of nodes in the senario 1
+Group142.nrofHosts = 1
+Group142.groupID = s
+Group142.movementModel = ExternalPathMovement
+Group142.traceFile = data/TaxiSanFran/file141.txt
+Group142.activeFile = data/TaxiSanFran/active141.txt
+
+#number of nodes in the senario 1
+Group143.nrofHosts = 1
+Group143.groupID = s
+Group143.movementModel = ExternalPathMovement
+Group143.traceFile = data/TaxiSanFran/file142.txt
+Group143.activeFile = data/TaxiSanFran/active142.txt
+
+#number of nodes in the senario 1
+Group144.nrofHosts = 1
+Group144.groupID = s
+Group144.movementModel = ExternalPathMovement
+Group144.traceFile = data/TaxiSanFran/file143.txt
+Group144.activeFile = data/TaxiSanFran/active143.txt
+
+#number of nodes in the senario 1
+Group145.nrofHosts = 1
+Group145.groupID = s
+Group145.movementModel = ExternalPathMovement
+Group145.traceFile = data/TaxiSanFran/file144.txt
+Group145.activeFile = data/TaxiSanFran/active144.txt
+
+#number of nodes in the senario 1
+Group146.nrofHosts = 1
+Group146.groupID = s
+Group146.movementModel = ExternalPathMovement
+Group146.traceFile = data/TaxiSanFran/file145.txt
+Group146.activeFile = data/TaxiSanFran/active145.txt
+
+#number of nodes in the senario 1
+Group147.nrofHosts = 1
+Group147.groupID = s
+Group147.movementModel = ExternalPathMovement
+Group147.traceFile = data/TaxiSanFran/file146.txt
+Group147.activeFile = data/TaxiSanFran/active146.txt
+
+#number of nodes in the senario 1
+Group148.nrofHosts = 1
+Group148.groupID = s
+Group148.movementModel = ExternalPathMovement
+Group148.traceFile = data/TaxiSanFran/file147.txt
+Group148.activeFile = data/TaxiSanFran/active147.txt
+
+#number of nodes in the senario 1
+Group149.nrofHosts = 1
+Group149.groupID = s
+Group149.movementModel = ExternalPathMovement
+Group149.traceFile = data/TaxiSanFran/file148.txt
+Group149.activeFile = data/TaxiSanFran/active148.txt
+
+#number of nodes in the senario 1
+Group150.nrofHosts = 1
+Group150.groupID = s
+Group150.movementModel = ExternalPathMovement
+Group150.traceFile = data/TaxiSanFran/file149.txt
+Group150.activeFile = data/TaxiSanFran/active149.txt
+
+#number of nodes in the senario 1
+Group151.nrofHosts = 1
+Group151.groupID = c
+Group151.speed = 2.7, 13.9
+Group151.movementModel = ExternalPathMovement
+Group151.traceFile = data/TaxiSanFran/file150.txt
+Group151.activeFile = data/TaxiSanFran/active150.txt
+
+#number of nodes in the senario 1
+Group152.nrofHosts = 1
+Group152.groupID = s
+Group152.movementModel = ExternalPathMovement
+Group152.traceFile = data/TaxiSanFran/file151.txt
+Group152.activeFile = data/TaxiSanFran/active151.txt
+
+#number of nodes in the senario 1
+Group153.nrofHosts = 1
+Group153.groupID = s
+Group153.movementModel = ExternalPathMovement
+Group153.traceFile = data/TaxiSanFran/file152.txt
+Group153.activeFile = data/TaxiSanFran/active152.txt
+
+#number of nodes in the senario 1
+Group154.nrofHosts = 1
+Group154.groupID = s
+Group154.movementModel = ExternalPathMovement
+Group154.traceFile = data/TaxiSanFran/file153.txt
+Group154.activeFile = data/TaxiSanFran/active153.txt
+
+#number of nodes in the senario 1
+Group155.nrofHosts = 1
+Group155.groupID = s
+Group155.movementModel = ExternalPathMovement
+Group155.traceFile = data/TaxiSanFran/file154.txt
+Group155.activeFile = data/TaxiSanFran/active154.txt
+
+#number of nodes in the senario 1
+Group156.nrofHosts = 1
+Group156.groupID = s
+Group156.movementModel = ExternalPathMovement
+Group156.traceFile = data/TaxiSanFran/file155.txt
+Group156.activeFile = data/TaxiSanFran/active155.txt
+
+#number of nodes in the senario 1
+Group157.nrofHosts = 1
+Group157.groupID = s
+Group157.movementModel = ExternalPathMovement
+Group157.traceFile = data/TaxiSanFran/file156.txt
+Group157.activeFile = data/TaxiSanFran/active156.txt
+
+#number of nodes in the senario 1
+Group158.nrofHosts = 1
+Group158.groupID = s
+Group158.movementModel = ExternalPathMovement
+Group158.traceFile = data/TaxiSanFran/file157.txt
+Group158.activeFile = data/TaxiSanFran/active157.txt
+
+#number of nodes in the senario 1
+Group159.nrofHosts = 1
+Group159.groupID = s
+Group159.movementModel = ExternalPathMovement
+Group159.traceFile = data/TaxiSanFran/file158.txt
+Group159.activeFile = data/TaxiSanFran/active158.txt
+
+#number of nodes in the senario 1
+Group160.nrofHosts = 1
+Group160.groupID = s
+Group160.movementModel = ExternalPathMovement
+Group160.traceFile = data/TaxiSanFran/file159.txt
+Group160.activeFile = data/TaxiSanFran/active159.txt
+
+#number of nodes in the senario 1
+Group161.nrofHosts = 1
+Group161.groupID = c
+Group161.speed = 2.7, 13.9
+Group161.movementModel = ExternalPathMovement
+Group161.traceFile = data/TaxiSanFran/file160.txt
+Group161.activeFile = data/TaxiSanFran/active160.txt
+
+#number of nodes in the senario 1
+Group162.nrofHosts = 1
+Group162.groupID = s
+Group162.movementModel = ExternalPathMovement
+Group162.traceFile = data/TaxiSanFran/file161.txt
+Group162.activeFile = data/TaxiSanFran/active161.txt
+
+#number of nodes in the senario 1
+Group163.nrofHosts = 1
+Group163.groupID = s
+Group163.movementModel = ExternalPathMovement
+Group163.traceFile = data/TaxiSanFran/file162.txt
+Group163.activeFile = data/TaxiSanFran/active162.txt
+
+#number of nodes in the senario 1
+Group164.nrofHosts = 1
+Group164.groupID = s
+Group164.movementModel = ExternalPathMovement
+Group164.traceFile = data/TaxiSanFran/file163.txt
+Group164.activeFile = data/TaxiSanFran/active163.txt
+
+#number of nodes in the senario 1
+Group165.nrofHosts = 1
+Group165.groupID = s
+Group165.movementModel = ExternalPathMovement
+Group165.traceFile = data/TaxiSanFran/file164.txt
+Group165.activeFile = data/TaxiSanFran/active164.txt
+
+#number of nodes in the senario 1
+Group166.nrofHosts = 1
+Group166.groupID = s
+Group166.movementModel = ExternalPathMovement
+Group166.traceFile = data/TaxiSanFran/file165.txt
+Group166.activeFile = data/TaxiSanFran/active165.txt
+
+#number of nodes in the senario 1
+Group167.nrofHosts = 1
+Group167.groupID = s
+Group167.movementModel = ExternalPathMovement
+Group167.traceFile = data/TaxiSanFran/file166.txt
+Group167.activeFile = data/TaxiSanFran/active166.txt
+
+#number of nodes in the senario 1
+Group168.nrofHosts = 1
+Group168.groupID = s
+Group168.movementModel = ExternalPathMovement
+Group168.traceFile = data/TaxiSanFran/file167.txt
+Group168.activeFile = data/TaxiSanFran/active167.txt
+
+#number of nodes in the senario 1
+Group169.nrofHosts = 1
+Group169.groupID = s
+Group169.movementModel = ExternalPathMovement
+Group169.traceFile = data/TaxiSanFran/file168.txt
+Group169.activeFile = data/TaxiSanFran/active168.txt
+
+#number of nodes in the senario 1
+Group170.nrofHosts = 1
+Group170.groupID = s
+Group170.movementModel = ExternalPathMovement
+Group170.traceFile = data/TaxiSanFran/file169.txt
+Group170.activeFile = data/TaxiSanFran/active169.txt
+
+#number of nodes in the senario 1
+Group171.nrofHosts = 1
+Group171.groupID = c
+Group171.speed = 2.7, 13.9
+Group171.movementModel = ExternalPathMovement
+Group171.traceFile = data/TaxiSanFran/file170.txt
+Group171.activeFile = data/TaxiSanFran/active170.txt
+
+#number of nodes in the senario 1
+Group172.nrofHosts = 1
+Group172.groupID = s
+Group172.movementModel = ExternalPathMovement
+Group172.traceFile = data/TaxiSanFran/file171.txt
+Group172.activeFile = data/TaxiSanFran/active171.txt
+
+#number of nodes in the senario 1
+Group173.nrofHosts = 1
+Group173.groupID = s
+Group173.movementModel = ExternalPathMovement
+Group173.traceFile = data/TaxiSanFran/file172.txt
+Group173.activeFile = data/TaxiSanFran/active172.txt
+
+#number of nodes in the senario 1
+Group174.nrofHosts = 1
+Group174.groupID = s
+Group174.movementModel = ExternalPathMovement
+Group174.traceFile = data/TaxiSanFran/file173.txt
+Group174.activeFile = data/TaxiSanFran/active173.txt
+
+#number of nodes in the senario 1
+Group175.nrofHosts = 1
+Group175.groupID = s
+Group175.movementModel = ExternalPathMovement
+Group175.traceFile = data/TaxiSanFran/file174.txt
+Group175.activeFile = data/TaxiSanFran/active174.txt
+
+#number of nodes in the senario 1
+Group176.nrofHosts = 1
+Group176.groupID = s
+Group176.movementModel = ExternalPathMovement
+Group176.traceFile = data/TaxiSanFran/file175.txt
+Group176.activeFile = data/TaxiSanFran/active175.txt
+
+#number of nodes in the senario 1
+Group177.nrofHosts = 1
+Group177.groupID = s
+Group177.movementModel = ExternalPathMovement
+Group177.traceFile = data/TaxiSanFran/file176.txt
+Group177.activeFile = data/TaxiSanFran/active176.txt
+
+#number of nodes in the senario 1
+Group178.nrofHosts = 1
+Group178.groupID = s
+Group178.movementModel = ExternalPathMovement
+Group178.traceFile = data/TaxiSanFran/file177.txt
+Group178.activeFile = data/TaxiSanFran/active177.txt
+
+#number of nodes in the senario 1
+Group179.nrofHosts = 1
+Group179.groupID = s
+Group179.movementModel = ExternalPathMovement
+Group179.traceFile = data/TaxiSanFran/file178.txt
+Group179.activeFile = data/TaxiSanFran/active178.txt
+
+#number of nodes in the senario 1
+Group180.nrofHosts = 1
+Group180.groupID = s
+Group180.movementModel = ExternalPathMovement
+Group180.traceFile = data/TaxiSanFran/file179.txt
+Group180.activeFile = data/TaxiSanFran/active179.txt
+
+#number of nodes in the senario 1
+Group181.nrofHosts = 1
+Group181.groupID = c
+Group181.speed = 2.7, 13.9
+Group181.movementModel = ExternalPathMovement
+Group181.traceFile = data/TaxiSanFran/file180.txt
+Group181.activeFile = data/TaxiSanFran/active180.txt
+
+#number of nodes in the senario 1
+Group182.nrofHosts = 1
+Group182.groupID = s
+Group182.movementModel = ExternalPathMovement
+Group182.traceFile = data/TaxiSanFran/file181.txt
+Group182.activeFile = data/TaxiSanFran/active181.txt
+
+#number of nodes in the senario 1
+Group183.nrofHosts = 1
+Group183.groupID = s
+Group183.movementModel = ExternalPathMovement
+Group183.traceFile = data/TaxiSanFran/file182.txt
+Group183.activeFile = data/TaxiSanFran/active182.txt
+
+#number of nodes in the senario 1
+Group184.nrofHosts = 1
+Group184.groupID = s
+Group184.movementModel = ExternalPathMovement
+Group184.traceFile = data/TaxiSanFran/file183.txt
+Group184.activeFile = data/TaxiSanFran/active183.txt
+
+#number of nodes in the senario 1
+Group185.nrofHosts = 1
+Group185.groupID = s
+Group185.movementModel = ExternalPathMovement
+Group185.traceFile = data/TaxiSanFran/file184.txt
+Group185.activeFile = data/TaxiSanFran/active184.txt
+
+#number of nodes in the senario 1
+Group186.nrofHosts = 1
+Group186.groupID = s
+Group186.movementModel = ExternalPathMovement
+Group186.traceFile = data/TaxiSanFran/file185.txt
+Group186.activeFile = data/TaxiSanFran/active185.txt
+
+#number of nodes in the senario 1
+Group187.nrofHosts = 1
+Group187.groupID = s
+Group187.movementModel = ExternalPathMovement
+Group187.traceFile = data/TaxiSanFran/file186.txt
+Group187.activeFile = data/TaxiSanFran/active186.txt
+
+#number of nodes in the senario 1
+Group188.nrofHosts = 1
+Group188.groupID = s
+Group188.movementModel = ExternalPathMovement
+Group188.traceFile = data/TaxiSanFran/file187.txt
+Group188.activeFile = data/TaxiSanFran/active187.txt
+
+#number of nodes in the senario 1
+Group189.nrofHosts = 1
+Group189.groupID = s
+Group189.movementModel = ExternalPathMovement
+Group189.traceFile = data/TaxiSanFran/file188.txt
+Group189.activeFile = data/TaxiSanFran/active188.txt
+
+#number of nodes in the senario 1
+Group190.nrofHosts = 1
+Group190.groupID = s
+Group190.movementModel = ExternalPathMovement
+Group190.traceFile = data/TaxiSanFran/file189.txt
+Group190.activeFile = data/TaxiSanFran/active189.txt
+
+#number of nodes in the senario 1
+Group191.nrofHosts = 1
+Group191.groupID = c
+Group191.speed = 2.7, 13.9
+Group191.movementModel = ExternalPathMovement
+Group191.traceFile = data/TaxiSanFran/file190.txt
+Group191.activeFile = data/TaxiSanFran/active190.txt
+
+#number of nodes in the senario 1
+Group192.nrofHosts = 1
+Group192.groupID = s
+Group192.movementModel = ExternalPathMovement
+Group192.traceFile = data/TaxiSanFran/file191.txt
+Group192.activeFile = data/TaxiSanFran/active191.txt
+
+#number of nodes in the senario 1
+Group193.nrofHosts = 1
+Group193.groupID = s
+Group193.movementModel = ExternalPathMovement
+Group193.traceFile = data/TaxiSanFran/file192.txt
+Group193.activeFile = data/TaxiSanFran/active192.txt
+
+#number of nodes in the senario 1
+Group194.nrofHosts = 1
+Group194.groupID = s
+Group194.movementModel = ExternalPathMovement
+Group194.traceFile = data/TaxiSanFran/file193.txt
+Group194.activeFile = data/TaxiSanFran/active193.txt
+
+#number of nodes in the senario 1
+Group195.nrofHosts = 1
+Group195.groupID = s
+Group195.movementModel = ExternalPathMovement
+Group195.traceFile = data/TaxiSanFran/file194.txt
+Group195.activeFile = data/TaxiSanFran/active194.txt
+
+#number of nodes in the senario 1
+Group196.nrofHosts = 1
+Group196.groupID = s
+Group196.movementModel = ExternalPathMovement
+Group196.traceFile = data/TaxiSanFran/file195.txt
+Group196.activeFile = data/TaxiSanFran/active195.txt
+
+#number of nodes in the senario 1
+Group197.nrofHosts = 1
+Group197.groupID = s
+Group197.movementModel = ExternalPathMovement
+Group197.traceFile = data/TaxiSanFran/file196.txt
+Group197.activeFile = data/TaxiSanFran/active196.txt
+
+#number of nodes in the senario 1
+Group198.nrofHosts = 1
+Group198.groupID = s
+Group198.movementModel = ExternalPathMovement
+Group198.traceFile = data/TaxiSanFran/file197.txt
+Group198.activeFile = data/TaxiSanFran/active197.txt
+
+#number of nodes in the senario 1
+Group199.nrofHosts = 1
+Group199.groupID = s
+Group199.movementModel = ExternalPathMovement
+Group199.traceFile = data/TaxiSanFran/file198.txt
+Group199.activeFile = data/TaxiSanFran/active198.txt
+
+#number of nodes in the senario 1
+Group200.nrofHosts = 1
+Group200.groupID = s
+Group200.movementModel = ExternalPathMovement
+Group200.traceFile = data/TaxiSanFran/file199.txt
+Group200.activeFile = data/TaxiSanFran/active199.txt
+
+
+#number of nodes in the senario 1
+Group201.nrofHosts = 1
+Group201.groupID = c
+Group201.speed = 2.7, 13.9
+#Group201.routeType = 1
+Group201.movementModel = ExternalPathMovement
+Group201.traceFile = data/TaxiSanFran/file200.txt
+Group201.activeFile = data/TaxiSanFran/active200.txt
+
+
+
+#number of nodes in the senario 1
+Group202.nrofHosts = 1
+Group202.groupID = s
+Group202.movementModel = ExternalPathMovement
+Group202.traceFile = data/TaxiSanFran/file201.txt
+Group202.activeFile = data/TaxiSanFran/active201.txt
+
+#number of nodes in the senario 1
+Group203.nrofHosts = 1
+Group203.groupID = s
+Group203.movementModel = ExternalPathMovement
+Group203.traceFile = data/TaxiSanFran/file202.txt
+Group203.activeFile = data/TaxiSanFran/active202.txt
+
+#number of nodes in the senario 1
+Group204.nrofHosts = 1
+Group204.groupID = s
+Group204.movementModel = ExternalPathMovement
+Group204.traceFile = data/TaxiSanFran/file203.txt
+Group204.activeFile = data/TaxiSanFran/active203.txt
+
+
+#number of nodes in the senario 1
+Group205.nrofHosts = 1
+Group205.groupID = s
+Group205.movementModel = ExternalPathMovement
+Group205.traceFile = data/TaxiSanFran/file204.txt
+Group205.activeFile = data/TaxiSanFran/active204.txt
+
+#number of nodes in the senario 1
+Group206.nrofHosts = 1
+Group206.groupID = s
+Group206.movementModel = ExternalPathMovement
+Group206.traceFile = data/TaxiSanFran/file205.txt
+Group206.activeFile = data/TaxiSanFran/active205.txt
+
+#number of nodes in the senario 1
+Group207.nrofHosts = 1
+Group207.groupID = s
+Group207.movementModel = ExternalPathMovement
+Group207.traceFile = data/TaxiSanFran/file206.txt
+Group207.activeFile = data/TaxiSanFran/active206.txt
+
+#number of nodes in the senario 1
+Group208.nrofHosts = 1
+Group208.groupID = s
+Group208.movementModel = ExternalPathMovement
+Group208.traceFile = data/TaxiSanFran/file207.txt
+Group208.activeFile = data/TaxiSanFran/active207.txt
+
+#number of nodes in the senario 1
+Group209.nrofHosts = 1
+Group209.groupID = s
+Group209.movementModel = ExternalPathMovement
+Group209.traceFile = data/TaxiSanFran/file208.txt
+Group209.activeFile = data/TaxiSanFran/active208.txt
+
+#number of nodes in the senario 1
+Group210.nrofHosts = 1
+Group210.groupID = s
+Group210.movementModel = ExternalPathMovement
+Group210.traceFile = data/TaxiSanFran/file209.txt
+Group210.activeFile = data/TaxiSanFran/active209.txt
+
+#number of nodes in the senario 1
+Group211.nrofHosts = 1
+Group211.groupID = c
+Group211.speed = 2.7, 13.9
+Group211.movementModel = ExternalPathMovement
+Group211.traceFile = data/TaxiSanFran/file210.txt
+Group211.activeFile = data/TaxiSanFran/active210.txt
+
+#numbe11 of nodes in the senario 1
+Group212.nrofHosts = 1
+Group212.groupID = s
+Group212.movementModel = ExternalPathMovement
+Group212.traceFile = data/TaxiSanFran/file211.txt
+Group212.activeFile = data/TaxiSanFran/active211.txt
+
+#number of nodes in the senario 1
+Group213.nrofHosts = 1
+Group213.groupID = s
+Group213.movementModel = ExternalPathMovement
+Group213.traceFile = data/TaxiSanFran/file212.txt
+Group213.activeFile = data/TaxiSanFran/active212.txt
+
+#number of nodes in the senario 1
+Group214.nrofHosts = 1
+Group214.groupID = s
+Group214.movementModel = ExternalPathMovement
+Group214.traceFile = data/TaxiSanFran/file213.txt
+Group214.activeFile = data/TaxiSanFran/active213.txt
+
+#number of nodes in the senario 1
+Group215.nrofHosts = 1
+Group215.groupID = s
+Group215.movementModel = ExternalPathMovement
+Group215.traceFile = data/TaxiSanFran/file214.txt
+Group215.activeFile = data/TaxiSanFran/active214.txt
+
+#number of nodes in the senario 1
+Group216.nrofHosts = 1
+Group216.groupID = s
+Group216.movementModel = ExternalPathMovement
+Group216.traceFile = data/TaxiSanFran/file215.txt
+Group216.activeFile = data/TaxiSanFran/active215.txt
+
+#number of nodes in the senario 1
+Group217.nrofHosts = 1
+Group217.groupID = s
+Group217.movementModel = ExternalPathMovement
+Group217.traceFile = data/TaxiSanFran/file216.txt
+Group217.activeFile = data/TaxiSanFran/active216.txt
+
+#number of nodes in the senario 1
+Group218.nrofHosts = 1
+Group218.groupID = s
+Group218.movementModel = ExternalPathMovement
+Group218.traceFile = data/TaxiSanFran/file217.txt
+Group218.activeFile = data/TaxiSanFran/active217.txt
+
+#number of nodes in the senario 1
+Group219.nrofHosts = 1
+Group219.groupID = s
+Group219.movementModel = ExternalPathMovement
+Group219.traceFile = data/TaxiSanFran/file218.txt
+Group219.activeFile = data/TaxiSanFran/active218.txt
+
+#number of nodes in the senario 1
+Group220.nrofHosts = 1
+Group220.groupID = s
+Group220.movementModel = ExternalPathMovement
+Group220.traceFile = data/TaxiSanFran/file219.txt
+Group220.activeFile = data/TaxiSanFran/active219.txt
+
+#number of nodes in the senario 1
+Group221.nrofHosts = 1
+Group221.groupID = c
+Group221.speed = 2.7, 13.9
+Group221.movementModel = ExternalPathMovement
+Group221.traceFile = data/TaxiSanFran/file220.txt
+Group221.activeFile = data/TaxiSanFran/active220.txt
+
+#number of nodes in the senario 1
+Group222.nrofHosts = 1
+Group222.groupID = s
+Group222.movementModel = ExternalPathMovement
+Group222.traceFile = data/TaxiSanFran/file221.txt
+Group222.activeFile = data/TaxiSanFran/active221.txt
+
+#number of nodes in the senario 1
+Group223.nrofHosts = 1
+Group223.groupID = s
+Group223.movementModel = ExternalPathMovement
+Group223.traceFile = data/TaxiSanFran/file222.txt
+Group223.activeFile = data/TaxiSanFran/active222.txt
+
+#number of nodes in the senario 1
+Group224.nrofHosts = 1
+Group224.groupID = s
+Group224.movementModel = ExternalPathMovement
+Group224.traceFile = data/TaxiSanFran/file223.txt
+Group224.activeFile = data/TaxiSanFran/active223.txt
+
+#number of nodes in the senario 1
+Group225.nrofHosts = 1
+Group225.groupID = s
+Group225.movementModel = ExternalPathMovement
+Group225.traceFile = data/TaxiSanFran/file224.txt
+Group225.activeFile = data/TaxiSanFran/active224.txt
+
+#number of nodes in the senario 1
+Group226.nrofHosts = 1
+Group226.groupID = s
+Group226.movementModel = ExternalPathMovement
+Group226.traceFile = data/TaxiSanFran/file225.txt
+Group226.activeFile = data/TaxiSanFran/active225.txt
+
+#number of nodes in the senario 1
+Group227.nrofHosts = 1
+Group227.groupID = s
+Group227.movementModel = ExternalPathMovement
+Group227.traceFile = data/TaxiSanFran/file226.txt
+Group227.activeFile = data/TaxiSanFran/active226.txt
+
+#number of nodes in the senario 1
+Group228.nrofHosts = 1
+Group228.groupID = s
+Group228.movementModel = ExternalPathMovement
+Group228.traceFile = data/TaxiSanFran/file227.txt
+Group228.activeFile = data/TaxiSanFran/active227.txt
+
+#number of nodes in the senario 1
+Group229.nrofHosts = 1
+Group229.groupID = s
+Group229.movementModel = ExternalPathMovement
+Group229.traceFile = data/TaxiSanFran/file228.txt
+Group229.activeFile = data/TaxiSanFran/active228.txt
+
+#number of nodes in the senario 1
+Group230.nrofHosts = 1
+Group230.groupID = s
+Group230.movementModel = ExternalPathMovement
+Group230.traceFile = data/TaxiSanFran/file229.txt
+Group230.activeFile = data/TaxiSanFran/active229.txt
+
+#number of nodes in the senario 1
+Group231.nrofHosts = 1
+Group231.groupID = c
+Group231.speed = 2.7, 13.9
+Group231.movementModel = ExternalPathMovement
+Group231.traceFile = data/TaxiSanFran/file230.txt
+Group231.activeFile = data/TaxiSanFran/active230.txt
+
+#number of nodes in the senario 1
+Group232.nrofHosts = 1
+Group232.groupID = s
+Group232.movementModel = ExternalPathMovement
+Group232.traceFile = data/TaxiSanFran/file231.txt
+Group232.activeFile = data/TaxiSanFran/active231.txt
+
+#number of nodes in the senario 1
+Group233.nrofHosts = 1
+Group233.groupID = s
+Group233.movementModel = ExternalPathMovement
+Group233.traceFile = data/TaxiSanFran/file232.txt
+Group233.activeFile = data/TaxiSanFran/active232.txt
+
+#number of nodes in the senario 1
+Group234.nrofHosts = 1
+Group234.groupID = s
+Group234.movementModel = ExternalPathMovement
+Group234.traceFile = data/TaxiSanFran/file233.txt
+Group234.activeFile = data/TaxiSanFran/active233.txt
+
+#number of nodes in the senario 1
+Group235.nrofHosts = 1
+Group235.groupID = s
+Group235.movementModel = ExternalPathMovement
+Group235.traceFile = data/TaxiSanFran/file234.txt
+Group235.activeFile = data/TaxiSanFran/active234.txt
+
+#number of nodes in the senario 1
+Group236.nrofHosts = 1
+Group236.groupID = s
+Group236.movementModel = ExternalPathMovement
+Group236.traceFile = data/TaxiSanFran/file235.txt
+Group236.activeFile = data/TaxiSanFran/active235.txt
+
+#number of nodes in the senario 1
+Group237.nrofHosts = 1
+Group237.groupID = s
+Group237.movementModel = ExternalPathMovement
+Group237.traceFile = data/TaxiSanFran/file236.txt
+Group237.activeFile = data/TaxiSanFran/active236.txt
+
+#number of nodes in the senario 1
+Group238.nrofHosts = 1
+Group238.groupID = s
+Group238.movementModel = ExternalPathMovement
+Group238.traceFile = data/TaxiSanFran/file237.txt
+Group238.activeFile = data/TaxiSanFran/active237.txt
+
+#number of nodes in the senario 1
+Group239.nrofHosts = 1
+Group239.groupID = s
+Group239.movementModel = ExternalPathMovement
+Group239.traceFile = data/TaxiSanFran/file238.txt
+Group239.activeFile = data/TaxiSanFran/active238.txt
+
+#number of nodes in the senario 1
+Group240.nrofHosts = 1
+Group240.groupID = s
+Group240.movementModel = ExternalPathMovement
+Group240.traceFile = data/TaxiSanFran/file239.txt
+Group240.activeFile = data/TaxiSanFran/active239.txt
+
+#number of nodes in the senario 1
+Group241.nrofHosts = 1
+Group241.groupID = c
+Group241.speed = 2.7, 13.9
+Group241.movementModel = ExternalPathMovement
+Group241.traceFile = data/TaxiSanFran/file240.txt
+Group241.activeFile = data/TaxiSanFran/active240.txt
+
+#number of nodes in the senario 1
+Group242.nrofHosts = 1
+Group242.groupID = s
+Group242.movementModel = ExternalPathMovement
+Group242.traceFile = data/TaxiSanFran/file241.txt
+Group242.activeFile = data/TaxiSanFran/active241.txt
+
+#number of nodes in the senario 1
+Group243.nrofHosts = 1
+Group243.groupID = s
+Group243.movementModel = ExternalPathMovement
+Group243.traceFile = data/TaxiSanFran/file242.txt
+Group243.activeFile = data/TaxiSanFran/active242.txt
+
+#number of nodes in the senario 1
+Group244.nrofHosts = 1
+Group244.groupID = s
+Group244.movementModel = ExternalPathMovement
+Group244.traceFile = data/TaxiSanFran/file243.txt
+Group244.activeFile = data/TaxiSanFran/active243.txt
+
+#number of nodes in the senario 1
+Group245.nrofHosts = 1
+Group245.groupID = s
+Group245.movementModel = ExternalPathMovement
+Group245.traceFile = data/TaxiSanFran/file244.txt
+Group245.activeFile = data/TaxiSanFran/active244.txt
+
+#number of nodes in the senario 1
+Group246.nrofHosts = 1
+Group246.groupID = s
+Group246.movementModel = ExternalPathMovement
+Group246.traceFile = data/TaxiSanFran/file245.txt
+Group246.activeFile = data/TaxiSanFran/active245.txt
+
+#number of nodes in the senario 1
+Group247.nrofHosts = 1
+Group247.groupID = s
+Group247.movementModel = ExternalPathMovement
+Group247.traceFile = data/TaxiSanFran/file246.txt
+Group247.activeFile = data/TaxiSanFran/active246.txt
+
+#number of nodes in the senario 1
+Group248.nrofHosts = 1
+Group248.groupID = s
+Group248.movementModel = ExternalPathMovement
+Group248.traceFile = data/TaxiSanFran/file247.txt
+Group248.activeFile = data/TaxiSanFran/active247.txt
+
+#number of nodes in the senario 1
+Group249.nrofHosts = 1
+Group249.groupID = s
+Group249.movementModel = ExternalPathMovement
+Group249.traceFile = data/TaxiSanFran/file248.txt
+Group249.activeFile = data/TaxiSanFran/active248.txt
+
+#number of nodes in the senario 1
+Group250.nrofHosts = 1
+Group250.groupID = s
+Group250.movementModel = ExternalPathMovement
+Group250.traceFile = data/TaxiSanFran/file249.txt
+Group250.activeFile = data/TaxiSanFran/active249.txt
+
+#number of nodes in the senario 1
+Group251.nrofHosts = 1
+Group251.groupID = c
+Group251.speed = 2.7, 13.9
+Group251.movementModel = ExternalPathMovement
+Group251.traceFile = data/TaxiSanFran/file250.txt
+Group251.activeFile = data/TaxiSanFran/active250.txt
+
+#number of nodes in the senario 1
+Group252.nrofHosts = 1
+Group252.groupID = s
+Group252.movementModel = ExternalPathMovement
+Group252.traceFile = data/TaxiSanFran/file251.txt
+Group252.activeFile = data/TaxiSanFran/active251.txt
+
+#number of nodes in the senario 1
+Group253.nrofHosts = 1
+Group253.groupID = s
+Group253.movementModel = ExternalPathMovement
+Group253.traceFile = data/TaxiSanFran/file252.txt
+Group253.activeFile = data/TaxiSanFran/active252.txt
+
+#number of nodes in the senario 1
+Group254.nrofHosts = 1
+Group254.groupID = s
+Group254.movementModel = ExternalPathMovement
+Group254.traceFile = data/TaxiSanFran/file253.txt
+Group254.activeFile = data/TaxiSanFran/active253.txt
+
+#number of nodes in the senario 1
+Group255.nrofHosts = 1
+Group255.groupID = s
+Group255.movementModel = ExternalPathMovement
+Group255.traceFile = data/TaxiSanFran/file254.txt
+Group255.activeFile = data/TaxiSanFran/active254.txt
+
+#number of nodes in the senario 1
+Group256.nrofHosts = 1
+Group256.groupID = s
+Group256.movementModel = ExternalPathMovement
+Group256.traceFile = data/TaxiSanFran/file255.txt
+Group256.activeFile = data/TaxiSanFran/active255.txt
+
+#number of nodes in the senario 1
+Group257.nrofHosts = 1
+Group257.groupID = s
+Group257.movementModel = ExternalPathMovement
+Group257.traceFile = data/TaxiSanFran/file256.txt
+Group257.activeFile = data/TaxiSanFran/active256.txt
+
+#number of nodes in the senario 1
+Group258.nrofHosts = 1
+Group258.groupID = s
+Group258.movementModel = ExternalPathMovement
+Group258.traceFile = data/TaxiSanFran/file257.txt
+Group258.activeFile = data/TaxiSanFran/active257.txt
+
+#number of nodes in the senario 1
+Group259.nrofHosts = 1
+Group259.groupID = s
+Group259.movementModel = ExternalPathMovement
+Group259.traceFile = data/TaxiSanFran/file258.txt
+Group259.activeFile = data/TaxiSanFran/active258.txt
+
+#number of nodes in the senario 1
+Group260.nrofHosts = 1
+Group260.groupID = s
+Group260.movementModel = ExternalPathMovement
+Group260.traceFile = data/TaxiSanFran/file259.txt
+Group260.activeFile = data/TaxiSanFran/active259.txt
+
+#number of nodes in the senario 1
+Group261.nrofHosts = 1
+Group261.groupID = c
+Group261.speed = 2.7, 13.9
+Group261.movementModel = ExternalPathMovement
+Group261.traceFile = data/TaxiSanFran/file260.txt
+Group261.activeFile = data/TaxiSanFran/active260.txt
+
+#number of nodes in the senario 1
+Group262.nrofHosts = 1
+Group262.groupID = s
+Group262.movementModel = ExternalPathMovement
+Group262.traceFile = data/TaxiSanFran/file261.txt
+Group262.activeFile = data/TaxiSanFran/active261.txt
+
+#number of nodes in the senario 1
+Group263.nrofHosts = 1
+Group263.groupID = s
+Group263.movementModel = ExternalPathMovement
+Group263.traceFile = data/TaxiSanFran/file262.txt
+Group263.activeFile = data/TaxiSanFran/active262.txt
+
+#number of nodes in the senario 1
+Group264.nrofHosts = 1
+Group264.groupID = s
+Group264.movementModel = ExternalPathMovement
+Group264.traceFile = data/TaxiSanFran/file263.txt
+Group264.activeFile = data/TaxiSanFran/active263.txt
+
+#number of nodes in the senario 1
+Group265.nrofHosts = 1
+Group265.groupID = s
+Group265.movementModel = ExternalPathMovement
+Group265.traceFile = data/TaxiSanFran/file264.txt
+Group265.activeFile = data/TaxiSanFran/active264.txt
+
+#number of nodes in the senario 1
+Group266.nrofHosts = 1
+Group266.groupID = s
+Group266.movementModel = ExternalPathMovement
+Group266.traceFile = data/TaxiSanFran/file265.txt
+Group266.activeFile = data/TaxiSanFran/active265.txt
+
+#number of nodes in the senario 1
+Group267.nrofHosts = 1
+Group267.groupID = s
+Group267.movementModel = ExternalPathMovement
+Group267.traceFile = data/TaxiSanFran/file266.txt
+Group267.activeFile = data/TaxiSanFran/active266.txt
+
+#number of nodes in the senario 1
+Group268.nrofHosts = 1
+Group268.groupID = s
+Group268.movementModel = ExternalPathMovement
+Group268.traceFile = data/TaxiSanFran/file267.txt
+Group268.activeFile = data/TaxiSanFran/active267.txt
+
+#number of nodes in the senario 1
+Group269.nrofHosts = 1
+Group269.groupID = s
+Group269.movementModel = ExternalPathMovement
+Group269.traceFile = data/TaxiSanFran/file268.txt
+Group269.activeFile = data/TaxiSanFran/active268.txt
+
+#number of nodes in the senario 1
+Group270.nrofHosts = 1
+Group270.groupID = s
+Group270.movementModel = ExternalPathMovement
+Group270.traceFile = data/TaxiSanFran/file269.txt
+Group270.activeFile = data/TaxiSanFran/active269.txt
+
+#number of nodes in the senario 1
+Group271.nrofHosts = 1
+Group271.groupID = c
+Group271.speed = 2.7, 13.9
+Group271.movementModel = ExternalPathMovement
+Group271.traceFile = data/TaxiSanFran/file270.txt
+Group271.activeFile = data/TaxiSanFran/active270.txt
+
+#number of nodes in the senario 1
+Group272.nrofHosts = 1
+Group272.groupID = s
+Group272.movementModel = ExternalPathMovement
+Group272.traceFile = data/TaxiSanFran/file271.txt
+Group272.activeFile = data/TaxiSanFran/active271.txt
+
+#number of nodes in the senario 1
+Group273.nrofHosts = 1
+Group273.groupID = s
+Group273.movementModel = ExternalPathMovement
+Group273.traceFile = data/TaxiSanFran/file272.txt
+Group273.activeFile = data/TaxiSanFran/active272.txt
+
+#number of nodes in the senario 1
+Group274.nrofHosts = 1
+Group274.groupID = s
+Group274.movementModel = ExternalPathMovement
+Group274.traceFile = data/TaxiSanFran/file273.txt
+Group274.activeFile = data/TaxiSanFran/active273.txt
+
+#number of nodes in the senario 1
+Group275.nrofHosts = 1
+Group275.groupID = s
+Group275.movementModel = ExternalPathMovement
+Group275.traceFile = data/TaxiSanFran/file274.txt
+Group275.activeFile = data/TaxiSanFran/active274.txt
+
+#number of nodes in the senario 1
+Group276.nrofHosts = 1
+Group276.groupID = s
+Group276.movementModel = ExternalPathMovement
+Group276.traceFile = data/TaxiSanFran/file275.txt
+Group276.activeFile = data/TaxiSanFran/active275.txt
+
+#number of nodes in the senario 1
+Group277.nrofHosts = 1
+Group277.groupID = s
+Group277.movementModel = ExternalPathMovement
+Group277.traceFile = data/TaxiSanFran/file276.txt
+Group277.activeFile = data/TaxiSanFran/active276.txt
+
+#number of nodes in the senario 1
+Group278.nrofHosts = 1
+Group278.groupID = s
+Group278.movementModel = ExternalPathMovement
+Group278.traceFile = data/TaxiSanFran/file277.txt
+Group278.activeFile = data/TaxiSanFran/active277.txt
+
+#number of nodes in the senario 1
+Group279.nrofHosts = 1
+Group279.groupID = s
+Group279.movementModel = ExternalPathMovement
+Group279.traceFile = data/TaxiSanFran/file278.txt
+Group279.activeFile = data/TaxiSanFran/active278.txt
+
+#number of nodes in the senario 1
+Group280.nrofHosts = 1
+Group280.groupID = s
+Group280.movementModel = ExternalPathMovement
+Group280.traceFile = data/TaxiSanFran/file279.txt
+Group280.activeFile = data/TaxiSanFran/active279.txt
+
+#number of nodes in the senario 1
+Group281.nrofHosts = 1
+Group281.groupID = c
+Group281.speed = 2.7, 13.9
+Group281.movementModel = ExternalPathMovement
+Group281.traceFile = data/TaxiSanFran/file280.txt
+Group281.activeFile = data/TaxiSanFran/active280.txt
+
+#number of nodes in the senario 1
+Group282.nrofHosts = 1
+Group282.groupID = s
+Group282.movementModel = ExternalPathMovement
+Group282.traceFile = data/TaxiSanFran/file281.txt
+Group282.activeFile = data/TaxiSanFran/active281.txt
+
+#number of nodes in the senario 1
+Group283.nrofHosts = 1
+Group283.groupID = s
+Group283.movementModel = ExternalPathMovement
+Group283.traceFile = data/TaxiSanFran/file282.txt
+Group283.activeFile = data/TaxiSanFran/active282.txt
+
+#number of nodes in the senario 1
+Group284.nrofHosts = 1
+Group284.groupID = s
+Group284.movementModel = ExternalPathMovement
+Group284.traceFile = data/TaxiSanFran/file283.txt
+Group284.activeFile = data/TaxiSanFran/active283.txt
+
+#number of nodes in the senario 1
+Group285.nrofHosts = 1
+Group285.groupID = s
+Group285.movementModel = ExternalPathMovement
+Group285.traceFile = data/TaxiSanFran/file284.txt
+Group285.activeFile = data/TaxiSanFran/active284.txt
+
+#number of nodes in the senario 1
+Group286.nrofHosts = 1
+Group286.groupID = s
+Group286.movementModel = ExternalPathMovement
+Group286.traceFile = data/TaxiSanFran/file285.txt
+Group286.activeFile = data/TaxiSanFran/active285.txt
+
+#number of nodes in the senario 1
+Group287.nrofHosts = 1
+Group287.groupID = s
+Group287.movementModel = ExternalPathMovement
+Group287.traceFile = data/TaxiSanFran/file286.txt
+Group287.activeFile = data/TaxiSanFran/active286.txt
+
+#number of nodes in the senario 1
+Group288.nrofHosts = 1
+Group288.groupID = s
+Group288.movementModel = ExternalPathMovement
+Group288.traceFile = data/TaxiSanFran/file287.txt
+Group288.activeFile = data/TaxiSanFran/active287.txt
+
+#number of nodes in the senario 1
+Group289.nrofHosts = 1
+Group289.groupID = s
+Group289.movementModel = ExternalPathMovement
+Group289.traceFile = data/TaxiSanFran/file288.txt
+Group289.activeFile = data/TaxiSanFran/active288.txt
+
+#number of nodes in the senario 1
+Group290.nrofHosts = 1
+Group290.groupID = s
+Group290.movementModel = ExternalPathMovement
+Group290.traceFile = data/TaxiSanFran/file289.txt
+Group290.activeFile = data/TaxiSanFran/active289.txt
+
+#number of nodes in the senario 1
+Group291.nrofHosts = 1
+Group291.groupID = c
+Group291.speed = 2.7, 13.9
+Group291.movementModel = ExternalPathMovement
+Group291.traceFile = data/TaxiSanFran/file290.txt
+Group291.activeFile = data/TaxiSanFran/active290.txt
+
+#number of nodes in the senario 1
+Group292.nrofHosts = 1
+Group292.groupID = s
+Group292.movementModel = ExternalPathMovement
+Group292.traceFile = data/TaxiSanFran/file291.txt
+Group292.activeFile = data/TaxiSanFran/active291.txt
+
+#number of nodes in the senario 1
+Group293.nrofHosts = 1
+Group293.groupID = s
+Group293.movementModel = ExternalPathMovement
+Group293.traceFile = data/TaxiSanFran/file292.txt
+Group293.activeFile = data/TaxiSanFran/active292.txt
+
+#number of nodes in the senario 1
+Group294.nrofHosts = 1
+Group294.groupID = s
+Group294.movementModel = ExternalPathMovement
+Group294.traceFile = data/TaxiSanFran/file293.txt
+Group294.activeFile = data/TaxiSanFran/active293.txt
+
+#number of nodes in the senario 1
+Group295.nrofHosts = 1
+Group295.groupID = s
+Group295.movementModel = ExternalPathMovement
+Group295.traceFile = data/TaxiSanFran/file294.txt
+Group295.activeFile = data/TaxiSanFran/active294.txt
+
+#number of nodes in the senario 1
+Group296.nrofHosts = 1
+Group296.groupID = s
+Group296.movementModel = ExternalPathMovement
+Group296.traceFile = data/TaxiSanFran/file295.txt
+Group296.activeFile = data/TaxiSanFran/active295.txt
+
+#number of nodes in the senario 1
+Group297.nrofHosts = 1
+Group297.groupID = s
+Group297.movementModel = ExternalPathMovement
+Group297.traceFile = data/TaxiSanFran/file296.txt
+Group297.activeFile = data/TaxiSanFran/active296.txt
+
+#number of nodes in the senario 1
+Group298.nrofHosts = 1
+Group298.groupID = s
+Group298.movementModel = ExternalPathMovement
+Group298.traceFile = data/TaxiSanFran/file297.txt
+Group298.activeFile = data/TaxiSanFran/active297.txt
+
+#number of nodes in the senario 1
+Group299.nrofHosts = 1
+Group299.groupID = s
+Group299.movementModel = ExternalPathMovement
+Group299.traceFile = data/TaxiSanFran/file298.txt
+Group299.activeFile = data/TaxiSanFran/active298.txt
+
+#number of nodes in the senario 1
+Group300.nrofHosts = 1
+Group300.groupID = s
+Group300.movementModel = ExternalPathMovement
+Group300.traceFile = data/TaxiSanFran/file299.txt
+Group300.activeFile = data/TaxiSanFran/active299.txt
+
+
+#number of nodes in the senario 1
+Group301.nrofHosts = 1
+Group301.groupID = c
+Group301.speed = 2.7, 13.9
+#Group301.routeType = 1
+Group301.movementModel = ExternalPathMovement
+Group301.traceFile = data/TaxiSanFran/file300.txt
+Group301.activeFile = data/TaxiSanFran/active300.txt
+
+
+
+#number of nodes in the senario 1
+Group302.nrofHosts = 1
+Group302.groupID = s
+Group302.movementModel = ExternalPathMovement
+Group302.traceFile = data/TaxiSanFran/file301.txt
+Group302.activeFile = data/TaxiSanFran/active301.txt
+
+#number of nodes in the senario 1
+Group303.nrofHosts = 1
+Group303.groupID = s
+Group303.movementModel = ExternalPathMovement
+Group303.traceFile = data/TaxiSanFran/file302.txt
+Group303.activeFile = data/TaxiSanFran/active302.txt
+
+#number of nodes in the senario 1
+Group304.nrofHosts = 1
+Group304.groupID = s
+Group304.movementModel = ExternalPathMovement
+Group304.traceFile = data/TaxiSanFran/file303.txt
+Group304.activeFile = data/TaxiSanFran/active303.txt
+
+
+#number of nodes in the senario 1
+Group305.nrofHosts = 1
+Group305.groupID = s
+Group305.movementModel = ExternalPathMovement
+Group305.traceFile = data/TaxiSanFran/file304.txt
+Group305.activeFile = data/TaxiSanFran/active304.txt
+
+#number of nodes in the senario 1
+Group306.nrofHosts = 1
+Group306.groupID = s
+Group306.movementModel = ExternalPathMovement
+Group306.traceFile = data/TaxiSanFran/file305.txt
+Group306.activeFile = data/TaxiSanFran/active305.txt
+
+#number of nodes in the senario 1
+Group307.nrofHosts = 1
+Group307.groupID = s
+Group307.movementModel = ExternalPathMovement
+Group307.traceFile = data/TaxiSanFran/file306.txt
+Group307.activeFile = data/TaxiSanFran/active306.txt
+
+#number of nodes in the senario 1
+Group308.nrofHosts = 1
+Group308.groupID = s
+Group308.movementModel = ExternalPathMovement
+Group308.traceFile = data/TaxiSanFran/file307.txt
+Group308.activeFile = data/TaxiSanFran/active307.txt
+
+#number of nodes in the senario 1
+Group309.nrofHosts = 1
+Group309.groupID = s
+Group309.movementModel = ExternalPathMovement
+Group309.traceFile = data/TaxiSanFran/file308.txt
+Group309.activeFile = data/TaxiSanFran/active308.txt
+
+#number of nodes in the senario 1
+Group310.nrofHosts = 1
+Group310.groupID = s
+Group310.movementModel = ExternalPathMovement
+Group310.traceFile = data/TaxiSanFran/file309.txt
+Group310.activeFile = data/TaxiSanFran/active309.txt
+
+#number of nodes in the senario 1
+Group311.nrofHosts = 1
+Group311.groupID = c
+Group311.speed = 2.7, 13.9
+Group311.movementModel = ExternalPathMovement
+Group311.traceFile = data/TaxiSanFran/file310.txt
+Group311.activeFile = data/TaxiSanFran/active310.txt
+
+#numbe11 of nodes in the senario 1
+Group312.nrofHosts = 1
+Group312.groupID = s
+Group312.movementModel = ExternalPathMovement
+Group312.traceFile = data/TaxiSanFran/file311.txt
+Group312.activeFile = data/TaxiSanFran/active311.txt
+
+#number of nodes in the senario 1
+Group313.nrofHosts = 1
+Group313.groupID = s
+Group313.movementModel = ExternalPathMovement
+Group313.traceFile = data/TaxiSanFran/file312.txt
+Group313.activeFile = data/TaxiSanFran/active312.txt
+
+#number of nodes in the senario 1
+Group314.nrofHosts = 1
+Group314.groupID = s
+Group314.movementModel = ExternalPathMovement
+Group314.traceFile = data/TaxiSanFran/file313.txt
+Group314.activeFile = data/TaxiSanFran/active313.txt
+
+#number of nodes in the senario 1
+Group315.nrofHosts = 1
+Group315.groupID = s
+Group315.movementModel = ExternalPathMovement
+Group315.traceFile = data/TaxiSanFran/file314.txt
+Group315.activeFile = data/TaxiSanFran/active314.txt
+
+#number of nodes in the senario 1
+Group316.nrofHosts = 1
+Group316.groupID = s
+Group316.movementModel = ExternalPathMovement
+Group316.traceFile = data/TaxiSanFran/file315.txt
+Group316.activeFile = data/TaxiSanFran/active315.txt
+
+#number of nodes in the senario 1
+Group317.nrofHosts = 1
+Group317.groupID = s
+Group317.movementModel = ExternalPathMovement
+Group317.traceFile = data/TaxiSanFran/file316.txt
+Group317.activeFile = data/TaxiSanFran/active316.txt
+
+#number of nodes in the senario 1
+Group318.nrofHosts = 1
+Group318.groupID = s
+Group318.movementModel = ExternalPathMovement
+Group318.traceFile = data/TaxiSanFran/file317.txt
+Group318.activeFile = data/TaxiSanFran/active317.txt
+
+#number of nodes in the senario 1
+Group319.nrofHosts = 1
+Group319.groupID = s
+Group319.movementModel = ExternalPathMovement
+Group319.traceFile = data/TaxiSanFran/file318.txt
+Group319.activeFile = data/TaxiSanFran/active318.txt
+
+#number of nodes in the senario 1
+Group320.nrofHosts = 1
+Group320.groupID = s
+Group320.movementModel = ExternalPathMovement
+Group320.traceFile = data/TaxiSanFran/file319.txt
+Group320.activeFile = data/TaxiSanFran/active319.txt
+
+#number of nodes in the senario 1
+Group321.nrofHosts = 1
+Group321.groupID = c
+Group321.speed = 2.7, 13.9
+Group321.movementModel = ExternalPathMovement
+Group321.traceFile = data/TaxiSanFran/file320.txt
+Group321.activeFile = data/TaxiSanFran/active320.txt
+
+#number of nodes in the senario 1
+Group322.nrofHosts = 1
+Group322.groupID = s
+Group322.movementModel = ExternalPathMovement
+Group322.traceFile = data/TaxiSanFran/file321.txt
+Group322.activeFile = data/TaxiSanFran/active321.txt
+
+#number of nodes in the senario 1
+Group323.nrofHosts = 1
+Group323.groupID = s
+Group323.movementModel = ExternalPathMovement
+Group323.traceFile = data/TaxiSanFran/file322.txt
+Group323.activeFile = data/TaxiSanFran/active322.txt
+
+#number of nodes in the senario 1
+Group324.nrofHosts = 1
+Group324.groupID = s
+Group324.movementModel = ExternalPathMovement
+Group324.traceFile = data/TaxiSanFran/file323.txt
+Group324.activeFile = data/TaxiSanFran/active323.txt
+
+#number of nodes in the senario 1
+Group325.nrofHosts = 1
+Group325.groupID = s
+Group325.movementModel = ExternalPathMovement
+Group325.traceFile = data/TaxiSanFran/file324.txt
+Group325.activeFile = data/TaxiSanFran/active324.txt
+
+#number of nodes in the senario 1
+Group326.nrofHosts = 1
+Group326.groupID = s
+Group326.movementModel = ExternalPathMovement
+Group326.traceFile = data/TaxiSanFran/file325.txt
+Group326.activeFile = data/TaxiSanFran/active325.txt
+
+#number of nodes in the senario 1
+Group327.nrofHosts = 1
+Group327.groupID = s
+Group327.movementModel = ExternalPathMovement
+Group327.traceFile = data/TaxiSanFran/file326.txt
+Group327.activeFile = data/TaxiSanFran/active326.txt
+
+#number of nodes in the senario 1
+Group328.nrofHosts = 1
+Group328.groupID = s
+Group328.movementModel = ExternalPathMovement
+Group328.traceFile = data/TaxiSanFran/file327.txt
+Group328.activeFile = data/TaxiSanFran/active327.txt
+
+#number of nodes in the senario 1
+Group329.nrofHosts = 1
+Group329.groupID = s
+Group329.movementModel = ExternalPathMovement
+Group329.traceFile = data/TaxiSanFran/file328.txt
+Group329.activeFile = data/TaxiSanFran/active328.txt
+
+#number of nodes in the senario 1
+Group330.nrofHosts = 1
+Group330.groupID = s
+Group330.movementModel = ExternalPathMovement
+Group330.traceFile = data/TaxiSanFran/file329.txt
+Group330.activeFile = data/TaxiSanFran/active329.txt
+
+#number of nodes in the senario 1
+Group331.nrofHosts = 1
+Group331.groupID = c
+Group331.speed = 2.7, 13.9
+Group331.movementModel = ExternalPathMovement
+Group331.traceFile = data/TaxiSanFran/file330.txt
+Group331.activeFile = data/TaxiSanFran/active330.txt
+
+#number of nodes in the senario 1
+Group332.nrofHosts = 1
+Group332.groupID = s
+Group332.movementModel = ExternalPathMovement
+Group332.traceFile = data/TaxiSanFran/file331.txt
+Group332.activeFile = data/TaxiSanFran/active331.txt
+
+#number of nodes in the senario 1
+Group333.nrofHosts = 1
+Group333.groupID = s
+Group333.movementModel = ExternalPathMovement
+Group333.traceFile = data/TaxiSanFran/file332.txt
+Group333.activeFile = data/TaxiSanFran/active332.txt
+
+#number of nodes in the senario 1
+Group334.nrofHosts = 1
+Group334.groupID = s
+Group334.movementModel = ExternalPathMovement
+Group334.traceFile = data/TaxiSanFran/file333.txt
+Group334.activeFile = data/TaxiSanFran/active333.txt
+
+#number of nodes in the senario 1
+Group335.nrofHosts = 1
+Group335.groupID = s
+Group335.movementModel = ExternalPathMovement
+Group335.traceFile = data/TaxiSanFran/file334.txt
+Group335.activeFile = data/TaxiSanFran/active334.txt
+
+#number of nodes in the senario 1
+Group336.nrofHosts = 1
+Group336.groupID = s
+Group336.movementModel = ExternalPathMovement
+Group336.traceFile = data/TaxiSanFran/file335.txt
+Group336.activeFile = data/TaxiSanFran/active335.txt
+
+#number of nodes in the senario 1
+Group337.nrofHosts = 1
+Group337.groupID = s
+Group337.movementModel = ExternalPathMovement
+Group337.traceFile = data/TaxiSanFran/file336.txt
+Group337.activeFile = data/TaxiSanFran/active336.txt
+
+#number of nodes in the senario 1
+Group338.nrofHosts = 1
+Group338.groupID = s
+Group338.movementModel = ExternalPathMovement
+Group338.traceFile = data/TaxiSanFran/file337.txt
+Group338.activeFile = data/TaxiSanFran/active337.txt
+
+#number of nodes in the senario 1
+Group339.nrofHosts = 1
+Group339.groupID = s
+Group339.movementModel = ExternalPathMovement
+Group339.traceFile = data/TaxiSanFran/file338.txt
+Group339.activeFile = data/TaxiSanFran/active338.txt
+
+#number of nodes in the senario 1
+Group340.nrofHosts = 1
+Group340.groupID = s
+Group340.movementModel = ExternalPathMovement
+Group340.traceFile = data/TaxiSanFran/file339.txt
+Group340.activeFile = data/TaxiSanFran/active339.txt
+
+#number of nodes in the senario 1
+Group341.nrofHosts = 1
+Group341.groupID = c
+Group341.speed = 2.7, 13.9
+Group341.movementModel = ExternalPathMovement
+Group341.traceFile = data/TaxiSanFran/file340.txt
+Group341.activeFile = data/TaxiSanFran/active340.txt
+
+#number of nodes in the senario 1
+Group342.nrofHosts = 1
+Group342.groupID = s
+Group342.movementModel = ExternalPathMovement
+Group342.traceFile = data/TaxiSanFran/file341.txt
+Group342.activeFile = data/TaxiSanFran/active341.txt
+
+#number of nodes in the senario 1
+Group343.nrofHosts = 1
+Group343.groupID = s
+Group343.movementModel = ExternalPathMovement
+Group343.traceFile = data/TaxiSanFran/file342.txt
+Group343.activeFile = data/TaxiSanFran/active342.txt
+
+#number of nodes in the senario 1
+Group344.nrofHosts = 1
+Group344.groupID = s
+Group344.movementModel = ExternalPathMovement
+Group344.traceFile = data/TaxiSanFran/file343.txt
+Group344.activeFile = data/TaxiSanFran/active343.txt
+
+#number of nodes in the senario 1
+Group345.nrofHosts = 1
+Group345.groupID = s
+Group345.movementModel = ExternalPathMovement
+Group345.traceFile = data/TaxiSanFran/file344.txt
+Group345.activeFile = data/TaxiSanFran/active344.txt
+
+#number of nodes in the senario 1
+Group346.nrofHosts = 1
+Group346.groupID = s
+Group346.movementModel = ExternalPathMovement
+Group346.traceFile = data/TaxiSanFran/file345.txt
+Group346.activeFile = data/TaxiSanFran/active345.txt
+
+#number of nodes in the senario 1
+Group347.nrofHosts = 1
+Group347.groupID = s
+Group347.movementModel = ExternalPathMovement
+Group347.traceFile = data/TaxiSanFran/file346.txt
+Group347.activeFile = data/TaxiSanFran/active346.txt
+
+#number of nodes in the senario 1
+Group348.nrofHosts = 1
+Group348.groupID = s
+Group348.movementModel = ExternalPathMovement
+Group348.traceFile = data/TaxiSanFran/file347.txt
+Group348.activeFile = data/TaxiSanFran/active347.txt
+
+#number of nodes in the senario 1
+Group349.nrofHosts = 1
+Group349.groupID = s
+Group349.movementModel = ExternalPathMovement
+Group349.traceFile = data/TaxiSanFran/file348.txt
+Group349.activeFile = data/TaxiSanFran/active348.txt
+
+#number of nodes in the senario 1
+Group350.nrofHosts = 1
+Group350.groupID = s
+Group350.movementModel = ExternalPathMovement
+Group350.traceFile = data/TaxiSanFran/file349.txt
+Group350.activeFile = data/TaxiSanFran/active349.txt
+
+#number of nodes in the senario 1
+Group351.nrofHosts = 1
+Group351.groupID = c
+Group351.speed = 2.7, 13.9
+Group351.movementModel = ExternalPathMovement
+Group351.traceFile = data/TaxiSanFran/file350.txt
+Group351.activeFile = data/TaxiSanFran/active350.txt
+
+#number of nodes in the senario 1
+Group352.nrofHosts = 1
+Group352.groupID = s
+Group352.movementModel = ExternalPathMovement
+Group352.traceFile = data/TaxiSanFran/file351.txt
+Group352.activeFile = data/TaxiSanFran/active351.txt
+
+#number of nodes in the senario 1
+Group353.nrofHosts = 1
+Group353.groupID = s
+Group353.movementModel = ExternalPathMovement
+Group353.traceFile = data/TaxiSanFran/file352.txt
+Group353.activeFile = data/TaxiSanFran/active352.txt
+
+#number of nodes in the senario 1
+Group354.nrofHosts = 1
+Group354.groupID = s
+Group354.movementModel = ExternalPathMovement
+Group354.traceFile = data/TaxiSanFran/file353.txt
+Group354.activeFile = data/TaxiSanFran/active353.txt
+
+#number of nodes in the senario 1
+Group355.nrofHosts = 1
+Group355.groupID = s
+Group355.movementModel = ExternalPathMovement
+Group355.traceFile = data/TaxiSanFran/file354.txt
+Group355.activeFile = data/TaxiSanFran/active354.txt
+
+#number of nodes in the senario 1
+Group356.nrofHosts = 1
+Group356.groupID = s
+Group356.movementModel = ExternalPathMovement
+Group356.traceFile = data/TaxiSanFran/file355.txt
+Group356.activeFile = data/TaxiSanFran/active355.txt
+
+#number of nodes in the senario 1
+Group357.nrofHosts = 1
+Group357.groupID = s
+Group357.movementModel = ExternalPathMovement
+Group357.traceFile = data/TaxiSanFran/file356.txt
+Group357.activeFile = data/TaxiSanFran/active356.txt
+
+#number of nodes in the senario 1
+Group358.nrofHosts = 1
+Group358.groupID = s
+Group358.movementModel = ExternalPathMovement
+Group358.traceFile = data/TaxiSanFran/file357.txt
+Group358.activeFile = data/TaxiSanFran/active357.txt
+
+#number of nodes in the senario 1
+Group359.nrofHosts = 1
+Group359.groupID = s
+Group359.movementModel = ExternalPathMovement
+Group359.traceFile = data/TaxiSanFran/file358.txt
+Group359.activeFile = data/TaxiSanFran/active358.txt
+
+#number of nodes in the senario 1
+Group360.nrofHosts = 1
+Group360.groupID = s
+Group360.movementModel = ExternalPathMovement
+Group360.traceFile = data/TaxiSanFran/file359.txt
+Group360.activeFile = data/TaxiSanFran/active359.txt
+
+#number of nodes in the senario 1
+Group361.nrofHosts = 1
+Group361.groupID = c
+Group361.speed = 2.7, 13.9
+Group361.movementModel = ExternalPathMovement
+Group361.traceFile = data/TaxiSanFran/file360.txt
+Group361.activeFile = data/TaxiSanFran/active360.txt
+
+#number of nodes in the senario 1
+Group362.nrofHosts = 1
+Group362.groupID = s
+Group362.movementModel = ExternalPathMovement
+Group362.traceFile = data/TaxiSanFran/file361.txt
+Group362.activeFile = data/TaxiSanFran/active361.txt
+
+#number of nodes in the senario 1
+Group363.nrofHosts = 1
+Group363.groupID = s
+Group363.movementModel = ExternalPathMovement
+Group363.traceFile = data/TaxiSanFran/file362.txt
+Group363.activeFile = data/TaxiSanFran/active362.txt
+
+#number of nodes in the senario 1
+Group364.nrofHosts = 1
+Group364.groupID = s
+Group364.movementModel = ExternalPathMovement
+Group364.traceFile = data/TaxiSanFran/file363.txt
+Group364.activeFile = data/TaxiSanFran/active363.txt
+
+#number of nodes in the senario 1
+Group365.nrofHosts = 1
+Group365.groupID = s
+Group365.movementModel = ExternalPathMovement
+Group365.traceFile = data/TaxiSanFran/file364.txt
+Group365.activeFile = data/TaxiSanFran/active364.txt
+
+#number of nodes in the senario 1
+Group366.nrofHosts = 1
+Group366.groupID = s
+Group366.movementModel = ExternalPathMovement
+Group366.traceFile = data/TaxiSanFran/file365.txt
+Group366.activeFile = data/TaxiSanFran/active365.txt
+
+#number of nodes in the senario 1
+Group367.nrofHosts = 1
+Group367.groupID = s
+Group367.movementModel = ExternalPathMovement
+Group367.traceFile = data/TaxiSanFran/file366.txt
+Group367.activeFile = data/TaxiSanFran/active366.txt
+
+#number of nodes in the senario 1
+Group368.nrofHosts = 1
+Group368.groupID = s
+Group368.movementModel = ExternalPathMovement
+Group368.traceFile = data/TaxiSanFran/file367.txt
+Group368.activeFile = data/TaxiSanFran/active367.txt
+
+#number of nodes in the senario 1
+Group369.nrofHosts = 1
+Group369.groupID = s
+Group369.movementModel = ExternalPathMovement
+Group369.traceFile = data/TaxiSanFran/file368.txt
+Group369.activeFile = data/TaxiSanFran/active368.txt
+
+#number of nodes in the senario 1
+Group370.nrofHosts = 1
+Group370.groupID = s
+Group370.movementModel = ExternalPathMovement
+Group370.traceFile = data/TaxiSanFran/file369.txt
+Group370.activeFile = data/TaxiSanFran/active369.txt
+
+#number of nodes in the senario 1
+Group371.nrofHosts = 1
+Group371.groupID = c
+Group371.speed = 2.7, 13.9
+Group371.movementModel = ExternalPathMovement
+Group371.traceFile = data/TaxiSanFran/file370.txt
+Group371.activeFile = data/TaxiSanFran/active370.txt
+
+#number of nodes in the senario 1
+Group372.nrofHosts = 1
+Group372.groupID = s
+Group372.movementModel = ExternalPathMovement
+Group372.traceFile = data/TaxiSanFran/file371.txt
+Group372.activeFile = data/TaxiSanFran/active371.txt
+
+#number of nodes in the senario 1
+Group373.nrofHosts = 1
+Group373.groupID = s
+Group373.movementModel = ExternalPathMovement
+Group373.traceFile = data/TaxiSanFran/file372.txt
+Group373.activeFile = data/TaxiSanFran/active372.txt
+
+#number of nodes in the senario 1
+Group374.nrofHosts = 1
+Group374.groupID = s
+Group374.movementModel = ExternalPathMovement
+Group374.traceFile = data/TaxiSanFran/file373.txt
+Group374.activeFile = data/TaxiSanFran/active373.txt
+
+#number of nodes in the senario 1
+Group375.nrofHosts = 1
+Group375.groupID = s
+Group375.movementModel = ExternalPathMovement
+Group375.traceFile = data/TaxiSanFran/file374.txt
+Group375.activeFile = data/TaxiSanFran/active374.txt
+
+#number of nodes in the senario 1
+Group376.nrofHosts = 1
+Group376.groupID = s
+Group376.movementModel = ExternalPathMovement
+Group376.traceFile = data/TaxiSanFran/file375.txt
+Group376.activeFile = data/TaxiSanFran/active375.txt
+
+#number of nodes in the senario 1
+Group377.nrofHosts = 1
+Group377.groupID = s
+Group377.movementModel = ExternalPathMovement
+Group377.traceFile = data/TaxiSanFran/file376.txt
+Group377.activeFile = data/TaxiSanFran/active376.txt
+
+#number of nodes in the senario 1
+Group378.nrofHosts = 1
+Group378.groupID = s
+Group378.movementModel = ExternalPathMovement
+Group378.traceFile = data/TaxiSanFran/file377.txt
+Group378.activeFile = data/TaxiSanFran/active377.txt
+
+#number of nodes in the senario 1
+Group379.nrofHosts = 1
+Group379.groupID = s
+Group379.movementModel = ExternalPathMovement
+Group379.traceFile = data/TaxiSanFran/file378.txt
+Group379.activeFile = data/TaxiSanFran/active378.txt
+
+#number of nodes in the senario 1
+Group380.nrofHosts = 1
+Group380.groupID = s
+Group380.movementModel = ExternalPathMovement
+Group380.traceFile = data/TaxiSanFran/file379.txt
+Group380.activeFile = data/TaxiSanFran/active379.txt
+
+#number of nodes in the senario 1
+Group381.nrofHosts = 1
+Group381.groupID = c
+Group381.speed = 2.7, 13.9
+Group381.movementModel = ExternalPathMovement
+Group381.traceFile = data/TaxiSanFran/file380.txt
+Group381.activeFile = data/TaxiSanFran/active380.txt
+
+#number of nodes in the senario 1
+Group382.nrofHosts = 1
+Group382.groupID = s
+Group382.movementModel = ExternalPathMovement
+Group382.traceFile = data/TaxiSanFran/file381.txt
+Group382.activeFile = data/TaxiSanFran/active381.txt
+
+#number of nodes in the senario 1
+Group383.nrofHosts = 1
+Group383.groupID = s
+Group383.movementModel = ExternalPathMovement
+Group383.traceFile = data/TaxiSanFran/file382.txt
+Group383.activeFile = data/TaxiSanFran/active382.txt
+
+#number of nodes in the senario 1
+Group384.nrofHosts = 1
+Group384.groupID = s
+Group384.movementModel = ExternalPathMovement
+Group384.traceFile = data/TaxiSanFran/file383.txt
+Group384.activeFile = data/TaxiSanFran/active383.txt
+
+#number of nodes in the senario 1
+Group385.nrofHosts = 1
+Group385.groupID = s
+Group385.movementModel = ExternalPathMovement
+Group385.traceFile = data/TaxiSanFran/file384.txt
+Group385.activeFile = data/TaxiSanFran/active384.txt
+
+#number of nodes in the senario 1
+Group386.nrofHosts = 1
+Group386.groupID = s
+Group386.movementModel = ExternalPathMovement
+Group386.traceFile = data/TaxiSanFran/file385.txt
+Group386.activeFile = data/TaxiSanFran/active385.txt
+
+#number of nodes in the senario 1
+Group387.nrofHosts = 1
+Group387.groupID = s
+Group387.movementModel = ExternalPathMovement
+Group387.traceFile = data/TaxiSanFran/file386.txt
+Group387.activeFile = data/TaxiSanFran/active386.txt
+
+#number of nodes in the senario 1
+Group388.nrofHosts = 1
+Group388.groupID = s
+Group388.movementModel = ExternalPathMovement
+Group388.traceFile = data/TaxiSanFran/file387.txt
+Group388.activeFile = data/TaxiSanFran/active387.txt
+
+#number of nodes in the senario 1
+Group389.nrofHosts = 1
+Group389.groupID = s
+Group389.movementModel = ExternalPathMovement
+Group389.traceFile = data/TaxiSanFran/file388.txt
+Group389.activeFile = data/TaxiSanFran/active388.txt
+
+#number of nodes in the senario 1
+Group390.nrofHosts = 1
+Group390.groupID = s
+Group390.movementModel = ExternalPathMovement
+Group390.traceFile = data/TaxiSanFran/file389.txt
+Group390.activeFile = data/TaxiSanFran/active389.txt
+
+#number of nodes in the senario 1
+Group391.nrofHosts = 1
+Group391.groupID = c
+Group391.speed = 2.7, 13.9
+Group391.movementModel = ExternalPathMovement
+Group391.traceFile = data/TaxiSanFran/file390.txt
+Group391.activeFile = data/TaxiSanFran/active390.txt
+
+#number of nodes in the senario 1
+Group392.nrofHosts = 1
+Group392.groupID = s
+Group392.movementModel = ExternalPathMovement
+Group392.traceFile = data/TaxiSanFran/file391.txt
+Group392.activeFile = data/TaxiSanFran/active391.txt
+
+#number of nodes in the senario 1
+Group393.nrofHosts = 1
+Group393.groupID = s
+Group393.movementModel = ExternalPathMovement
+Group393.traceFile = data/TaxiSanFran/file392.txt
+Group393.activeFile = data/TaxiSanFran/active392.txt
+
+#number of nodes in the senario 1
+Group394.nrofHosts = 1
+Group394.groupID = s
+Group394.movementModel = ExternalPathMovement
+Group394.traceFile = data/TaxiSanFran/file393.txt
+Group394.activeFile = data/TaxiSanFran/active393.txt
+
+#number of nodes in the senario 1
+Group395.nrofHosts = 1
+Group395.groupID = s
+Group395.movementModel = ExternalPathMovement
+Group395.traceFile = data/TaxiSanFran/file394.txt
+Group395.activeFile = data/TaxiSanFran/active394.txt
+
+#number of nodes in the senario 1
+Group396.nrofHosts = 1
+Group396.groupID = s
+Group396.movementModel = ExternalPathMovement
+Group396.traceFile = data/TaxiSanFran/file395.txt
+Group396.activeFile = data/TaxiSanFran/active395.txt
+
+#number of nodes in the senario 1
+Group397.nrofHosts = 1
+Group397.groupID = s
+Group397.movementModel = ExternalPathMovement
+Group397.traceFile = data/TaxiSanFran/file396.txt
+Group397.activeFile = data/TaxiSanFran/active396.txt
+
+#number of nodes in the senario 1
+Group398.nrofHosts = 1
+Group398.groupID = s
+Group398.movementModel = ExternalPathMovement
+Group398.traceFile = data/TaxiSanFran/file397.txt
+Group398.activeFile = data/TaxiSanFran/active397.txt
+
+#number of nodes in the senario 1
+Group399.nrofHosts = 1
+Group399.groupID = s
+Group399.movementModel = ExternalPathMovement
+Group399.traceFile = data/TaxiSanFran/file398.txt
+Group399.activeFile = data/TaxiSanFran/active398.txt
+
+#number of nodes in the senario 1
+Group400.nrofHosts = 1
+Group400.groupID = s
+Group400.movementModel = ExternalPathMovement
+Group400.traceFile = data/TaxiSanFran/file399.txt
+Group400.activeFile = data/TaxiSanFran/active399.txt
+
+
+
+#number of nodes in the senario 1
+Group401.nrofHosts = 1
+Group401.groupID = c
+Group401.speed = 2.7, 13.9
+#Group1.routeType = 1
+Group401.movementModel = ExternalPathMovement
+Group401.traceFile = data/TaxiSanFran/file400.txt
+Group401.activeFile = data/TaxiSanFran/active400.txt
+
+
+
+#number of nodes in the senario 1
+Group402.nrofHosts = 1
+Group402.groupID = s
+Group402.movementModel = ExternalPathMovement
+Group402.traceFile = data/TaxiSanFran/file401.txt
+Group402.activeFile = data/TaxiSanFran/active401.txt
+
+#number of nodes in the senario 1
+Group403.nrofHosts = 1
+Group403.groupID = s
+Group403.movementModel = ExternalPathMovement
+Group403.traceFile = data/TaxiSanFran/file402.txt
+Group403.activeFile = data/TaxiSanFran/active402.txt
+
+#number of nodes in the senario 1
+Group404.nrofHosts = 1
+Group404.groupID = s
+Group404.movementModel = ExternalPathMovement
+Group404.traceFile = data/TaxiSanFran/file403.txt
+Group404.activeFile = data/TaxiSanFran/active403.txt
+
+
+#number of nodes in the senario 1
+Group405.nrofHosts = 1
+Group405.groupID = s
+Group405.movementModel = ExternalPathMovement
+Group405.traceFile = data/TaxiSanFran/file404.txt
+Group405.activeFile = data/TaxiSanFran/active404.txt
+
+#number of nodes in the senario 1
+Group406.nrofHosts = 1
+Group406.groupID = s
+Group406.movementModel = ExternalPathMovement
+Group406.traceFile = data/TaxiSanFran/file405.txt
+Group406.activeFile = data/TaxiSanFran/active405.txt
+
+#number of nodes in the senario 1
+Group407.nrofHosts = 1
+Group407.groupID = s
+Group407.movementModel = ExternalPathMovement
+Group407.traceFile = data/TaxiSanFran/file406.txt
+Group407.activeFile = data/TaxiSanFran/active406.txt
+
+#number of nodes in the senario 1
+Group408.nrofHosts = 1
+Group408.groupID = s
+Group408.movementModel = ExternalPathMovement
+Group408.traceFile = data/TaxiSanFran/file407.txt
+Group408.activeFile = data/TaxiSanFran/active407.txt
+
+#number of nodes in the senario 1
+Group409.nrofHosts = 1
+Group409.groupID = s
+Group409.movementModel = ExternalPathMovement
+Group409.traceFile = data/TaxiSanFran/file408.txt
+Group409.activeFile = data/TaxiSanFran/active408.txt
+
+#number of nodes in the senario 1
+Group410.nrofHosts = 1
+Group410.groupID = s
+Group410.movementModel = ExternalPathMovement
+Group410.traceFile = data/TaxiSanFran/file409.txt
+Group410.activeFile = data/TaxiSanFran/active409.txt
+
+#number of nodes in the senario 1
+Group411.nrofHosts = 1
+Group411.groupID = c
+Group411.speed = 2.7, 13.9
+Group411.movementModel = ExternalPathMovement
+Group411.traceFile = data/TaxiSanFran/file410.txt
+Group411.activeFile = data/TaxiSanFran/active410.txt
+
+#numbe11 of nodes in the senario 1
+Group412.nrofHosts = 1
+Group412.groupID = s
+Group412.movementModel = ExternalPathMovement
+Group412.traceFile = data/TaxiSanFran/file411.txt
+Group412.activeFile = data/TaxiSanFran/active411.txt
+
+#number of nodes in the senario 1
+Group413.nrofHosts = 1
+Group413.groupID = s
+Group413.movementModel = ExternalPathMovement
+Group413.traceFile = data/TaxiSanFran/file412.txt
+Group413.activeFile = data/TaxiSanFran/active412.txt
+
+#number of nodes in the senario 1
+Group414.nrofHosts = 1
+Group414.groupID = s
+Group414.movementModel = ExternalPathMovement
+Group414.traceFile = data/TaxiSanFran/file413.txt
+Group414.activeFile = data/TaxiSanFran/active413.txt
+
+#number of nodes in the senario 1
+Group415.nrofHosts = 1
+Group415.groupID = s
+Group415.movementModel = ExternalPathMovement
+Group415.traceFile = data/TaxiSanFran/file414.txt
+Group415.activeFile = data/TaxiSanFran/active414.txt
+
+#number of nodes in the senario 1
+Group416.nrofHosts = 1
+Group416.groupID = s
+Group416.movementModel = ExternalPathMovement
+Group416.traceFile = data/TaxiSanFran/file415.txt
+Group416.activeFile = data/TaxiSanFran/active415.txt
+
+#number of nodes in the senario 1
+Group417.nrofHosts = 1
+Group417.groupID = s
+Group417.movementModel = ExternalPathMovement
+Group417.traceFile = data/TaxiSanFran/file416.txt
+Group417.activeFile = data/TaxiSanFran/active416.txt
+
+#number of nodes in the senario 1
+Group418.nrofHosts = 1
+Group418.groupID = s
+Group418.movementModel = ExternalPathMovement
+Group418.traceFile = data/TaxiSanFran/file417.txt
+Group418.activeFile = data/TaxiSanFran/active417.txt
+
+#number of nodes in the senario 1
+Group419.nrofHosts = 1
+Group419.groupID = s
+Group419.movementModel = ExternalPathMovement
+Group419.traceFile = data/TaxiSanFran/file418.txt
+Group419.activeFile = data/TaxiSanFran/active418.txt
+
+#number of nodes in the senario 1
+Group420.nrofHosts = 1
+Group420.groupID = s
+Group420.movementModel = ExternalPathMovement
+Group420.traceFile = data/TaxiSanFran/file419.txt
+Group420.activeFile = data/TaxiSanFran/active419.txt
+
+#number of nodes in the senario 1
+Group421.nrofHosts = 1
+Group421.groupID = c
+Group421.speed = 2.7, 13.9
+Group421.movementModel = ExternalPathMovement
+Group421.traceFile = data/TaxiSanFran/file420.txt
+Group421.activeFile = data/TaxiSanFran/active420.txt
+
+#number of nodes in the senario 1
+Group422.nrofHosts = 1
+Group422.groupID = s
+Group422.movementModel = ExternalPathMovement
+Group422.traceFile = data/TaxiSanFran/file421.txt
+Group422.activeFile = data/TaxiSanFran/active421.txt
+
+#number of nodes in the senario 1
+Group423.nrofHosts = 1
+Group423.groupID = s
+Group423.movementModel = ExternalPathMovement
+Group423.traceFile = data/TaxiSanFran/file422.txt
+Group423.activeFile = data/TaxiSanFran/active422.txt
+
+#number of nodes in the senario 1
+Group424.nrofHosts = 1
+Group424.groupID = s
+Group424.movementModel = ExternalPathMovement
+Group424.traceFile = data/TaxiSanFran/file423.txt
+Group424.activeFile = data/TaxiSanFran/active423.txt
+
+#number of nodes in the senario 1
+Group425.nrofHosts = 1
+Group425.groupID = s
+Group425.movementModel = ExternalPathMovement
+Group425.traceFile = data/TaxiSanFran/file424.txt
+Group425.activeFile = data/TaxiSanFran/active424.txt
+
+#number of nodes in the senario 1
+Group426.nrofHosts = 1
+Group426.groupID = s
+Group426.movementModel = ExternalPathMovement
+Group426.traceFile = data/TaxiSanFran/file425.txt
+Group426.activeFile = data/TaxiSanFran/active425.txt
+
+#number of nodes in the senario 1
+Group427.nrofHosts = 1
+Group427.groupID = s
+Group427.movementModel = ExternalPathMovement
+Group427.traceFile = data/TaxiSanFran/file426.txt
+Group427.activeFile = data/TaxiSanFran/active426.txt
+
+#number of nodes in the senario 1
+Group428.nrofHosts = 1
+Group428.groupID = s
+Group428.movementModel = ExternalPathMovement
+Group428.traceFile = data/TaxiSanFran/file427.txt
+Group428.activeFile = data/TaxiSanFran/active427.txt
+
+#number of nodes in the senario 1
+Group429.nrofHosts = 1
+Group429.groupID = s
+Group429.movementModel = ExternalPathMovement
+Group429.traceFile = data/TaxiSanFran/file428.txt
+Group429.activeFile = data/TaxiSanFran/active428.txt
+
+#number of nodes in the senario 1
+Group430.nrofHosts = 1
+Group430.groupID = s
+Group430.movementModel = ExternalPathMovement
+Group430.traceFile = data/TaxiSanFran/file429.txt
+Group430.activeFile = data/TaxiSanFran/active429.txt
+
+#number of nodes in the senario 1
+Group431.nrofHosts = 1
+Group431.groupID = c
+Group431.speed = 2.7, 13.9
+Group431.movementModel = ExternalPathMovement
+Group431.traceFile = data/TaxiSanFran/file430.txt
+Group431.activeFile = data/TaxiSanFran/active430.txt
+
+#number of nodes in the senario 1
+Group432.nrofHosts = 1
+Group432.groupID = s
+Group432.movementModel = ExternalPathMovement
+Group432.traceFile = data/TaxiSanFran/file431.txt
+Group432.activeFile = data/TaxiSanFran/active431.txt
+
+#number of nodes in the senario 1
+Group433.nrofHosts = 1
+Group433.groupID = s
+Group433.movementModel = ExternalPathMovement
+Group433.traceFile = data/TaxiSanFran/file432.txt
+Group433.activeFile = data/TaxiSanFran/active432.txt
+
+#number of nodes in the senario 1
+Group434.nrofHosts = 1
+Group434.groupID = s
+Group434.movementModel = ExternalPathMovement
+Group434.traceFile = data/TaxiSanFran/file433.txt
+Group434.activeFile = data/TaxiSanFran/active433.txt
+
+#number of nodes in the senario 1
+Group435.nrofHosts = 1
+Group435.groupID = s
+Group435.movementModel = ExternalPathMovement
+Group435.traceFile = data/TaxiSanFran/file434.txt
+Group435.activeFile = data/TaxiSanFran/active434.txt
+
+#number of nodes in the senario 1
+Group436.nrofHosts = 1
+Group436.groupID = s
+Group436.movementModel = ExternalPathMovement
+Group436.traceFile = data/TaxiSanFran/file435.txt
+Group436.activeFile = data/TaxiSanFran/active435.txt
+
+#number of nodes in the senario 1
+Group437.nrofHosts = 1
+Group437.groupID = s
+Group437.movementModel = ExternalPathMovement
+Group437.traceFile = data/TaxiSanFran/file436.txt
+Group437.activeFile = data/TaxiSanFran/active436.txt
+
+#number of nodes in the senario 1
+Group438.nrofHosts = 1
+Group438.groupID = s
+Group438.movementModel = ExternalPathMovement
+Group438.traceFile = data/TaxiSanFran/file437.txt
+Group438.activeFile = data/TaxiSanFran/active437.txt
+
+#number of nodes in the senario 1
+Group439.nrofHosts = 1
+Group439.groupID = s
+Group439.movementModel = ExternalPathMovement
+Group439.traceFile = data/TaxiSanFran/file438.txt
+Group439.activeFile = data/TaxiSanFran/active438.txt
+
+#number of nodes in the senario 1
+Group440.nrofHosts = 1
+Group440.groupID = s
+Group440.movementModel = ExternalPathMovement
+Group440.traceFile = data/TaxiSanFran/file439.txt
+Group440.activeFile = data/TaxiSanFran/active439.txt
+
+#number of nodes in the senario 1
+Group441.nrofHosts = 1
+Group441.groupID = c
+Group441.speed = 2.7, 13.9
+Group441.movementModel = ExternalPathMovement
+Group441.traceFile = data/TaxiSanFran/file440.txt
+Group441.activeFile = data/TaxiSanFran/active440.txt
+
+#number of nodes in the senario 1
+Group442.nrofHosts = 1
+Group442.groupID = s
+Group442.movementModel = ExternalPathMovement
+Group442.traceFile = data/TaxiSanFran/file441.txt
+Group442.activeFile = data/TaxiSanFran/active441.txt
+
+#number of nodes in the senario 1
+Group443.nrofHosts = 1
+Group443.groupID = s
+Group443.movementModel = ExternalPathMovement
+Group443.traceFile = data/TaxiSanFran/file442.txt
+Group443.activeFile = data/TaxiSanFran/active442.txt
+
+#number of nodes in the senario 1
+Group444.nrofHosts = 1
+Group444.groupID = s
+Group444.movementModel = ExternalPathMovement
+Group444.traceFile = data/TaxiSanFran/file443.txt
+Group444.activeFile = data/TaxiSanFran/active443.txt
+
+#number of nodes in the senario 1
+Group445.nrofHosts = 1
+Group445.groupID = s
+Group445.movementModel = ExternalPathMovement
+Group445.traceFile = data/TaxiSanFran/file444.txt
+Group445.activeFile = data/TaxiSanFran/active444.txt
+
+#number of nodes in the senario 1
+Group446.nrofHosts = 1
+Group446.groupID = s
+Group446.movementModel = ExternalPathMovement
+Group446.traceFile = data/TaxiSanFran/file445.txt
+Group446.activeFile = data/TaxiSanFran/active445.txt
+
+#number of nodes in the senario 1
+Group447.nrofHosts = 1
+Group447.groupID = s
+Group447.movementModel = ExternalPathMovement
+Group447.traceFile = data/TaxiSanFran/file446.txt
+Group447.activeFile = data/TaxiSanFran/active446.txt
+
+#number of nodes in the senario 1
+Group448.nrofHosts = 1
+Group448.groupID = s
+Group448.movementModel = ExternalPathMovement
+Group448.traceFile = data/TaxiSanFran/file447.txt
+Group448.activeFile = data/TaxiSanFran/active447.txt
+
+#number of nodes in the senario 1
+Group449.nrofHosts = 1
+Group449.groupID = s
+Group449.movementModel = ExternalPathMovement
+Group449.traceFile = data/TaxiSanFran/file448.txt
+Group449.activeFile = data/TaxiSanFran/active448.txt
+
+#number of nodes in the senario 1
+Group450.nrofHosts = 1
+Group450.groupID = s
+Group450.movementModel = ExternalPathMovement
+Group450.traceFile = data/TaxiSanFran/file449.txt
+Group450.activeFile = data/TaxiSanFran/active449.txt
+
+#number of nodes in the senario 1
+Group451.nrofHosts = 1
+Group451.groupID = c
+Group451.speed = 2.7, 13.9
+Group451.movementModel = ExternalPathMovement
+Group451.traceFile = data/TaxiSanFran/file450.txt
+Group451.activeFile = data/TaxiSanFran/active450.txt
+
+#number of nodes in the senario 1
+Group452.nrofHosts = 1
+Group452.groupID = s
+Group452.movementModel = ExternalPathMovement
+Group452.traceFile = data/TaxiSanFran/file451.txt
+Group452.activeFile = data/TaxiSanFran/active451.txt
+
+#number of nodes in the senario 1
+Group453.nrofHosts = 1
+Group453.groupID = s
+Group453.movementModel = ExternalPathMovement
+Group453.traceFile = data/TaxiSanFran/file452.txt
+Group453.activeFile = data/TaxiSanFran/active452.txt
+
+#number of nodes in the senario 1
+Group454.nrofHosts = 1
+Group454.groupID = s
+Group454.movementModel = ExternalPathMovement
+Group454.traceFile = data/TaxiSanFran/file453.txt
+Group454.activeFile = data/TaxiSanFran/active453.txt
+
+#number of nodes in the senario 1
+Group455.nrofHosts = 1
+Group455.groupID = s
+Group455.movementModel = ExternalPathMovement
+Group455.traceFile = data/TaxiSanFran/file454.txt
+Group455.activeFile = data/TaxiSanFran/active454.txt
+
+#number of nodes in the senario 1
+Group456.nrofHosts = 1
+Group456.groupID = s
+Group456.movementModel = ExternalPathMovement
+Group456.traceFile = data/TaxiSanFran/file455.txt
+Group456.activeFile = data/TaxiSanFran/active455.txt
+
+#number of nodes in the senario 1
+Group457.nrofHosts = 1
+Group457.groupID = s
+Group457.movementModel = ExternalPathMovement
+Group457.traceFile = data/TaxiSanFran/file456.txt
+Group457.activeFile = data/TaxiSanFran/active456.txt
+
+#number of nodes in the senario 1
+Group458.nrofHosts = 1
+Group458.groupID = s
+Group458.movementModel = ExternalPathMovement
+Group458.traceFile = data/TaxiSanFran/file457.txt
+Group458.activeFile = data/TaxiSanFran/active457.txt
+
+#number of nodes in the senario 1
+Group459.nrofHosts = 1
+Group459.groupID = s
+Group459.movementModel = ExternalPathMovement
+Group459.traceFile = data/TaxiSanFran/file458.txt
+Group459.activeFile = data/TaxiSanFran/active458.txt
+
+#number of nodes in the senario 1
+Group460.nrofHosts = 1
+Group460.groupID = s
+Group460.movementModel = ExternalPathMovement
+Group460.traceFile = data/TaxiSanFran/file459.txt
+Group460.activeFile = data/TaxiSanFran/active459.txt
+
+#number of nodes in the senario 1
+Group461.nrofHosts = 1
+Group461.groupID = c
+Group461.speed = 2.7, 13.9
+Group461.movementModel = ExternalPathMovement
+Group461.traceFile = data/TaxiSanFran/file460.txt
+Group461.activeFile = data/TaxiSanFran/active460.txt
+
+#number of nodes in the senario 1
+Group462.nrofHosts = 1
+Group462.groupID = s
+Group462.movementModel = ExternalPathMovement
+Group462.traceFile = data/TaxiSanFran/file461.txt
+Group462.activeFile = data/TaxiSanFran/active461.txt
+
+#number of nodes in the senario 1
+Group463.nrofHosts = 1
+Group463.groupID = s
+Group463.movementModel = ExternalPathMovement
+Group463.traceFile = data/TaxiSanFran/file462.txt
+Group463.activeFile = data/TaxiSanFran/active462.txt
+
+#number of nodes in the senario 1
+Group464.nrofHosts = 1
+Group464.groupID = s
+Group464.movementModel = ExternalPathMovement
+Group464.traceFile = data/TaxiSanFran/file463.txt
+Group464.activeFile = data/TaxiSanFran/active463.txt
+
+#number of nodes in the senario 1
+Group465.nrofHosts = 1
+Group465.groupID = s
+Group465.movementModel = ExternalPathMovement
+Group465.traceFile = data/TaxiSanFran/file464.txt
+Group465.activeFile = data/TaxiSanFran/active464.txt
+
+#number of nodes in the senario 1
+Group466.nrofHosts = 1
+Group466.groupID = s
+Group466.movementModel = ExternalPathMovement
+Group466.traceFile = data/TaxiSanFran/file465.txt
+Group466.activeFile = data/TaxiSanFran/active465.txt
+
+#number of nodes in the senario 1
+Group467.nrofHosts = 1
+Group467.groupID = s
+Group467.movementModel = ExternalPathMovement
+Group467.traceFile = data/TaxiSanFran/file466.txt
+Group467.activeFile = data/TaxiSanFran/active466.txt
+
+#number of nodes in the senario 1
+Group468.nrofHosts = 1
+Group468.groupID = s
+Group468.movementModel = ExternalPathMovement
+Group468.traceFile = data/TaxiSanFran/file467.txt
+Group468.activeFile = data/TaxiSanFran/active467.txt
+
+#number of nodes in the senario 1
+Group469.nrofHosts = 1
+Group469.groupID = s
+Group469.movementModel = ExternalPathMovement
+Group469.traceFile = data/TaxiSanFran/file468.txt
+Group469.activeFile = data/TaxiSanFran/active468.txt
+
+#number of nodes in the senario 1
+Group470.nrofHosts = 1
+Group470.groupID = s
+Group470.movementModel = ExternalPathMovement
+Group470.traceFile = data/TaxiSanFran/file469.txt
+Group470.activeFile = data/TaxiSanFran/active469.txt
+
+#number of nodes in the senario 1
+Group471.nrofHosts = 1
+Group471.groupID = c
+Group471.speed = 2.7, 13.9
+Group471.movementModel = ExternalPathMovement
+Group471.traceFile = data/TaxiSanFran/file470.txt
+Group471.activeFile = data/TaxiSanFran/active470.txt
+
+#number of nodes in the senario 1
+Group472.nrofHosts = 1
+Group472.groupID = s
+Group472.movementModel = ExternalPathMovement
+Group472.traceFile = data/TaxiSanFran/file471.txt
+Group472.activeFile = data/TaxiSanFran/active471.txt
+
+#number of nodes in the senario 1
+Group473.nrofHosts = 1
+Group473.groupID = s
+Group473.movementModel = ExternalPathMovement
+Group473.traceFile = data/TaxiSanFran/file472.txt
+Group473.activeFile = data/TaxiSanFran/active472.txt
+
+#number of nodes in the senario 1
+Group474.nrofHosts = 1
+Group474.groupID = s
+Group474.movementModel = ExternalPathMovement
+Group474.traceFile = data/TaxiSanFran/file473.txt
+Group474.activeFile = data/TaxiSanFran/active473.txt
+
+#number of nodes in the senario 1
+Group475.nrofHosts = 1
+Group475.groupID = s
+Group475.movementModel = ExternalPathMovement
+Group475.traceFile = data/TaxiSanFran/file474.txt
+Group475.activeFile = data/TaxiSanFran/active474.txt
+
+#number of nodes in the senario 1
+Group476.nrofHosts = 1
+Group476.groupID = s
+Group476.movementModel = ExternalPathMovement
+Group476.traceFile = data/TaxiSanFran/file475.txt
+Group476.activeFile = data/TaxiSanFran/active475.txt
+
+#number of nodes in the senario 1
+Group477.nrofHosts = 1
+Group477.groupID = s
+Group477.movementModel = ExternalPathMovement
+Group477.traceFile = data/TaxiSanFran/file476.txt
+Group477.activeFile = data/TaxiSanFran/active476.txt
+
+#number of nodes in the senario 1
+Group478.nrofHosts = 1
+Group478.groupID = s
+Group478.movementModel = ExternalPathMovement
+Group478.traceFile = data/TaxiSanFran/file477.txt
+Group478.activeFile = data/TaxiSanFran/active477.txt
+
+#number of nodes in the senario 1
+Group479.nrofHosts = 1
+Group479.groupID = s
+Group479.movementModel = ExternalPathMovement
+Group479.traceFile = data/TaxiSanFran/file478.txt
+Group479.activeFile = data/TaxiSanFran/active478.txt
+
+#number of nodes in the senario 1
+Group480.nrofHosts = 1
+Group480.groupID = s
+Group480.movementModel = ExternalPathMovement
+Group480.traceFile = data/TaxiSanFran/file479.txt
+Group480.activeFile = data/TaxiSanFran/active479.txt
+
+#number of nodes in the senario 1
+Group481.nrofHosts = 1
+Group481.groupID = c
+Group481.speed = 2.7, 13.9
+Group481.movementModel = ExternalPathMovement
+Group481.traceFile = data/TaxiSanFran/file480.txt
+Group481.activeFile = data/TaxiSanFran/active480.txt
+
+#number of nodes in the senario 1
+Group482.nrofHosts = 1
+Group482.groupID = s
+Group482.movementModel = ExternalPathMovement
+Group482.traceFile = data/TaxiSanFran/file481.txt
+Group482.activeFile = data/TaxiSanFran/active481.txt
+
+#number of nodes in the senario 1
+Group483.nrofHosts = 1
+Group483.groupID = s
+Group483.movementModel = ExternalPathMovement
+Group483.traceFile = data/TaxiSanFran/file482.txt
+Group483.activeFile = data/TaxiSanFran/active482.txt
+
+#number of nodes in the senario 1
+Group484.nrofHosts = 1
+Group484.groupID = s
+Group484.movementModel = ExternalPathMovement
+Group484.traceFile = data/TaxiSanFran/file483.txt
+Group484.activeFile = data/TaxiSanFran/active483.txt
+
+#number of nodes in the senario 1
+Group485.nrofHosts = 1
+Group485.groupID = s
+Group485.movementModel = ExternalPathMovement
+Group485.traceFile = data/TaxiSanFran/file484.txt
+Group485.activeFile = data/TaxiSanFran/active484.txt
+
+#number of nodes in the senario 1
+Group486.nrofHosts = 1
+Group486.groupID = s
+Group486.movementModel = ExternalPathMovement
+Group486.traceFile = data/TaxiSanFran/file485.txt
+Group486.activeFile = data/TaxiSanFran/active485.txt
+
+#number of nodes in the senario 1
+Group487.nrofHosts = 1
+Group487.groupID = s
+Group487.movementModel = ExternalPathMovement
+Group487.traceFile = data/TaxiSanFran/file486.txt
+Group487.activeFile = data/TaxiSanFran/active486.txt
+
+#number of nodes in the senario 1
+Group488.nrofHosts = 1
+Group488.groupID = s
+Group488.movementModel = ExternalPathMovement
+Group488.traceFile = data/TaxiSanFran/file487.txt
+Group488.activeFile = data/TaxiSanFran/active487.txt
+
+#number of nodes in the senario 1
+Group489.nrofHosts = 1
+Group489.groupID = s
+Group489.movementModel = ExternalPathMovement
+Group489.traceFile = data/TaxiSanFran/file488.txt
+Group489.activeFile = data/TaxiSanFran/active488.txt
+
+#number of nodes in the senario 1
+Group490.nrofHosts = 1
+Group490.groupID = s
+Group490.movementModel = ExternalPathMovement
+Group490.traceFile = data/TaxiSanFran/file489.txt
+Group490.activeFile = data/TaxiSanFran/active489.txt
+
+#number of nodes in the senario 1
+Group491.nrofHosts = 1
+Group491.groupID = c
+Group491.speed = 2.7, 13.9
+Group491.movementModel = ExternalPathMovement
+Group491.traceFile = data/TaxiSanFran/file490.txt
+Group491.activeFile = data/TaxiSanFran/active490.txt
+
+#number of nodes in the senario 1
+Group492.nrofHosts = 1
+Group492.groupID = s
+Group492.movementModel = ExternalPathMovement
+Group492.traceFile = data/TaxiSanFran/file491.txt
+Group492.activeFile = data/TaxiSanFran/active491.txt
+
+#number of nodes in the senario 1
+Group493.nrofHosts = 1
+Group493.groupID = s
+Group493.movementModel = ExternalPathMovement
+Group493.traceFile = data/TaxiSanFran/file492.txt
+Group493.activeFile = data/TaxiSanFran/active492.txt
+
+#number of nodes in the senario 1
+Group494.nrofHosts = 1
+Group494.groupID = s
+Group494.movementModel = ExternalPathMovement
+Group494.traceFile = data/TaxiSanFran/file493.txt
+Group494.activeFile = data/TaxiSanFran/active493.txt
+
+#number of nodes in the senario 1
+Group495.nrofHosts = 1
+Group495.groupID = s
+Group495.movementModel = ExternalPathMovement
+Group495.traceFile = data/TaxiSanFran/file494.txt
+Group495.activeFile = data/TaxiSanFran/active494.txt
+
+#number of nodes in the senario 1
+Group496.nrofHosts = 1
+Group496.groupID = s
+Group496.movementModel = ExternalPathMovement
+Group496.traceFile = data/TaxiSanFran/file495.txt
+Group496.activeFile = data/TaxiSanFran/active495.txt
+
+#number of nodes in the senario 1
+Group497.nrofHosts = 1
+Group497.groupID = s
+Group497.movementModel = ExternalPathMovement
+Group497.traceFile = data/TaxiSanFran/file496.txt
+Group497.activeFile = data/TaxiSanFran/active496.txt
+
+#number of nodes in the senario 1
+Group498.nrofHosts = 1
+Group498.groupID = s
+Group498.movementModel = ExternalPathMovement
+Group498.traceFile = data/TaxiSanFran/file497.txt
+Group498.activeFile = data/TaxiSanFran/active497.txt
+
+#number of nodes in the senario 1
+Group499.nrofHosts = 1
+Group499.groupID = s
+Group499.movementModel = ExternalPathMovement
+Group499.traceFile = data/TaxiSanFran/file498.txt
+Group499.activeFile = data/TaxiSanFran/active498.txt
+
+#number of nodes in the senario 1
+Group500.nrofHosts = 1
+Group500.groupID = s
+Group500.movementModel = ExternalPathMovement
+Group500.traceFile = data/TaxiSanFran/file499.txt
+Group500.activeFile = data/TaxiSanFran/active499.txt
+
+
+
+#Pedestrain
+#Group102.nrofHosts = 5
+#Group102.groupID = P
+
+
+#Pedestrain
+#Group103.nrofHosts = 2
+#Group103.groupID = C
+#Group103.movementModel = CarMovement
+#Group6.routeFile = data/TaxiSanFran/taxi1.wkt
+
+
+
+## Message creation parameters
+# How many event generators
+Events.nrof = 2
+# Class of the first event generator
+Events1.class = MessageEventGenerator
+# (following settings are specific for the MessageEventGenerator class)
+# Creation interval in seconds (one new message every 25 to 35 seconds)###
+#Events1.interval = 25,35
+Events1.interval = 55,65
+#Events1.interval = 30, 65
+# Message sizes (500kB - 1MB)
+Events1.size = 500k,1M
+# range of message source/destination addresses
+#Events1.hosts = 0,22
+Events1.hosts = 0,99
+# Message ID prefix
+Events1.prefix = M
+
+
+
+
+## Movement model settings
+# seed for movement models' pseudo random number generator (default = 0)
+#MovementModel.rngSeed = 1
+MovementModel.rngSeed=[1; 2; 3; 4; 5; 6]
+# World's size for Movement Models without implicit size (width, height; meters)
+#MovementModel.worldSize = 38000, 122520
+
+#MovementModel.worldSize = 25501, 66745
+#MovementModel.worldSize = 9674,96745
+#MovementModel.worldSize =  5793,41925
+MovementModel.worldSize =  5886,42063
+
+# How long time to move hosts in the world before real simulation
+###MovementModel.warmup = 1000
+
+## Map based movement -movement model specific settings
+#MapBasedMovement.nrofMapFiles =536
+MapBasedMovement.nrofMapFiles =177
+
+
+#MapBasedMovement.mapFile1 = data/roads.wkt
+#MapBasedMovement.mapFile2 = data/main_roads.wkt
+#MapBasedMovement.mapFile3 = data/pedestrian_paths.wkt
+#MapBasedMovement.mapFile4 = data/shops.wkt
+MapBasedMovement.mapFile1 = data/TaxiSanFran/taxi0.wkt
+MapBasedMovement.mapFile2 =  data/TaxiSanFran/taxi1.wkt
+MapBasedMovement.mapFile3 =  data/TaxiSanFran/taxi2.wkt
+MapBasedMovement.mapFile4 =  data/TaxiSanFran/taxi3.wkt
+MapBasedMovement.mapFile5 =  data/TaxiSanFran/taxi4.wkt
+MapBasedMovement.mapFile6 =  data/TaxiSanFran/taxi5.wkt
+MapBasedMovement.mapFile7 =  data/TaxiSanFran/taxi6.wkt
+MapBasedMovement.mapFile8 =  data/TaxiSanFran/taxi7.wkt
+MapBasedMovement.mapFile9 =  data/TaxiSanFran/taxi8.wkt
+MapBasedMovement.mapFile10 =  data/TaxiSanFran/taxi9.wkt
+MapBasedMovement.mapFile11 = data/TaxiSanFran/taxi10.wkt
+MapBasedMovement.mapFile12 =  data/TaxiSanFran/taxi11.wkt
+MapBasedMovement.mapFile13 =  data/TaxiSanFran/taxi12.wkt
+MapBasedMovement.mapFile14 =  data/TaxiSanFran/taxi13.wkt
+MapBasedMovement.mapFile15 =  data/TaxiSanFran/taxi14.wkt
+MapBasedMovement.mapFile16 =  data/TaxiSanFran/taxi15.wkt
+MapBasedMovement.mapFile17 =  data/TaxiSanFran/taxi16.wkt
+MapBasedMovement.mapFile18 =  data/TaxiSanFran/taxi17.wkt
+MapBasedMovement.mapFile19 =  data/TaxiSanFran/taxi18.wkt
+MapBasedMovement.mapFile20 =  data/TaxiSanFran/taxi19.wkt
+MapBasedMovement.mapFile21 = data/TaxiSanFran/taxi20.wkt
+MapBasedMovement.mapFile22 =  data/TaxiSanFran/taxi21.wkt
+MapBasedMovement.mapFile23 =  data/TaxiSanFran/taxi22.wkt
+MapBasedMovement.mapFile24 =  data/TaxiSanFran/taxi23.wkt
+MapBasedMovement.mapFile25 =  data/TaxiSanFran/taxi24.wkt
+MapBasedMovement.mapFile26 =  data/TaxiSanFran/taxi25.wkt
+MapBasedMovement.mapFile27 =  data/TaxiSanFran/taxi26.wkt
+MapBasedMovement.mapFile28 =  data/TaxiSanFran/taxi27.wkt
+MapBasedMovement.mapFile29 =  data/TaxiSanFran/taxi28.wkt
+MapBasedMovement.mapFile30 =  data/TaxiSanFran/taxi29.wkt
+MapBasedMovement.mapFile31 = data/TaxiSanFran/taxi30.wkt
+MapBasedMovement.mapFile32 =  data/TaxiSanFran/taxi31.wkt
+MapBasedMovement.mapFile33 =  data/TaxiSanFran/taxi32.wkt
+MapBasedMovement.mapFile34 =  data/TaxiSanFran/taxi33.wkt
+MapBasedMovement.mapFile35 =  data/TaxiSanFran/taxi34.wkt
+MapBasedMovement.mapFile36 =  data/TaxiSanFran/taxi35.wkt
+MapBasedMovement.mapFile37 =  data/TaxiSanFran/taxi36.wkt
+MapBasedMovement.mapFile38 =  data/TaxiSanFran/taxi37.wkt
+MapBasedMovement.mapFile39 =  data/TaxiSanFran/taxi38.wkt
+MapBasedMovement.mapFile40 =  data/TaxiSanFran/taxi39.wkt
+MapBasedMovement.mapFile41 = data/TaxiSanFran/taxi40.wkt
+MapBasedMovement.mapFile42 =  data/TaxiSanFran/taxi41.wkt
+MapBasedMovement.mapFile43 =  data/TaxiSanFran/taxi42.wkt
+MapBasedMovement.mapFile44 =  data/TaxiSanFran/taxi43.wkt
+MapBasedMovement.mapFile45 =  data/TaxiSanFran/taxi44.wkt
+MapBasedMovement.mapFile46 =  data/TaxiSanFran/taxi45.wkt
+MapBasedMovement.mapFile47 =  data/TaxiSanFran/taxi46.wkt
+MapBasedMovement.mapFile48 =  data/TaxiSanFran/taxi47.wkt
+MapBasedMovement.mapFile49 =  data/TaxiSanFran/taxi48.wkt
+MapBasedMovement.mapFile50 =  data/TaxiSanFran/taxi49.wkt
+MapBasedMovement.mapFile51 = data/TaxiSanFran/taxi50.wkt
+MapBasedMovement.mapFile52 =  data/TaxiSanFran/taxi51.wkt
+MapBasedMovement.mapFile53 =  data/TaxiSanFran/taxi52.wkt
+MapBasedMovement.mapFile54 =  data/TaxiSanFran/taxi53.wkt
+MapBasedMovement.mapFile55 =  data/TaxiSanFran/taxi54.wkt
+MapBasedMovement.mapFile56 =  data/TaxiSanFran/taxi55.wkt
+MapBasedMovement.mapFile57 =  data/TaxiSanFran/taxi56.wkt
+MapBasedMovement.mapFile58 =  data/TaxiSanFran/taxi57.wkt
+MapBasedMovement.mapFile59 =  data/TaxiSanFran/taxi58.wkt
+MapBasedMovement.mapFile60 =  data/TaxiSanFran/taxi59.wkt
+MapBasedMovement.mapFile61 = data/TaxiSanFran/taxi60.wkt
+MapBasedMovement.mapFile62 =  data/TaxiSanFran/taxi61.wkt
+MapBasedMovement.mapFile63 =  data/TaxiSanFran/taxi62.wkt
+MapBasedMovement.mapFile64 =  data/TaxiSanFran/taxi63.wkt
+MapBasedMovement.mapFile65 =  data/TaxiSanFran/taxi64.wkt
+MapBasedMovement.mapFile66 =  data/TaxiSanFran/taxi65.wkt
+MapBasedMovement.mapFile67 =  data/TaxiSanFran/taxi66.wkt
+MapBasedMovement.mapFile68 =  data/TaxiSanFran/taxi67.wkt
+MapBasedMovement.mapFile69 =  data/TaxiSanFran/taxi68.wkt
+MapBasedMovement.mapFile70 =  data/TaxiSanFran/taxi69.wkt
+MapBasedMovement.mapFile71 = data/TaxiSanFran/taxi70.wkt
+MapBasedMovement.mapFile72 =  data/TaxiSanFran/taxi71.wkt
+MapBasedMovement.mapFile73 =  data/TaxiSanFran/taxi72.wkt
+MapBasedMovement.mapFile74 =  data/TaxiSanFran/taxi73.wkt
+MapBasedMovement.mapFile75 =  data/TaxiSanFran/taxi74.wkt
+MapBasedMovement.mapFile76 =  data/TaxiSanFran/taxi75.wkt
+MapBasedMovement.mapFile77 =  data/TaxiSanFran/taxi76.wkt
+MapBasedMovement.mapFile78 =  data/TaxiSanFran/taxi77.wkt
+MapBasedMovement.mapFile79 =  data/TaxiSanFran/taxi78.wkt
+MapBasedMovement.mapFile80 =  data/TaxiSanFran/taxi79.wkt
+MapBasedMovement.mapFile81 = data/TaxiSanFran/taxi80.wkt
+MapBasedMovement.mapFile82 =  data/TaxiSanFran/taxi81.wkt
+MapBasedMovement.mapFile83 =  data/TaxiSanFran/taxi82.wkt
+MapBasedMovement.mapFile84 =  data/TaxiSanFran/taxi83.wkt
+MapBasedMovement.mapFile85 =  data/TaxiSanFran/taxi84.wkt
+MapBasedMovement.mapFile86 =  data/TaxiSanFran/taxi85.wkt
+MapBasedMovement.mapFile87 =  data/TaxiSanFran/taxi86.wkt
+MapBasedMovement.mapFile88 =  data/TaxiSanFran/taxi87.wkt
+MapBasedMovement.mapFile89 =  data/TaxiSanFran/taxi88.wkt
+MapBasedMovement.mapFile90 =  data/TaxiSanFran/taxi89.wkt
+MapBasedMovement.mapFile91 = data/TaxiSanFran/taxi90.wkt
+MapBasedMovement.mapFile92 =  data/TaxiSanFran/taxi91.wkt
+MapBasedMovement.mapFile93 =  data/TaxiSanFran/taxi92.wkt
+MapBasedMovement.mapFile94 =  data/TaxiSanFran/taxi93.wkt
+MapBasedMovement.mapFile95 =  data/TaxiSanFran/taxi94.wkt
+MapBasedMovement.mapFile96 =  data/TaxiSanFran/taxi95.wkt
+MapBasedMovement.mapFile97 =  data/TaxiSanFran/taxi96.wkt
+MapBasedMovement.mapFile98 =  data/TaxiSanFran/taxi97.wkt
+MapBasedMovement.mapFile99 =  data/TaxiSanFran/taxi98.wkt
+MapBasedMovement.mapFile100 =  data/TaxiSanFran/taxi99.wkt
+
+
+MapBasedMovement.mapFile101 = data/TaxiSanFran/taxi100.wkt
+MapBasedMovement.mapFile102 =  data/TaxiSanFran/taxi101.wkt
+MapBasedMovement.mapFile103 =  data/TaxiSanFran/taxi102.wkt
+MapBasedMovement.mapFile104 =  data/TaxiSanFran/taxi103.wkt
+MapBasedMovement.mapFile105 =  data/TaxiSanFran/taxi104.wkt
+MapBasedMovement.mapFile106 =  data/TaxiSanFran/taxi105.wkt
+MapBasedMovement.mapFile107 =  data/TaxiSanFran/taxi106.wkt
+MapBasedMovement.mapFile108 =  data/TaxiSanFran/taxi107.wkt
+MapBasedMovement.mapFile109 =  data/TaxiSanFran/taxi108.wkt
+MapBasedMovement.mapFile110 =  data/TaxiSanFran/taxi109.wkt
+MapBasedMovement.mapFile111 = data/TaxiSanFran/taxi110.wkt
+MapBasedMovement.mapFile112 =  data/TaxiSanFran/taxi111.wkt
+MapBasedMovement.mapFile113 =  data/TaxiSanFran/taxi112.wkt
+MapBasedMovement.mapFile114 =  data/TaxiSanFran/taxi113.wkt
+MapBasedMovement.mapFile115 =  data/TaxiSanFran/taxi114.wkt
+MapBasedMovement.mapFile116 =  data/TaxiSanFran/taxi115.wkt
+MapBasedMovement.mapFile117 =  data/TaxiSanFran/taxi116.wkt
+MapBasedMovement.mapFile118 =  data/TaxiSanFran/taxi117.wkt
+MapBasedMovement.mapFile119 =  data/TaxiSanFran/taxi118.wkt
+MapBasedMovement.mapFile120 =  data/TaxiSanFran/taxi119.wkt
+MapBasedMovement.mapFile121 = data/TaxiSanFran/taxi120.wkt
+MapBasedMovement.mapFile122 =  data/TaxiSanFran/taxi121.wkt
+MapBasedMovement.mapFile123 =  data/TaxiSanFran/taxi122.wkt
+MapBasedMovement.mapFile124 =  data/TaxiSanFran/taxi123.wkt
+MapBasedMovement.mapFile125 =  data/TaxiSanFran/taxi124.wkt
+MapBasedMovement.mapFile126 =  data/TaxiSanFran/taxi125.wkt
+MapBasedMovement.mapFile127 =  data/TaxiSanFran/taxi126.wkt
+MapBasedMovement.mapFile128 =  data/TaxiSanFran/taxi127.wkt
+MapBasedMovement.mapFile129 =  data/TaxiSanFran/taxi128.wkt
+MapBasedMovement.mapFile130 =  data/TaxiSanFran/taxi129.wkt
+MapBasedMovement.mapFile131 = data/TaxiSanFran/taxi130.wkt
+MapBasedMovement.mapFile132 =  data/TaxiSanFran/taxi131.wkt
+MapBasedMovement.mapFile133 =  data/TaxiSanFran/taxi132.wkt
+MapBasedMovement.mapFile134 =  data/TaxiSanFran/taxi133.wkt
+MapBasedMovement.mapFile135 =  data/TaxiSanFran/taxi134.wkt
+MapBasedMovement.mapFile136 =  data/TaxiSanFran/taxi135.wkt
+MapBasedMovement.mapFile137 =  data/TaxiSanFran/taxi136.wkt
+MapBasedMovement.mapFile138 =  data/TaxiSanFran/taxi137.wkt
+MapBasedMovement.mapFile139 =  data/TaxiSanFran/taxi138.wkt
+MapBasedMovement.mapFile140 =  data/TaxiSanFran/taxi139.wkt
+MapBasedMovement.mapFile141 = data/TaxiSanFran/taxi140.wkt
+MapBasedMovement.mapFile142 =  data/TaxiSanFran/taxi141.wkt
+MapBasedMovement.mapFile143 =  data/TaxiSanFran/taxi142.wkt
+MapBasedMovement.mapFile144 =  data/TaxiSanFran/taxi143.wkt
+MapBasedMovement.mapFile145 =  data/TaxiSanFran/taxi144.wkt
+MapBasedMovement.mapFile146 =  data/TaxiSanFran/taxi145.wkt
+MapBasedMovement.mapFile147 =  data/TaxiSanFran/taxi146.wkt
+MapBasedMovement.mapFile148 =  data/TaxiSanFran/taxi147.wkt
+MapBasedMovement.mapFile149 =  data/TaxiSanFran/taxi148.wkt
+MapBasedMovement.mapFile150 =  data/TaxiSanFran/taxi149.wkt
+MapBasedMovement.mapFile151 = data/TaxiSanFran/taxi150.wkt
+MapBasedMovement.mapFile152 =  data/TaxiSanFran/taxi151.wkt
+MapBasedMovement.mapFile153 =  data/TaxiSanFran/taxi152.wkt
+MapBasedMovement.mapFile154 =  data/TaxiSanFran/taxi153.wkt
+MapBasedMovement.mapFile155 =  data/TaxiSanFran/taxi154.wkt
+MapBasedMovement.mapFile156 =  data/TaxiSanFran/taxi155.wkt
+MapBasedMovement.mapFile157 =  data/TaxiSanFran/taxi156.wkt
+MapBasedMovement.mapFile158 =  data/TaxiSanFran/taxi157.wkt
+MapBasedMovement.mapFile159 =  data/TaxiSanFran/taxi158.wkt
+MapBasedMovement.mapFile160 =  data/TaxiSanFran/taxi159.wkt
+MapBasedMovement.mapFile161 = data/TaxiSanFran/taxi160.wkt
+MapBasedMovement.mapFile162 =  data/TaxiSanFran/taxi161.wkt
+MapBasedMovement.mapFile163 =  data/TaxiSanFran/taxi162.wkt
+MapBasedMovement.mapFile164 =  data/TaxiSanFran/taxi163.wkt
+MapBasedMovement.mapFile165 =  data/TaxiSanFran/taxi164.wkt
+MapBasedMovement.mapFile166 =  data/TaxiSanFran/taxi165.wkt
+MapBasedMovement.mapFile167 =  data/TaxiSanFran/taxi166.wkt
+MapBasedMovement.mapFile168 =  data/TaxiSanFran/taxi167.wkt
+MapBasedMovement.mapFile169 =  data/TaxiSanFran/taxi168.wkt
+MapBasedMovement.mapFile170 =  data/TaxiSanFran/taxi169.wkt
+MapBasedMovement.mapFile171 = data/TaxiSanFran/taxi170.wkt
+MapBasedMovement.mapFile172 =  data/TaxiSanFran/taxi171.wkt
+MapBasedMovement.mapFile173 =  data/TaxiSanFran/taxi172.wkt
+MapBasedMovement.mapFile174 =  data/TaxiSanFran/taxi173.wkt
+MapBasedMovement.mapFile175 =  data/TaxiSanFran/taxi174.wkt
+MapBasedMovement.mapFile176 =  data/TaxiSanFran/taxi175.wkt
+MapBasedMovement.mapFile177 =  data/TaxiSanFran/taxi176.wkt
+MapBasedMovement.mapFile178 =  data/TaxiSanFran/taxi177.wkt
+MapBasedMovement.mapFile179 =  data/TaxiSanFran/taxi178.wkt
+MapBasedMovement.mapFile180 =  data/TaxiSanFran/taxi179.wkt
+MapBasedMovement.mapFile181 = data/TaxiSanFran/taxi180.wkt
+MapBasedMovement.mapFile182 =  data/TaxiSanFran/taxi181.wkt
+MapBasedMovement.mapFile183 =  data/TaxiSanFran/taxi182.wkt
+MapBasedMovement.mapFile184 =  data/TaxiSanFran/taxi183.wkt
+MapBasedMovement.mapFile185 =  data/TaxiSanFran/taxi184.wkt
+MapBasedMovement.mapFile186 =  data/TaxiSanFran/taxi185.wkt
+MapBasedMovement.mapFile187 =  data/TaxiSanFran/taxi186.wkt
+MapBasedMovement.mapFile188 =  data/TaxiSanFran/taxi187.wkt
+MapBasedMovement.mapFile189 =  data/TaxiSanFran/taxi188.wkt
+MapBasedMovement.mapFile190 =  data/TaxiSanFran/taxi189.wkt
+MapBasedMovement.mapFile191 = data/TaxiSanFran/taxi190.wkt
+MapBasedMovement.mapFile192 =  data/TaxiSanFran/taxi191.wkt
+MapBasedMovement.mapFile193 =  data/TaxiSanFran/taxi192.wkt
+MapBasedMovement.mapFile194 =  data/TaxiSanFran/taxi193.wkt
+MapBasedMovement.mapFile195 =  data/TaxiSanFran/taxi194.wkt
+MapBasedMovement.mapFile196 =  data/TaxiSanFran/taxi195.wkt
+MapBasedMovement.mapFile197 =  data/TaxiSanFran/taxi196.wkt
+MapBasedMovement.mapFile198 =  data/TaxiSanFran/taxi197.wkt
+MapBasedMovement.mapFile199 =  data/TaxiSanFran/taxi198.wkt
+MapBasedMovement.mapFile200 =  data/TaxiSanFran/taxi199.wkt
+
+MapBasedMovement.mapFile201 = data/TaxiSanFran/taxi200.wkt
+MapBasedMovement.mapFile202 =  data/TaxiSanFran/taxi201.wkt
+MapBasedMovement.mapFile203 =  data/TaxiSanFran/taxi202.wkt
+MapBasedMovement.mapFile204 =  data/TaxiSanFran/taxi203.wkt
+MapBasedMovement.mapFile205 =  data/TaxiSanFran/taxi204.wkt
+MapBasedMovement.mapFile206 =  data/TaxiSanFran/taxi205.wkt
+MapBasedMovement.mapFile207 =  data/TaxiSanFran/taxi206.wkt
+MapBasedMovement.mapFile208 =  data/TaxiSanFran/taxi207.wkt
+MapBasedMovement.mapFile209 =  data/TaxiSanFran/taxi208.wkt
+MapBasedMovement.mapFile210 =  data/TaxiSanFran/taxi209.wkt
+MapBasedMovement.mapFile211 = data/TaxiSanFran/taxi210.wkt
+MapBasedMovement.mapFile212 =  data/TaxiSanFran/taxi211.wkt
+MapBasedMovement.mapFile213 =  data/TaxiSanFran/taxi212.wkt
+MapBasedMovement.mapFile214 =  data/TaxiSanFran/taxi213.wkt
+MapBasedMovement.mapFile215 =  data/TaxiSanFran/taxi214.wkt
+MapBasedMovement.mapFile216 =  data/TaxiSanFran/taxi215.wkt
+MapBasedMovement.mapFile217 =  data/TaxiSanFran/taxi216.wkt
+MapBasedMovement.mapFile218 =  data/TaxiSanFran/taxi217.wkt
+MapBasedMovement.mapFile219 =  data/TaxiSanFran/taxi218.wkt
+MapBasedMovement.mapFile220 =  data/TaxiSanFran/taxi219.wkt
+MapBasedMovement.mapFile221 = data/TaxiSanFran/taxi220.wkt
+MapBasedMovement.mapFile222 =  data/TaxiSanFran/taxi221.wkt
+MapBasedMovement.mapFile223 =  data/TaxiSanFran/taxi222.wkt
+MapBasedMovement.mapFile224 =  data/TaxiSanFran/taxi223.wkt
+MapBasedMovement.mapFile225 =  data/TaxiSanFran/taxi224.wkt
+MapBasedMovement.mapFile226 =  data/TaxiSanFran/taxi225.wkt
+MapBasedMovement.mapFile227 =  data/TaxiSanFran/taxi226.wkt
+MapBasedMovement.mapFile228 =  data/TaxiSanFran/taxi227.wkt
+MapBasedMovement.mapFile229 =  data/TaxiSanFran/taxi228.wkt
+MapBasedMovement.mapFile230 =  data/TaxiSanFran/taxi229.wkt
+MapBasedMovement.mapFile231 = data/TaxiSanFran/taxi230.wkt
+MapBasedMovement.mapFile232 =  data/TaxiSanFran/taxi231.wkt
+MapBasedMovement.mapFile233 =  data/TaxiSanFran/taxi232.wkt
+MapBasedMovement.mapFile234 =  data/TaxiSanFran/taxi233.wkt
+MapBasedMovement.mapFile235 =  data/TaxiSanFran/taxi234.wkt
+MapBasedMovement.mapFile236 =  data/TaxiSanFran/taxi235.wkt
+MapBasedMovement.mapFile237 =  data/TaxiSanFran/taxi236.wkt
+MapBasedMovement.mapFile238 =  data/TaxiSanFran/taxi237.wkt
+MapBasedMovement.mapFile239 =  data/TaxiSanFran/taxi238.wkt
+MapBasedMovement.mapFile240 =  data/TaxiSanFran/taxi239.wkt
+MapBasedMovement.mapFile241 = data/TaxiSanFran/taxi240.wkt
+MapBasedMovement.mapFile242 =  data/TaxiSanFran/taxi241.wkt
+MapBasedMovement.mapFile243 =  data/TaxiSanFran/taxi242.wkt
+MapBasedMovement.mapFile244 =  data/TaxiSanFran/taxi243.wkt
+MapBasedMovement.mapFile245 =  data/TaxiSanFran/taxi244.wkt
+MapBasedMovement.mapFile246 =  data/TaxiSanFran/taxi245.wkt
+MapBasedMovement.mapFile247 =  data/TaxiSanFran/taxi246.wkt
+MapBasedMovement.mapFile248 =  data/TaxiSanFran/taxi247.wkt
+MapBasedMovement.mapFile249 =  data/TaxiSanFran/taxi248.wkt
+MapBasedMovement.mapFile250 =  data/TaxiSanFran/taxi249.wkt
+MapBasedMovement.mapFile251 = data/TaxiSanFran/taxi250.wkt
+MapBasedMovement.mapFile252 =  data/TaxiSanFran/taxi251.wkt
+MapBasedMovement.mapFile253 =  data/TaxiSanFran/taxi252.wkt
+MapBasedMovement.mapFile254 =  data/TaxiSanFran/taxi253.wkt
+MapBasedMovement.mapFile255 =  data/TaxiSanFran/taxi254.wkt
+MapBasedMovement.mapFile256 =  data/TaxiSanFran/taxi255.wkt
+MapBasedMovement.mapFile257 =  data/TaxiSanFran/taxi256.wkt
+MapBasedMovement.mapFile258 =  data/TaxiSanFran/taxi257.wkt
+MapBasedMovement.mapFile259 =  data/TaxiSanFran/taxi258.wkt
+MapBasedMovement.mapFile260 =  data/TaxiSanFran/taxi259.wkt
+MapBasedMovement.mapFile261 = data/TaxiSanFran/taxi260.wkt
+MapBasedMovement.mapFile262 =  data/TaxiSanFran/taxi261.wkt
+MapBasedMovement.mapFile263 =  data/TaxiSanFran/taxi262.wkt
+MapBasedMovement.mapFile264 =  data/TaxiSanFran/taxi263.wkt
+MapBasedMovement.mapFile265 =  data/TaxiSanFran/taxi264.wkt
+MapBasedMovement.mapFile266 =  data/TaxiSanFran/taxi265.wkt
+MapBasedMovement.mapFile267 =  data/TaxiSanFran/taxi266.wkt
+MapBasedMovement.mapFile268 =  data/TaxiSanFran/taxi267.wkt
+MapBasedMovement.mapFile269 =  data/TaxiSanFran/taxi268.wkt
+MapBasedMovement.mapFile270 =  data/TaxiSanFran/taxi269.wkt
+MapBasedMovement.mapFile271 = data/TaxiSanFran/taxi270.wkt
+MapBasedMovement.mapFile272 =  data/TaxiSanFran/taxi271.wkt
+MapBasedMovement.mapFile273 =  data/TaxiSanFran/taxi272.wkt
+MapBasedMovement.mapFile274 =  data/TaxiSanFran/taxi273.wkt
+MapBasedMovement.mapFile275 =  data/TaxiSanFran/taxi274.wkt
+MapBasedMovement.mapFile276 =  data/TaxiSanFran/taxi275.wkt
+MapBasedMovement.mapFile277 =  data/TaxiSanFran/taxi276.wkt
+MapBasedMovement.mapFile278 =  data/TaxiSanFran/taxi277.wkt
+MapBasedMovement.mapFile279 =  data/TaxiSanFran/taxi278.wkt
+MapBasedMovement.mapFile280 =  data/TaxiSanFran/taxi279.wkt
+MapBasedMovement.mapFile281 = data/TaxiSanFran/taxi280.wkt
+MapBasedMovement.mapFile282 =  data/TaxiSanFran/taxi281.wkt
+MapBasedMovement.mapFile283 =  data/TaxiSanFran/taxi282.wkt
+MapBasedMovement.mapFile284 =  data/TaxiSanFran/taxi283.wkt
+MapBasedMovement.mapFile285 =  data/TaxiSanFran/taxi284.wkt
+MapBasedMovement.mapFile286 =  data/TaxiSanFran/taxi285.wkt
+MapBasedMovement.mapFile287 =  data/TaxiSanFran/taxi286.wkt
+MapBasedMovement.mapFile288 =  data/TaxiSanFran/taxi287.wkt
+MapBasedMovement.mapFile289 =  data/TaxiSanFran/taxi288.wkt
+MapBasedMovement.mapFile290 =  data/TaxiSanFran/taxi289.wkt
+MapBasedMovement.mapFile291 = data/TaxiSanFran/taxi290.wkt
+MapBasedMovement.mapFile292 =  data/TaxiSanFran/taxi291.wkt
+MapBasedMovement.mapFile293 =  data/TaxiSanFran/taxi292.wkt
+MapBasedMovement.mapFile294 =  data/TaxiSanFran/taxi293.wkt
+MapBasedMovement.mapFile295 =  data/TaxiSanFran/taxi294.wkt
+MapBasedMovement.mapFile296 =  data/TaxiSanFran/taxi295.wkt
+MapBasedMovement.mapFile297 =  data/TaxiSanFran/taxi296.wkt
+MapBasedMovement.mapFile298 =  data/TaxiSanFran/taxi297.wkt
+MapBasedMovement.mapFile299 =  data/TaxiSanFran/taxi298.wkt
+MapBasedMovement.mapFile300 =  data/TaxiSanFran/taxi299.wkt
+
+MapBasedMovement.mapFile301 = data/TaxiSanFran/taxi300.wkt
+MapBasedMovement.mapFile302 =  data/TaxiSanFran/taxi301.wkt
+MapBasedMovement.mapFile303 =  data/TaxiSanFran/taxi302.wkt
+MapBasedMovement.mapFile304 =  data/TaxiSanFran/taxi303.wkt
+MapBasedMovement.mapFile305 =  data/TaxiSanFran/taxi304.wkt
+MapBasedMovement.mapFile306 =  data/TaxiSanFran/taxi305.wkt
+MapBasedMovement.mapFile307 =  data/TaxiSanFran/taxi306.wkt
+MapBasedMovement.mapFile308 =  data/TaxiSanFran/taxi307.wkt
+MapBasedMovement.mapFile309 =  data/TaxiSanFran/taxi308.wkt
+MapBasedMovement.mapFile310 =  data/TaxiSanFran/taxi309.wkt
+MapBasedMovement.mapFile311 = data/TaxiSanFran/taxi310.wkt
+MapBasedMovement.mapFile312 =  data/TaxiSanFran/taxi311.wkt
+MapBasedMovement.mapFile313 =  data/TaxiSanFran/taxi312.wkt
+MapBasedMovement.mapFile314 =  data/TaxiSanFran/taxi313.wkt
+MapBasedMovement.mapFile315 =  data/TaxiSanFran/taxi314.wkt
+MapBasedMovement.mapFile316 =  data/TaxiSanFran/taxi315.wkt
+MapBasedMovement.mapFile317 =  data/TaxiSanFran/taxi316.wkt
+MapBasedMovement.mapFile318 =  data/TaxiSanFran/taxi317.wkt
+MapBasedMovement.mapFile319 =  data/TaxiSanFran/taxi318.wkt
+MapBasedMovement.mapFile320 =  data/TaxiSanFran/taxi319.wkt
+MapBasedMovement.mapFile321 = data/TaxiSanFran/taxi320.wkt
+MapBasedMovement.mapFile322 =  data/TaxiSanFran/taxi321.wkt
+MapBasedMovement.mapFile323 =  data/TaxiSanFran/taxi322.wkt
+MapBasedMovement.mapFile324 =  data/TaxiSanFran/taxi323.wkt
+MapBasedMovement.mapFile325 =  data/TaxiSanFran/taxi324.wkt
+MapBasedMovement.mapFile326 =  data/TaxiSanFran/taxi325.wkt
+MapBasedMovement.mapFile327 =  data/TaxiSanFran/taxi326.wkt
+MapBasedMovement.mapFile328 =  data/TaxiSanFran/taxi327.wkt
+MapBasedMovement.mapFile329 =  data/TaxiSanFran/taxi328.wkt
+MapBasedMovement.mapFile330 =  data/TaxiSanFran/taxi329.wkt
+MapBasedMovement.mapFile331 = data/TaxiSanFran/taxi330.wkt
+MapBasedMovement.mapFile332 =  data/TaxiSanFran/taxi331.wkt
+MapBasedMovement.mapFile333 =  data/TaxiSanFran/taxi332.wkt
+MapBasedMovement.mapFile334 =  data/TaxiSanFran/taxi333.wkt
+MapBasedMovement.mapFile335 =  data/TaxiSanFran/taxi334.wkt
+MapBasedMovement.mapFile336 =  data/TaxiSanFran/taxi335.wkt
+MapBasedMovement.mapFile337 =  data/TaxiSanFran/taxi336.wkt
+MapBasedMovement.mapFile338 =  data/TaxiSanFran/taxi337.wkt
+MapBasedMovement.mapFile339 =  data/TaxiSanFran/taxi338.wkt
+MapBasedMovement.mapFile340 =  data/TaxiSanFran/taxi339.wkt
+MapBasedMovement.mapFile341 = data/TaxiSanFran/taxi340.wkt
+MapBasedMovement.mapFile342 =  data/TaxiSanFran/taxi341.wkt
+MapBasedMovement.mapFile343 =  data/TaxiSanFran/taxi342.wkt
+MapBasedMovement.mapFile344 =  data/TaxiSanFran/taxi343.wkt
+MapBasedMovement.mapFile345 =  data/TaxiSanFran/taxi344.wkt
+MapBasedMovement.mapFile346 =  data/TaxiSanFran/taxi345.wkt
+MapBasedMovement.mapFile347 =  data/TaxiSanFran/taxi346.wkt
+MapBasedMovement.mapFile348 =  data/TaxiSanFran/taxi347.wkt
+MapBasedMovement.mapFile349 =  data/TaxiSanFran/taxi348.wkt
+MapBasedMovement.mapFile350 =  data/TaxiSanFran/taxi349.wkt
+MapBasedMovement.mapFile351 = data/TaxiSanFran/taxi350.wkt
+MapBasedMovement.mapFile352 =  data/TaxiSanFran/taxi351.wkt
+MapBasedMovement.mapFile353 =  data/TaxiSanFran/taxi352.wkt
+MapBasedMovement.mapFile354 =  data/TaxiSanFran/taxi353.wkt
+MapBasedMovement.mapFile355 =  data/TaxiSanFran/taxi354.wkt
+MapBasedMovement.mapFile356 =  data/TaxiSanFran/taxi355.wkt
+MapBasedMovement.mapFile357 =  data/TaxiSanFran/taxi356.wkt
+MapBasedMovement.mapFile358 =  data/TaxiSanFran/taxi357.wkt
+MapBasedMovement.mapFile359 =  data/TaxiSanFran/taxi358.wkt
+MapBasedMovement.mapFile360 =  data/TaxiSanFran/taxi359.wkt
+MapBasedMovement.mapFile361 = data/TaxiSanFran/taxi360.wkt
+MapBasedMovement.mapFile362 =  data/TaxiSanFran/taxi361.wkt
+MapBasedMovement.mapFile363 =  data/TaxiSanFran/taxi362.wkt
+MapBasedMovement.mapFile364 =  data/TaxiSanFran/taxi363.wkt
+MapBasedMovement.mapFile365 =  data/TaxiSanFran/taxi364.wkt
+MapBasedMovement.mapFile366 =  data/TaxiSanFran/taxi365.wkt
+MapBasedMovement.mapFile367 =  data/TaxiSanFran/taxi366.wkt
+MapBasedMovement.mapFile368 =  data/TaxiSanFran/taxi367.wkt
+MapBasedMovement.mapFile369 =  data/TaxiSanFran/taxi368.wkt
+MapBasedMovement.mapFile370 =  data/TaxiSanFran/taxi369.wkt
+MapBasedMovement.mapFile371 = data/TaxiSanFran/taxi370.wkt
+MapBasedMovement.mapFile372 =  data/TaxiSanFran/taxi371.wkt
+MapBasedMovement.mapFile373 =  data/TaxiSanFran/taxi372.wkt
+MapBasedMovement.mapFile374 =  data/TaxiSanFran/taxi373.wkt
+MapBasedMovement.mapFile375 =  data/TaxiSanFran/taxi374.wkt
+MapBasedMovement.mapFile376 =  data/TaxiSanFran/taxi375.wkt
+MapBasedMovement.mapFile377 =  data/TaxiSanFran/taxi376.wkt
+MapBasedMovement.mapFile378 =  data/TaxiSanFran/taxi377.wkt
+MapBasedMovement.mapFile379 =  data/TaxiSanFran/taxi378.wkt
+MapBasedMovement.mapFile380 =  data/TaxiSanFran/taxi379.wkt
+MapBasedMovement.mapFile381 = data/TaxiSanFran/taxi380.wkt
+MapBasedMovement.mapFile382 =  data/TaxiSanFran/taxi381.wkt
+MapBasedMovement.mapFile383 =  data/TaxiSanFran/taxi382.wkt
+MapBasedMovement.mapFile384 =  data/TaxiSanFran/taxi383.wkt
+MapBasedMovement.mapFile385 =  data/TaxiSanFran/taxi384.wkt
+MapBasedMovement.mapFile386 =  data/TaxiSanFran/taxi385.wkt
+MapBasedMovement.mapFile387 =  data/TaxiSanFran/taxi386.wkt
+MapBasedMovement.mapFile388 =  data/TaxiSanFran/taxi387.wkt
+MapBasedMovement.mapFile389 =  data/TaxiSanFran/taxi388.wkt
+MapBasedMovement.mapFile390 =  data/TaxiSanFran/taxi389.wkt
+MapBasedMovement.mapFile391 = data/TaxiSanFran/taxi390.wkt
+MapBasedMovement.mapFile392 =  data/TaxiSanFran/taxi391.wkt
+MapBasedMovement.mapFile393 =  data/TaxiSanFran/taxi392.wkt
+MapBasedMovement.mapFile394 =  data/TaxiSanFran/taxi393.wkt
+MapBasedMovement.mapFile395 =  data/TaxiSanFran/taxi394.wkt
+MapBasedMovement.mapFile396 =  data/TaxiSanFran/taxi395.wkt
+MapBasedMovement.mapFile397 =  data/TaxiSanFran/taxi396.wkt
+MapBasedMovement.mapFile398 =  data/TaxiSanFran/taxi397.wkt
+MapBasedMovement.mapFile399 =  data/TaxiSanFran/taxi398.wkt
+MapBasedMovement.mapFile400 =  data/TaxiSanFran/taxi399.wkt
+
+MapBasedMovement.mapFile401 = data/TaxiSanFran/taxi400.wkt
+MapBasedMovement.mapFile402 =  data/TaxiSanFran/taxi401.wkt
+MapBasedMovement.mapFile403 =  data/TaxiSanFran/taxi402.wkt
+MapBasedMovement.mapFile404 =  data/TaxiSanFran/taxi403.wkt
+MapBasedMovement.mapFile405 =  data/TaxiSanFran/taxi404.wkt
+MapBasedMovement.mapFile406 =  data/TaxiSanFran/taxi405.wkt
+MapBasedMovement.mapFile407 =  data/TaxiSanFran/taxi406.wkt
+MapBasedMovement.mapFile408 =  data/TaxiSanFran/taxi407.wkt
+MapBasedMovement.mapFile409 =  data/TaxiSanFran/taxi408.wkt
+MapBasedMovement.mapFile410 =  data/TaxiSanFran/taxi409.wkt
+MapBasedMovement.mapFile411 = data/TaxiSanFran/taxi410.wkt
+MapBasedMovement.mapFile412 =  data/TaxiSanFran/taxi411.wkt
+MapBasedMovement.mapFile413 =  data/TaxiSanFran/taxi412.wkt
+MapBasedMovement.mapFile414 =  data/TaxiSanFran/taxi413.wkt
+MapBasedMovement.mapFile415 =  data/TaxiSanFran/taxi414.wkt
+MapBasedMovement.mapFile416 =  data/TaxiSanFran/taxi415.wkt
+MapBasedMovement.mapFile417 =  data/TaxiSanFran/taxi416.wkt
+MapBasedMovement.mapFile418 =  data/TaxiSanFran/taxi417.wkt
+MapBasedMovement.mapFile419 =  data/TaxiSanFran/taxi418.wkt
+MapBasedMovement.mapFile420 =  data/TaxiSanFran/taxi419.wkt
+MapBasedMovement.mapFile421 = data/TaxiSanFran/taxi420.wkt
+MapBasedMovement.mapFile422 =  data/TaxiSanFran/taxi421.wkt
+MapBasedMovement.mapFile423 =  data/TaxiSanFran/taxi422.wkt
+MapBasedMovement.mapFile424 =  data/TaxiSanFran/taxi423.wkt
+MapBasedMovement.mapFile425 =  data/TaxiSanFran/taxi424.wkt
+MapBasedMovement.mapFile426 =  data/TaxiSanFran/taxi425.wkt
+MapBasedMovement.mapFile427 =  data/TaxiSanFran/taxi426.wkt
+MapBasedMovement.mapFile428 =  data/TaxiSanFran/taxi427.wkt
+MapBasedMovement.mapFile429 =  data/TaxiSanFran/taxi428.wkt
+MapBasedMovement.mapFile430 =  data/TaxiSanFran/taxi429.wkt
+MapBasedMovement.mapFile431 = data/TaxiSanFran/taxi430.wkt
+MapBasedMovement.mapFile432 =  data/TaxiSanFran/taxi431.wkt
+MapBasedMovement.mapFile433 =  data/TaxiSanFran/taxi432.wkt
+MapBasedMovement.mapFile434 =  data/TaxiSanFran/taxi433.wkt
+MapBasedMovement.mapFile435 =  data/TaxiSanFran/taxi434.wkt
+MapBasedMovement.mapFile436 =  data/TaxiSanFran/taxi435.wkt
+MapBasedMovement.mapFile437 =  data/TaxiSanFran/taxi436.wkt
+MapBasedMovement.mapFile438 =  data/TaxiSanFran/taxi437.wkt
+MapBasedMovement.mapFile439 =  data/TaxiSanFran/taxi438.wkt
+MapBasedMovement.mapFile440 =  data/TaxiSanFran/taxi439.wkt
+MapBasedMovement.mapFile441 = data/TaxiSanFran/taxi440.wkt
+MapBasedMovement.mapFile442 =  data/TaxiSanFran/taxi441.wkt
+MapBasedMovement.mapFile443 =  data/TaxiSanFran/taxi442.wkt
+MapBasedMovement.mapFile444 =  data/TaxiSanFran/taxi443.wkt
+MapBasedMovement.mapFile445 =  data/TaxiSanFran/taxi444.wkt
+MapBasedMovement.mapFile446 =  data/TaxiSanFran/taxi445.wkt
+MapBasedMovement.mapFile447 =  data/TaxiSanFran/taxi446.wkt
+MapBasedMovement.mapFile448 =  data/TaxiSanFran/taxi447.wkt
+MapBasedMovement.mapFile449 =  data/TaxiSanFran/taxi448.wkt
+MapBasedMovement.mapFile450 =  data/TaxiSanFran/taxi449.wkt
+MapBasedMovement.mapFile451 = data/TaxiSanFran/taxi450.wkt
+MapBasedMovement.mapFile452 =  data/TaxiSanFran/taxi451.wkt
+MapBasedMovement.mapFile453 =  data/TaxiSanFran/taxi452.wkt
+MapBasedMovement.mapFile454 =  data/TaxiSanFran/taxi453.wkt
+MapBasedMovement.mapFile455 =  data/TaxiSanFran/taxi454.wkt
+MapBasedMovement.mapFile456 =  data/TaxiSanFran/taxi455.wkt
+MapBasedMovement.mapFile457 =  data/TaxiSanFran/taxi456.wkt
+MapBasedMovement.mapFile458 =  data/TaxiSanFran/taxi457.wkt
+MapBasedMovement.mapFile459 =  data/TaxiSanFran/taxi458.wkt
+MapBasedMovement.mapFile460 =  data/TaxiSanFran/taxi459.wkt
+MapBasedMovement.mapFile461 = data/TaxiSanFran/taxi460.wkt
+MapBasedMovement.mapFile462 =  data/TaxiSanFran/taxi461.wkt
+MapBasedMovement.mapFile463 =  data/TaxiSanFran/taxi462.wkt
+MapBasedMovement.mapFile464 =  data/TaxiSanFran/taxi463.wkt
+MapBasedMovement.mapFile465 =  data/TaxiSanFran/taxi464.wkt
+MapBasedMovement.mapFile466 =  data/TaxiSanFran/taxi465.wkt
+MapBasedMovement.mapFile467 =  data/TaxiSanFran/taxi466.wkt
+MapBasedMovement.mapFile468 =  data/TaxiSanFran/taxi467.wkt
+MapBasedMovement.mapFile469 =  data/TaxiSanFran/taxi468.wkt
+MapBasedMovement.mapFile470 =  data/TaxiSanFran/taxi469.wkt
+MapBasedMovement.mapFile471 = data/TaxiSanFran/taxi470.wkt
+MapBasedMovement.mapFile472 =  data/TaxiSanFran/taxi471.wkt
+MapBasedMovement.mapFile473 =  data/TaxiSanFran/taxi472.wkt
+MapBasedMovement.mapFile474 =  data/TaxiSanFran/taxi473.wkt
+MapBasedMovement.mapFile475 =  data/TaxiSanFran/taxi474.wkt
+MapBasedMovement.mapFile476 =  data/TaxiSanFran/taxi475.wkt
+MapBasedMovement.mapFile477 =  data/TaxiSanFran/taxi476.wkt
+MapBasedMovement.mapFile478 =  data/TaxiSanFran/taxi477.wkt
+MapBasedMovement.mapFile479 =  data/TaxiSanFran/taxi478.wkt
+MapBasedMovement.mapFile480 =  data/TaxiSanFran/taxi479.wkt
+MapBasedMovement.mapFile481 = data/TaxiSanFran/taxi480.wkt
+MapBasedMovement.mapFile482 =  data/TaxiSanFran/taxi481.wkt
+MapBasedMovement.mapFile483 =  data/TaxiSanFran/taxi482.wkt
+MapBasedMovement.mapFile484 =  data/TaxiSanFran/taxi483.wkt
+MapBasedMovement.mapFile485 =  data/TaxiSanFran/taxi484.wkt
+MapBasedMovement.mapFile486 =  data/TaxiSanFran/taxi485.wkt
+MapBasedMovement.mapFile487 =  data/TaxiSanFran/taxi486.wkt
+MapBasedMovement.mapFile488 =  data/TaxiSanFran/taxi487.wkt
+MapBasedMovement.mapFile489 =  data/TaxiSanFran/taxi488.wkt
+MapBasedMovement.mapFile490 =  data/TaxiSanFran/taxi489.wkt
+MapBasedMovement.mapFile491 = data/TaxiSanFran/taxi490.wkt
+MapBasedMovement.mapFile492 =  data/TaxiSanFran/taxi491.wkt
+MapBasedMovement.mapFile493 =  data/TaxiSanFran/taxi492.wkt
+MapBasedMovement.mapFile494 =  data/TaxiSanFran/taxi493.wkt
+MapBasedMovement.mapFile495 =  data/TaxiSanFran/taxi494.wkt
+MapBasedMovement.mapFile496 =  data/TaxiSanFran/taxi495.wkt
+MapBasedMovement.mapFile497 =  data/TaxiSanFran/taxi496.wkt
+MapBasedMovement.mapFile498 =  data/TaxiSanFran/taxi497.wkt
+MapBasedMovement.mapFile499 =  data/TaxiSanFran/taxi498.wkt
+MapBasedMovement.mapFile500 =  data/TaxiSanFran/taxi499.wkt
+
+
+MapBasedMovement.mapFile501 = data/TaxiSanFran/taxi500.wkt
+MapBasedMovement.mapFile502 =  data/TaxiSanFran/taxi501.wkt
+MapBasedMovement.mapFile503 =  data/TaxiSanFran/taxi502.wkt
+MapBasedMovement.mapFile504 =  data/TaxiSanFran/taxi503.wkt
+MapBasedMovement.mapFile505 =  data/TaxiSanFran/taxi504.wkt
+MapBasedMovement.mapFile506 =  data/TaxiSanFran/taxi505.wkt
+MapBasedMovement.mapFile507 =  data/TaxiSanFran/taxi506.wkt
+MapBasedMovement.mapFile508 =  data/TaxiSanFran/taxi507.wkt
+MapBasedMovement.mapFile509 =  data/TaxiSanFran/taxi508.wkt
+MapBasedMovement.mapFile510 =  data/TaxiSanFran/taxi509.wkt
+MapBasedMovement.mapFile511 = data/TaxiSanFran/taxi510.wkt
+MapBasedMovement.mapFile512 =  data/TaxiSanFran/taxi511.wkt
+MapBasedMovement.mapFile513 =  data/TaxiSanFran/taxi512.wkt
+MapBasedMovement.mapFile514 =  data/TaxiSanFran/taxi513.wkt
+MapBasedMovement.mapFile515 =  data/TaxiSanFran/taxi514.wkt
+MapBasedMovement.mapFile516 =  data/TaxiSanFran/taxi515.wkt
+MapBasedMovement.mapFile517 =  data/TaxiSanFran/taxi516.wkt
+MapBasedMovement.mapFile518 =  data/TaxiSanFran/taxi517.wkt
+MapBasedMovement.mapFile519 =  data/TaxiSanFran/taxi518.wkt
+MapBasedMovement.mapFile520 =  data/TaxiSanFran/taxi519.wkt
+MapBasedMovement.mapFile521 = data/TaxiSanFran/taxi520.wkt
+MapBasedMovement.mapFile522 =  data/TaxiSanFran/taxi521.wkt
+MapBasedMovement.mapFile523 =  data/TaxiSanFran/taxi522.wkt
+MapBasedMovement.mapFile524 =  data/TaxiSanFran/taxi523.wkt
+MapBasedMovement.mapFile525 =  data/TaxiSanFran/taxi524.wkt
+MapBasedMovement.mapFile526 =  data/TaxiSanFran/taxi525.wkt
+MapBasedMovement.mapFile527 =  data/TaxiSanFran/taxi526.wkt
+MapBasedMovement.mapFile528 =  data/TaxiSanFran/taxi527.wkt
+MapBasedMovement.mapFile529 =  data/TaxiSanFran/taxi528.wkt
+MapBasedMovement.mapFile530 =  data/TaxiSanFran/taxi529.wkt
+MapBasedMovement.mapFile531 = data/TaxiSanFran/taxi530.wkt
+MapBasedMovement.mapFile532 =  data/TaxiSanFran/taxi531.wkt
+MapBasedMovement.mapFile533 =  data/TaxiSanFran/taxi532.wkt
+MapBasedMovement.mapFile534 =  data/TaxiSanFran/taxi533.wkt
+MapBasedMovement.mapFile535 =  data/TaxiSanFran/taxi534.wkt
+MapBasedMovement.mapFile536 =  data/TaxiSanFran/taxi535.wkt
+
+
+## Reports - all report names have to be valid report classes
+
+# how many reports to load
+Report.nrofReports = 3
+# length of the warm up period (simulated seconds)
+Report.warmup = 0
+# default directory of reports (can be overridden per Report with output setting)
+Report.reportDir = reports/
+# Report classes to load
+Report.report1 = MessageStatsReport
+Report.report2 = ContactTimesReport
+Report.report3 = ClusterStatsReport
+#Report.report5 =MessageMLSamaneh1
+#Report.report5 = NewMessageReportSamane
+
+
+Report.granularity=6
+LocationSnapshotReport.granularity=1
+
+## Default settings for some routers settings
+ProphetRouter.secondsInTimeUnit = 30
+SprayAndWaitRouter.nrofCopies = 6
+SprayAndWaitRouter.binaryMode = true
+
+## Optimization settings -- these affect the speed of the simulation
+## see World class for details.
+Optimization.cellSizeMult = 5
+#Optimization.cellSizeMult = 1
+Optimization.randomizeUpdateOrder = true
+
+
+## GUI settings
+
+# GUI underlay image settings
+GUI.UnderlayImage.fileName = data/helsinki_underlay.png
+# Image offset in pixels (x, y)
+GUI.UnderlayImage.offset = 64, 20
+# Scaling factor for the image
+GUI.UnderlayImage.scale = 4.75
+# Image rotation (radians)
+GUI.UnderlayImage.rotate = -0.015
+
+# how many events to show in the log panel (default = 30)
+GUI.EventLogPanel.nrofEvents = 100
+# Regular Expression log filter (see Pattern-class from the Java API for RE-matching details)
+#GUI.EventLogPanel.REfilter = .*p[1-9]<->p[1-9]$

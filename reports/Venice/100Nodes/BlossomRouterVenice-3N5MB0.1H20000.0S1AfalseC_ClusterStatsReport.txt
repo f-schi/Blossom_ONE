@@ -1,0 +1,11 @@
+Cluster stats for scenario BlossomRouterVenice-3N5MB0.1H20000.0S1AfalseC
+sim_time: 172800.0000
+created: 257840
+
+Average max cluster size: 1.3419407384424449
+Average number when cluster is initialized: 1.132171113869066
+Average max cluster size of at the end existing clusters: 1.7173913043478262
+Average max cluster size of removed clusters: 1.3418737441523076
+Average size when a cluster gets initialized: 1.132171113869066
+Average existing time of a cluster: 29.435189265492056
+Number of removed cluster: 257794

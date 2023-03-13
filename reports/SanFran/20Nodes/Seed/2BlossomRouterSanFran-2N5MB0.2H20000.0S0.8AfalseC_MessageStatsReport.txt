@@ -1,0 +1,21 @@
+Message stats for scenario 2BlossomRouterSanFran-2N5MB0.2H20000.0S0.8AfalseC
+sim_time: 172800.0000
+created: 5854
+started: 1875
+relayed: 1844
+aborted: 31
+dropped: 3928
+removed: 1843
+delivered: 1824
+delivery_prob: 0.3116
+dropped_prob: 2.0949
+response_prob: 0.0000
+overhead_ratio: 0.0110
+latency_avg: 1949.2866
+latency_med: 1571.4000
+hopcount_avg: 1.0033
+hopcount_med: 1
+buffertime_avg: 3175.0290
+buffertime_med: 2979.0000
+rtt_avg: NaN
+rtt_med: NaN

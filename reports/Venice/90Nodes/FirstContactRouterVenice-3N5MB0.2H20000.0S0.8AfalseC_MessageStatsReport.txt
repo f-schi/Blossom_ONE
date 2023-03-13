@@ -1,0 +1,21 @@
+Message stats for scenario FirstContactRouterVenice-3N5MB0.2H20000.0S0.8AfalseC
+sim_time: 172800.0000
+created: 5861
+started: 168754
+relayed: 162061
+aborted: 6690
+dropped: 3112
+removed: 162061
+delivered: 2646
+delivery_prob: 0.4515
+dropped_prob: 0.0184
+response_prob: 0.0000
+overhead_ratio: 60.2475
+latency_avg: 2495.1861
+latency_med: 1482.9000
+hopcount_avg: 24.7714
+hopcount_med: 21
+buffertime_avg: 109.1713
+buffertime_med: 33.6000
+rtt_avg: NaN
+rtt_med: NaN

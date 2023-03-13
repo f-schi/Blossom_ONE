@@ -1,0 +1,21 @@
+Message stats for scenario BlossomRouterSanFran-3N5MB0.2H0.0S1AfalseC
+sim_time: 172800.0000
+created: 5844
+started: 144591
+relayed: 135854
+aborted: 8735
+dropped: 99362
+removed: 40064
+delivered: 1931
+delivery_prob: 0.3304
+dropped_prob: 0.6872
+response_prob: 0.0000
+overhead_ratio: 69.3542
+latency_avg: 1832.9396
+latency_med: 1450.8000
+hopcount_avg: 4.4029
+hopcount_med: 4
+buffertime_avg: 432.9375
+buffertime_med: 184.3000
+rtt_avg: NaN
+rtt_med: NaN

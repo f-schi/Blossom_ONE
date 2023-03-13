@@ -1,0 +1,21 @@
+Message stats for scenario 5EpidemicRouterVenice-3N5MB0.2H20000.0S1AfalseC
+sim_time: 172800.0000
+created: 5840
+started: 287809
+relayed: 268837
+aborted: 18965
+dropped: 272037
+removed: 0
+delivered: 2141
+delivery_prob: 0.3666
+dropped_prob: 0.9452
+response_prob: 0.0000
+overhead_ratio: 124.5661
+latency_avg: 1376.4628
+latency_med: 1081.8000
+hopcount_avg: 3.3536
+hopcount_med: 3
+buffertime_avg: 310.5536
+buffertime_med: 99.9000
+rtt_avg: NaN
+rtt_med: NaN

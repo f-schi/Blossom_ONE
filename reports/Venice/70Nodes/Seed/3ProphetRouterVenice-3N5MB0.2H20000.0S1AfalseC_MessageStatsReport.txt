@@ -1,0 +1,21 @@
+Message stats for scenario 3ProphetRouterVenice-3N5MB0.2H20000.0S1AfalseC
+sim_time: 172800.0000
+created: 5844
+started: 419039
+relayed: 402497
+aborted: 16535
+dropped: 404551
+removed: 0
+delivered: 3184
+delivery_prob: 0.5448
+dropped_prob: 0.9654
+response_prob: 0.0000
+overhead_ratio: 125.4124
+latency_avg: 1242.2456
+latency_med: 1054.1000
+hopcount_avg: 2.7952
+hopcount_med: 3
+buffertime_avg: 255.7952
+buffertime_med: 38.6000
+rtt_avg: NaN
+rtt_med: NaN

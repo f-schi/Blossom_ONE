@@ -1,0 +1,21 @@
+Message stats for scenario EpidemicRouterSanFran-3N5MB0.2H20000.0S0.8AfalseC
+sim_time: 172800.0000
+created: 5840
+started: 202412
+relayed: 188853
+aborted: 13554
+dropped: 192143
+removed: 0
+delivered: 2070
+delivery_prob: 0.3545
+dropped_prob: 0.9493
+response_prob: 0.0000
+overhead_ratio: 90.2333
+latency_avg: 1838.6935
+latency_med: 1469.1000
+hopcount_avg: 3.3053
+hopcount_med: 3
+buffertime_avg: 439.5690
+buffertime_med: 150.1000
+rtt_avg: NaN
+rtt_med: NaN

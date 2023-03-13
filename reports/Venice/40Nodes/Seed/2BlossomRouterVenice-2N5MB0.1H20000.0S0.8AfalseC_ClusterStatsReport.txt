@@ -1,0 +1,11 @@
+Cluster stats for scenario 2BlossomRouterVenice-2N5MB0.1H20000.0S0.8AfalseC
+sim_time: 172800.0000
+created: 60706
+
+Average max cluster size: 1.2342437320857906
+Average number when cluster is initialized: 1.1173689585872895
+Average max cluster size of at the end existing clusters: 1.4
+Average max cluster size of removed clusters: 1.2342164228285224
+Average size when a cluster gets initialized: 1.1173689585872895
+Average existing time of a cluster: 23.889631997666427
+Number of removed cluster: 60696

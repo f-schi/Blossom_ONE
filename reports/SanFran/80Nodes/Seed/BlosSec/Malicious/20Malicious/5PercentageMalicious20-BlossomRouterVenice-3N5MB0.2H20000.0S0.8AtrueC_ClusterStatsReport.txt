@@ -1,0 +1,11 @@
+Cluster stats for scenario 5PercentageMalicious20-BlossomRouterVenice-3N5MB0.2H20000.0S0.8AtrueC
+sim_time: 172800.0000
+created: 54
+
+Average max cluster size: 4.148148148148148
+Average number when cluster is initialized: 1.1666666666666667
+Average max cluster size of at the end existing clusters: 11.428571428571429
+Average max cluster size of removed clusters: 3.0638297872340425
+Average size when a cluster gets initialized: 1.1666666666666667
+Average existing time of a cluster: 2700.250000002942
+Number of removed cluster: 47

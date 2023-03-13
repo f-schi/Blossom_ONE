@@ -1,0 +1,11 @@
+Cluster stats for scenario 4BlossomRouterSanFran-3N5MB0.1H20000.0S0.8AfalseC
+sim_time: 172800.0000
+created: 150634
+
+Average max cluster size: 1.2666263924479202
+Average number when cluster is initialized: 1.1008670021376317
+Average max cluster size of at the end existing clusters: 1.75
+Average max cluster size of removed clusters: 1.2664723148234232
+Average size when a cluster gets initialized: 1.1008670021376317
+Average existing time of a cluster: 55.054951739042025
+Number of removed cluster: 150586

@@ -1,0 +1,21 @@
+Message stats for scenario 5ProphetRouterSanFran-3N5MB0.2H20000.0S1AfalseC
+sim_time: 172800.0000
+created: 5844
+started: 294529
+relayed: 283010
+aborted: 11514
+dropped: 285111
+removed: 0
+delivered: 3128
+delivery_prob: 0.5352
+dropped_prob: 0.9680
+response_prob: 0.0000
+overhead_ratio: 89.4763
+latency_avg: 1563.9616
+latency_med: 1364.6000
+hopcount_avg: 2.6854
+hopcount_med: 2
+buffertime_avg: 366.6025
+buffertime_med: 64.3000
+rtt_avg: NaN
+rtt_med: NaN

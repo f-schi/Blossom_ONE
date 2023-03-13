@@ -1,0 +1,21 @@
+Message stats for scenario BlossomRouterVenice-2N5MB0.2H10000.0S1AfalseC
+sim_time: 172800.0000
+created: 5842
+started: 3328
+relayed: 3248
+aborted: 80
+dropped: 2683
+removed: 3167
+delivered: 3100
+delivery_prob: 0.5306
+dropped_prob: 0.8062
+response_prob: 0.0000
+overhead_ratio: 0.0477
+latency_avg: 2765.5490
+latency_med: 2130.2000
+hopcount_avg: 1.0100
+hopcount_med: 1
+buffertime_avg: 4043.5396
+buffertime_med: 3504.0000
+rtt_avg: NaN
+rtt_med: NaN
