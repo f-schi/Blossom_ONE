@@ -1,0 +1,11 @@
+Cluster stats for scenario 5ProphetRouterVenice-3N5MB0.2H20000.0S0.8AfalseC
+sim_time: 172800.0000
+created: 0
+
+Average max cluster size: 0.0
+Average number when cluster is initialized: 0.0
+Average max cluster size of at the end existing clusters: 0.0
+Average max cluster size of removed clusters: 0.0
+Average size when a cluster gets initialized: 0.0
+Average existing time of a cluster: 0.0
+Number of removed cluster: 0
